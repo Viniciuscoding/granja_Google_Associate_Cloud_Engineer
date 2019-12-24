@@ -44,8 +44,18 @@ Google was the first major Cloud provider to deliver per second billing for its 
 Google gives customers the ability to run their applications elsewhere, 
 if Google becomes no longer the best provider for their needs
 ```
+#### Billing
+GCP provides four tools to help with billing: 
+**Budgets and Alerts:** You can define budgets either per billing account or per GCP project. A budget can be a fixed limit or you can tie it to another metric.
+**Billing Exports:** lets you store detailed billing information in places where it's easy to retrieve for more detailed analysis, such as a BigQuery dataset or a Cloud storage bucket.
+**Reports:** is a visual tool in the GCP console that allows you to monitor your expenditure.
+**Quotas:** designed to prevent the over-consumption of resources, whether because of error or malicious attack. There are two types of quotasL rate quotas and allocation quotas
+- **Rate Quotas:** reset after a specific time. For example, by default, the Kubernetes Engine service sets a quota of a 1000 calls to its API from each GCP project every 100 seconds. After that 100 seconds, the limit is reset.
+- **Allocation Quotas:** govern the number of resources you can have in your projects. For example, by default, each GCP project has a quota allowing it no more than five Virtual Private Cloud networks. Although projects all start with the same quotas, you can change some of them by requesting an increase from Google Cloud support.
+
 
 ## CLOUD SECURITY
+- Google enables **hardware encryption support** in hard drives and SSDs. ```That's how Google achieves encryption at rest of customer data.```
 - Google services that want to make themselves available on the Internet register themselves with an infrastructure service called the **Google Front End**, which ```checks incoming network connections for correct certificates and best practices.```
 - The GFE also additionally, applies protections against denial of service attacks. ```The sheer scale of its infrastructure, enables Google to simply absorb many denial of service attacks, even behind the GFEs.```
 - Google also has **multi-tier, multi-layer denial of service protections** that further reduce the risk of any denial of service impact.
@@ -56,6 +66,26 @@ if Google becomes no longer the best provider for their needs
 - To help ensure that code is as secure as possible Google stores its **source code centrally** and requires **two-party review of new code**.
 - Google also ```gives its developers libraries that keep them from introducing certain classes of security bugs.```
 - Externally, Google also runs a **vulnerability rewards program**, where we ```pay anyone who is able to discover and inform us of bugs in our infrastructure or applications.```
+
+### GCP Hierarchy
+
+```Policies are inherited downwards in the hierarchy.```
+
+- All Google Cloud platform resources **belong to a project**.
+- **Projects are the basis for enabling and using GCP** services like managing APIs, enabling billing and adding and removing collaborators and enabling other Google services.
+- ```**Each project is a separate compartment** and each resource belongs to exactly one.```
+- **Projects can have different owners and users**
+- **Projects are built separately and they're managed separately.**
+- Each GCP project **has a name and a project ID** that you assign.
+- The **project ID** is ```a permanent, unchangeable identifier``` and it has to be unique across GCP.
+- You use project IDs in several contexts to tell GCP which project you want to work with.
+- On the other hand, **project names** are ```for your convenience and you can assign them```.
+- GCP also assigns each of your projects a unique project number and you'll see a display to you in various contexts.
+
+
+
+
+
 
 
 
