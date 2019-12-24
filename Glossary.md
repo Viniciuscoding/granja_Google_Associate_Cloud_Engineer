@@ -14,3 +14,7 @@
 **ISO 14001 Certification:** It is a standard that maps out a framework for improving resource efficiency and reducing waste.
 
 **Universal Second Factor:** 
+
+**Identity Access Management (IAM):** Tool to control who can do what in the cloud.
+
+
