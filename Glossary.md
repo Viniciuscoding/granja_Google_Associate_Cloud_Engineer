@@ -17,4 +17,12 @@
 
 **Identity Access Management (IAM):** Tool to control who can do what in the cloud.
 
+**Virtual Private Cloud (VPC):** 
+
+**VPC Rounding Table:** these are used to forward traffic from one instance to another instance within the same network. Even across sub-networks and even between GCP zones without requiring an external IP address. VPCs routing tables are built in, you don't have to provision or manage a router. 
+
+**Cloud Load Balancing:** is a fully distributed, software-defined managed service for all your traffic.
+
+
+
 
