@@ -1,6 +1,8 @@
 # granja_Google_Associate_Cloud_Engineer
 Studying for the GCP Associate Cloud Engineer certification
 
+## Google Cloud Platform Repo
+git clone https://github.com/GoogleCloudPlatform/training-data-analyst
 
 ## Definitions by Coursera
 
