@@ -111,5 +111,17 @@ This guide applies to both REST APIs and RPC APIs, with specific focus on gRPC A
 
 This guide is a living document and additions to it will be made over time as new style and design patterns are adopted and approved. In that spirit, it is never going to be complete and there will always be ample room for the art and craft of API design.
 
+### GCP Machine Learning Resources
+
+[**Machine families resource and comparison guide**](https://cloud.google.com/compute/docs/machine-resource)
+
+This document describes the machine families, machine series, and machine types that you can choose from to create a virtual machine (VM) instance with the resources you need. When you create a VM, you select a machine type from a machine family that determines the resources available to that VM. There are several machine families you can choose from and each machine family is further organized into machine series and predefined machine types within each series. For example, within the N2 series in the general-purpose machine family, you can select the n2-standard-4 machine type.
+
+
+
+
+
+
+
 
 
