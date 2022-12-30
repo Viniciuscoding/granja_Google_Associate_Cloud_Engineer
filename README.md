@@ -7,7 +7,8 @@ Studying for the GCP Machine Learning Enginerr Professional certification
 [Training path for ML Engineer](https://cloud.google.com/training/machinelearning-ai)
 ### [Data Analyst Learning Path](https://www.cloudskillsboost.google/paths/18)
 [Training path for Data Analyst](https://cloud.google.com/training/data-engineering-and-analytics)
-Teaches how to use Looker
+
+- Teaches how to use Looker!
 ## Google Cloud Platform Repo
 git clone https://github.com/GoogleCloudPlatform/training-data-analyst
 
