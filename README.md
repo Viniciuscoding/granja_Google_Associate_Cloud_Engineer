@@ -51,7 +51,7 @@ Google's network carries as much as 40% of the world's Internet traffic every da
 ```
 ### ML Compute Power
 ```
-The requiring computing power for ML models was doubling every 2 years** until 2012.
+The requiring computing power for ML models was doubling every 2 years until 2012.
 From 2013 to now requiring computing power for ML models was doubling every 3.5 months!
 ```
 ### Renewable Energy
