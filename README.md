@@ -1,10 +1,6 @@
 # granja_Google_ML_Engineer
 Studying for the GCP Machine Learning Enginerr Professional certification
 
-## Curiosity
-The requiring computing power for ML models was **doubling every 2 years** until 2012.<br>
-From 2013 to now requiring computing power for ML models was **doubling every 3.5 months!** 
-
 ## Learning Paths
 
 ### [Machine Learning Engineer Learning Path](https://www.cloudskillsboost.google/paths/17)
@@ -53,6 +49,8 @@ The US National Institute of Standards and Technology created it, although, ther
 Google's network carries as much as 40% of the world's Internet traffic every day.
 100,000 km of fiber cable and 8 subsea cables
 ```
+The requiring computing power for ML models was **doubling every 2 years** until 2012.<br>
+From 2013 to now requiring computing power for ML models was **doubling every 3.5 months!** 
 
 ### Renewable Energy
 ```
