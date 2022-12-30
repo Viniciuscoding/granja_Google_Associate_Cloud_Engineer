@@ -155,6 +155,27 @@ Putting resources in different zones in a region reduces the risk of an infrastr
 
 Only certain resources are region- or zone-specific. Other resources, such as images, are global resources that can be used by any other resources across any location. For information on global, regional, and zonal Compute Engine resources, see [Global, Regional, and Zonal Resources](https://cloud.google.com/compute/docs/regions-zones/global-regional-zonal-resources).
 
+## DATA
+
+### Storage
+Storage & Process Data depends on:<br>
+- **Type of data**
+- **Business need**
+
+### Types of data
+- **Unstructured (Relational Data)**
+- **Structured Data (No-Relational Data)**
+
+#### Unstructure Data
+It is information stored in a non-tabular form such as documents images and audio files.<br>
+**IMPORTANT:** *Cloud Storage is great for No-Relational Data.*
+
+#### Structured Data
+It is information stored in a non-tabular form. There are two types of such data: **transactional workloads** and **analytical workloads**.
+
+
+
+
 
 
 
