@@ -49,21 +49,21 @@ The US National Institute of Standards and Technology created it, although, ther
 Google's network carries as much as 40% of the world's Internet traffic every day.
 100,000 km of fiber cable and 8 subsea cables
 ```
-The requiring computing power for ML models was **doubling every 2 years** until 2012.<br>
-From 2013 to now requiring computing power for ML models was **doubling every 3.5 months!** 
-
+### ML Compute Power
+```
+The requiring computing power for ML models was doubling every 2 years** until 2012.
+From 2013 to now requiring computing power for ML models was doubling every 3.5 months!
+```
 ### Renewable Energy
 ```
 - Google is one of the world's largest corporate purchasers of wind and solar energy.
 - Google has been a hundred percent carbon neutral since 2007.
 - Tts data centers energy source will shortly reach a hundred percent renewable energy.
 ```
-
 ### Payments and reliability
 ```
 Google was the first major Cloud provider to deliver per second billing for its IaaS Compute offering.
-```
-```
+
 Google gives customers the ability to run their applications elsewhere, 
 if Google becomes no longer the best provider for their needs
 ```
