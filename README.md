@@ -67,7 +67,7 @@ Google was the first major Cloud provider to deliver per second billing for its 
 Google gives customers the ability to run their applications elsewhere, 
 if Google becomes no longer the best provider for their needs
 ```
-#### Billing
+## BILLING
 GCP provides four tools to help with billing: 
 **Budgets and Alerts:** You can define budgets either per billing account or per GCP project. A budget can be a fixed limit or you can tie it to another metric.
 **Billing Exports:** lets you store detailed billing information in places where it's easy to retrieve for more detailed analysis, such as a BigQuery dataset or a Cloud storage bucket.
@@ -105,6 +105,7 @@ GCP provides four tools to help with billing:
 - On the other hand, **project names** are ```for your convenience and you can assign them```.
 - GCP also assigns each of your projects a unique project number and you'll see a display to you in various contexts.
 
+## PERMISSIONS & ROLES
 
 ### Roles and permissions
 
@@ -118,6 +119,8 @@ GCP provides four tools to help with billing:
 |roles/viewer	|Viewer   |Permissions for read-only actions that do not affect state, such as viewing (but not modifying) existing resources or data.|
 |roles/editor	|Editor	  |All viewer permissions, plus permissions for actions that modify state, such as changing existing resources.<br>**Note:**<br>*The Editor role contains permissions to create and delete resources for most Google Cloud services. However, it does not contain permissions to perform all actions for all services. For more information about how to check whether a role has the permissions that you need, see [Role types](https://cloud.google.com/iam/docs/roles-overview#role-types).*|
 |roles/owner	|Owner	  |All Editor permissions and permissions for the following actions:<br>- Manage roles and permissions for a project and all resources within the project.<br>- Set up billing for a project.<br>**Note:**<br>- *Granting the Owner role at a resource level, such as a Pub/Sub topic, doesn't grant the Owner role on the parent project.*<br>- *Granting the Owner role at the organization level doesn't allow you to update the organization's metadata. However, it allows you to modify all projects and other resources under that organization.*<br>- *To grant the Owner role on a project to a user outside of your organization, you must use the Google Cloud console, not the gcloud CLI. If your project is not part of an organization, you must use the Google Cloud console to grant the Owner role.*|
+
+## APIs
 
 ### [Google APIs Explorer](https://developers.google.com/apis-explorer/#p/dialogflow/v3/)
 
