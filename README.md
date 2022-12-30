@@ -1,6 +1,13 @@
-# granja_Google_Associate_Cloud_Engineer
-Studying for the GCP Associate Cloud Engineer certification
+# granja_Google_ML_Engineer
+Studying for the GCP Machine Learning Enginerr Professional certification
 
+## Learning Paths
+
+### [Machine Learning Engineer Learning Path](https://www.cloudskillsboost.google/paths/17)
+[Training path for ML Engineer](https://cloud.google.com/training/machinelearning-ai)
+### [Data Analyst Learning Path](https://www.cloudskillsboost.google/paths/18)
+[Training path for Data Analyst](https://cloud.google.com/training/data-engineering-and-analytics)
+Teaches how to use Looker
 ## Google Cloud Platform Repo
 git clone https://github.com/GoogleCloudPlatform/training-data-analyst
 
