@@ -1,6 +1,10 @@
 # granja_Google_ML_Engineer
 Studying for the GCP Machine Learning Enginerr Professional certification
 
+## Curiosity
+The requiring computing power for ML models was **doubling every 2 years** until 2012.<br>
+From 2013 to now requiring computing power for ML models was **doubling every 3.5 months!** 
+
 ## Learning Paths
 
 ### [Machine Learning Engineer Learning Path](https://www.cloudskillsboost.google/paths/17)
@@ -9,6 +13,17 @@ Studying for the GCP Machine Learning Enginerr Professional certification
 [Training path for Data Analyst](https://cloud.google.com/training/data-engineering-and-analytics)
 
 - Teaches how to use Looker!
+### Machine Learning Advanced Solutions Lab
+[Advanced Solutions Lab (For Teams!)](https://cloud.google.com/asl)<br>
+The Advanced Solutions Lab is an immersive training program that provides a unique opportunity for technical teams to learn from Google's machine learning experts in a dedicated, collaborative space on Google Campus.
+
+## Google Code Samples
+
+### [Detect sentiment](https://cloud.google.com/natural-language/docs/samples/language-quickstart?hl=en)
+Perform sentiment analysis by using client libraries [Link](https://cloud.google.com/natural-language/docs/sentiment-analysis-client-libraries)
+### DELETE LATER
+Load a CSV file from Cloud Storage using an explicit schema [Link](https://cloud.google.com/bigquery/docs/samples/bigquery-load-table-gcs-csv?hl=en)
+
 ## Google Cloud Platform Repo
 git clone https://github.com/GoogleCloudPlatform/training-data-analyst
 
