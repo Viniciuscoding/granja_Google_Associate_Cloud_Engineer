@@ -205,7 +205,14 @@ Pub/Sub is a distributed messaging service that can receive messages from a vari
 
 ### Google Dataflow (ETL)
 
-Dataflow creates a pipeline to process both streaming data and batch data. “Process” in this case refers to the steps to: **extract**, **transform**, and **load data** **(ETL)**.
+Dataflow creates a pipeline to process both streaming data and batch data.
+- “Process” in this case refers to the steps to: **extract**, **transform**, and **load data** **(ETL)**.<br>
+Dataflow is a fully managed service for executing Apache Beam pipelines within the Google Cloud ecosystem.<br>
+Dataflow is serverless and NoOps, which means No Operations.<br>
+- A NoOps environment is one that doesn't require management from an operations team, because maintenance, monitoring, and scaling are automated.
+- Serverless computing is a cloud computing execution model. This is when Google Cloud, for example, manages infrastructure tasks on behalf of the users. This includes tasks like: `resource provisioning`, `performance tuning`, and `ensuring pipeline reliability`.<br>
+Dataflow is designed to be low maintenancemeans.
+- It means that you can spend more time analyzing the insights from your datasets and less time provisioning resources to ensure that your pipeline will successfully complete its next cycles.
 
 ### Pipeline Design Questions
 ```
@@ -214,12 +221,57 @@ Dataflow creates a pipeline to process both streaming data and batch data. “Pr
 3. Will the pipeline SDK be able to handle late data?
 4. Are there existing templates or solutions that should be referenced?
 ```
+### Process Pipelines (Apache Beam)
+Popular soluton for pipeline design. It’s an open source, unified programming model to define and execute data processing pipelines, including ETL, batch, and stream processing.
+```
+1. Apache Beam is unified, which means it uses a single programming model for both batch and streaming data.
+2. It’s portable, which means it can work on multiple execution environments, like Dataflow and Apache Spark, among others.
+3. It’s extensible, which means it allows you to write and share your own connectors and transformation libraries.
+4. Apache Beam provides pipeline templates, so you don’t need to build a pipeline from nothing.
+5. It can write pipelines in Java, Python, or Go.
+6. The Apache Beam software development kit, or SDK, is a collection of software development tools in one installable package. It provides a variety of libraries for transformations and data connectors to sources and sinks.
+7. Apache Beam creates a model representation from your code that is portable across many runners.
+```
 
+### Execution Engine (Dataflow)
 
+#### Execution Engine Questions
+```
+1. How much maintenance overhead is involved?
+2. Is the infrastructure reliable?
+3. How is the pipeline scaling handled?
+4. How can the pipeline be monitored?
+5. Is the pipeline locked in to a specific service provider? 
+```
 
+### Dataflow task performed
+When a job is received by Dataflow it does the following:
+```
+1. Graph Optimization
+2. Work Scheduler
+3. Auto-scaler
+4. Auto-healing
+5. Work rebalancing
+6. Compute & Storage
+```
 
+### Dataflow Templates
+`Steaming`, `Batching`, and `Utility`
 
-
+**Streaming templates** are for processing continuous, or real-time, data.<br>
+- Pub/Sub to BigQuery
+- Pub/Sub to Cloud Storage
+- Datastream to BigQuery
+- Pub/Sub to MongoDB
+**Batch templates**  are for processing bulk data, or batch load data.<br>
+- BigQuery to Cloud Storage
+- Bigtable to Cloud Storage
+- Cloud Storage to BigQuery
+- Cloud Spanner to Cloud Storage
+**Utility templates** address activities related to bulk compression, deletion, and conversion.<br>
+- Bulk compression of Cloud Storage files
+- Firestore bulk deletion
+- File format conversion
 
 
 
