@@ -268,7 +268,7 @@ When a job is received by Dataflow it does the following:
 - BigQuery to Cloud Storage
 - Bigtable to Cloud Storage
 - Cloud Storage to BigQuery
-- Cloud Spanner to Cloud Storage<br>
+- Cloud Spanner to Cloud Storage
 
 **Utility templates** address activities related to bulk compression, deletion, and conversion.<br>
 - Bulk compression of Cloud Storage files
