@@ -200,10 +200,12 @@ veracity: Data won't always be good quality and will come with some inconsistenc
 ```
 
 ### Google Publisher/Subscriber (Pub/Sub)
+[Pub/Sub Documentation](https://cloud.google.com/pubsub/docs/)
 
 Pub/Sub is a distributed messaging service that can receive messages from a variety of device streams such as gaming events, IoT devices, and application streams. It ensures at-least-once delivery of received messages to subscribing applications, with no provisioning required. Pub/Sub’s APIs are open, the service is global by default, and it offers end-to-end encryption.
 
 ### Google Dataflow (ETL)
+[Dataflow Documentation](https://cloud.google.com/dataflow/docs/)
 
 Dataflow creates a pipeline to process both streaming data and batch data.
 - “Process” in this case refers to the steps to: **extract**, **transform**, and **load data** **(ETL)**.<br>
@@ -255,8 +257,10 @@ When a job is received by Dataflow it does the following:
 6. Compute & Storage
 ```
 
-### Dataflow Templates
+### [Dataflow Templates](https://cloud.google.com/dataflow/docs/concepts/dataflow-templates)
 `Steaming`, `Batching`, and `Utility`
+
+[Pre-Built Templates](https://cloud.google.com/dataflow/docs/guides/templates/provided-templates)
 
 **Streaming templates** are for processing continuous, or real-time, data.<br>
 - Pub/Sub to BigQuery
