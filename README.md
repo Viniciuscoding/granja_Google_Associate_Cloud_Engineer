@@ -262,12 +262,12 @@ When a job is received by Dataflow it does the following:
 - Pub/Sub to BigQuery
 - Pub/Sub to Cloud Storage
 - Datastream to BigQuery
-- Pub/Sub to MongoDB
+- Pub/Sub to MongoDB<br>
 **Batch templates**  are for processing bulk data, or batch load data.<br>
 - BigQuery to Cloud Storage
 - Bigtable to Cloud Storage
 - Cloud Storage to BigQuery
-- Cloud Spanner to Cloud Storage
+- Cloud Spanner to Cloud Storage<br>
 **Utility templates** address activities related to bulk compression, deletion, and conversion.<br>
 - Bulk compression of Cloud Storage files
 - Firestore bulk deletion
