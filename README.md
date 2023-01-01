@@ -280,4 +280,41 @@ When a job is received by Dataflow it does the following:
 - File format conversion
 
 
+## BigQuery
+It is a fully-managed data wherehouse.<br>
+```Being fully managed means that bigquery takes care of the underlying infrastructure so you can focus on using SQL queries to answer business questions without worrying about deployment scalability and security.```
+
+### Data Lake vs Data Wherehouse
+**Data Lake** is just a pool of raw unorganized and unclassified data which has no specified purpose a data.<br>
+**Data Wherehouse** contains structured and organized data which can be used for advanced querying.
+
+
+## Vertex AI
+It is a unified platform which means having one digital experience to create, deploy, and manage models over time, and at scale.<br>
+1. Data Readiness
+2. Feature Readiness
+3. Training & Hyperparameter Tunning
+4. Deployment & Model Monitoring
+
+### Traditional Challenges
+- Determining how to handle large quantities of data.
+- Determining the right machine learning model to train the data.
+- Harnessing the required amount of computing power.
+
+### Production Challenges
+- Scalability
+- Monitoring
+- Continuous Integration, Delivery and Deployment
+
+### Usage Challenges
+- Many tools require advanced coding skills.
+- Take focus away from model configuration.
+- No unified workflow.
+- Difficulties finding tools.
+
+
+
+
+
+
 
