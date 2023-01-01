@@ -312,7 +312,25 @@ It is a unified platform which means having one digital experience to create, de
 - No unified workflow.
 - Difficulties finding tools.
 
+## [Hyperparameter Tunning](https://cloud.google.com/vertex-ai/docs/training/hyperparameter-tuning-overview)
 
+Hyperparameters are the variables that govern the training process itself. For example, part of designing a DNN is deciding how many hidden layers of nodes to use between the input and output layers, and how many nodes each hidden layer should use. These variables are not directly related to the training data. They are configuration variables. Note that parameters change during a training job, while hyperparameters are usually constant during a job.
+
+### [Using Hyperparameter Tunning](https://cloud.google.com/vertex-ai/docs/training/using-hyperparameter-tuning#aiplatform_get_hyperparameter_tuning_job_sample-python)
+
+Hyperparameter tuning searches for the best combination of hyperparameter values by optimizing metric values across a series of trials. Metrics are scalar summaries that you add to your trainer, such as model accuracy. Hyperparameter tuning optimizes target variables that you specify, called hyperparameter metrics. Model accuracy, as calculated from an evaluation pass, is a common metric. Metrics must be numeric.
+
+### [Vertex AI Vizier](https://cloud.google.com/vertex-ai/docs/vizier/overview)
+It is a hyperparameter optmizer. Vertex AI Vizier is a **black-box optimization service** that helps you tune hyperparameters in complex machine learning (ML) models. When ML models have many different hyperparameters, it can be difficult and time consuming to tune them manually. Vertex AI Vizier optimizes your model's output by tuning the hyperparameters for you.
+
+**Black-box optimization** is the optimization of a system that meets either of the following criteria:<br>
+- Doesn't have a known [objective function](https://developers.google.com/machine-learning/glossary#objective-function) to evaluate.
+- Is too costly to evaluate by using the objective function, usually due to the complexity of the system.
+
+#### How to use Vertex AI Vizier
+This page describes how to make API requests to Vertex AI Vizier by using Python.
+
+Tutorial on how to use [Vertex AI Vizier](https://cloud.google.com/vertex-ai/docs/vizier/using-vizier) in Python
 
 
 
