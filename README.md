@@ -219,7 +219,8 @@ Dataflow is designed to be low maintenancemeans.
 ### Pipeline Design Questions
 ```
 1. Will the pipeline code be compatible with both batch and streaming data, or will it need to be refactored?
-2. Will the pipeline code software development kit (SDK) being used have all the transformations, mid-flight aggregations and windowing?
+2. Will the pipeline code software development kit (SDK) being used have all the transformations, mid-flight
+aggregations and windowing?
 3. Will the pipeline SDK be able to handle late data?
 4. Are there existing templates or solutions that should be referenced?
 ```
@@ -231,7 +232,8 @@ Popular soluton for pipeline design. It’s an open source, unified programming 
 3. It’s extensible, which means it allows you to write and share your own connectors and transformation libraries.
 4. Apache Beam provides pipeline templates, so you don’t need to build a pipeline from nothing.
 5. It can write pipelines in Java, Python, or Go.
-6. The Apache Beam software development kit, or SDK, is a collection of software development tools in one installable package. It provides a variety of libraries for transformations and data connectors to sources and sinks.
+6. The Apache Beam software development kit, or SDK, is a collection of software development tools in one installable
+package. It provides a variety of libraries for transformations and data connectors to sources and sinks.
 7. Apache Beam creates a model representation from your code that is portable across many runners.
 ```
 
