@@ -284,12 +284,22 @@ When a job is received by Dataflow it does the following:
 It is a fully-managed data wherehouse.<br>
 ```Being fully managed means that bigquery takes care of the underlying infrastructure so you can focus on using SQL queries to answer business questions without worrying about deployment scalability and security.```
 
+[BigQuery Usage Pricing](https://cloud.google.com/bigquery#section-5)
+
 ### BigQuey Export Schema
 This article explains the format and schema of the data that is imported into BigQuery. The data used come from teh table: `data-to-insights.ecommerce.web_analytics`.
 
 ### Data Lake vs Data Wherehouse
 **Data Lake** is just a pool of raw unorganized and unclassified data which has no specified purpose a data.<br>
 **Data Wherehouse** contains structured and organized data which can be used for advanced querying.
+
+## [BigQuery ML](https://cloud.google.com/bigquery-ml/docs)
+BigQuery ML enables users to create and execute machine learning models in BigQuery by using standard SQL queries
+
+[Tutorials](https://cloud.google.com/bigquery-ml/docs/tutorials)
+
+[End-to-end user journey for each model](https://cloud.google.com/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-e2e-journey)
+
 
 ## Vertex AI
 It is a unified platform which means having one digital experience to create, deploy, and manage models over time, and at scale.<br>
