@@ -352,7 +352,8 @@ Tutorial on how to use [Vertex AI Vizier](https://cloud.google.com/vertex-ai/doc
 - It is a centralized repository to organize, store, and serve machine learning features.
 - It aggregates all the different features from different sources and updates them to make them available from a central repository.
 - Upon engineers need to model something, they can use the features available in the Feature Store dictionary to build a dataset.
-``` Benefits
+``` 
+Benefits
 1. Features are shareable for training or serving tasks: Features are managed and served from a central repository,
 which helps maintain consistency across your organization.
 2. Features are reusable: Helps save time and reduces duplicative efforts, especially for high-value features.
