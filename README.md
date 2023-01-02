@@ -386,17 +386,36 @@ Refers to all the cases predicted as positive and how many are actually positive
 ## MLOps
 Machine Learning Development + Operations
 
-**ML**         = Upload Data + Engineering Feature + Train Model + Evaluate Model <br>
+**ML** = Upload Data + Engineering Feature + Train Model + Evaluate Model <br>
 **Operations** = Deploy + Monitor + Release
 
-### Goals
-**ML**         = Solve production challenges related to machine learning<br>
+### MLOps Goals
+**ML** = Solve production challenges related to machine learning<br>
 **Operations** = Building an intergrated system + Operating in production
 
 ```
 Practicing MLOps means advocating for automation and monitoring at each step of 
 the ML system construction. This means adopting a process to enable:
 ```
-- Continuous integration
-- Continuous training
-- Continuous delivery
+- Continuous integration (CI)
+- Continuous training (CT)
+- Continuous delivery (CD)
+
+### Machine Learning Deployment Options
+**Endpoint**<br>
+1. Best when immediate results with low latency are needed.
+2. A model must be deployed to an endpoint before that model can be used to serve real-time
+- e.x: Making instant recommendations based on a user’s browsing habits whenever they’re online.
+**Batch Predition**<br>
+1. Best when no immediate response is required, and accumulated data should be processed with a single request.
+- e.x: Sending out new ads every other week based on the user’s recent purchasing behavior and what’s currently popular on the market
+**Offline Predition**<br>
+1. Best when the model should be deployed in a specific environment off the cloud.
+- e.x: Edge AI where a camera need to identify defects on a product during assembly line or packaging process. 
+
+### Vertex AI Pipelines
+It automates, monitors, and governs machine learning systems by orchestrating the workflow in a serverless manner
+
+### Vertex AI Workbench
+It is a notebook tool that helps to define one's own pipeline. You can do this with prebuilt pipeline components, which means that you primarily need to specify how the pipeline is put together using components as building blocks
+
