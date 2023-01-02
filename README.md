@@ -344,7 +344,15 @@ This page describes how to make API requests to Vertex AI Vizier by using Python
 
 Tutorial on how to use [Vertex AI Vizier](https://cloud.google.com/vertex-ai/docs/vizier/using-vizier) in Python
 
-
-
+## Vertex AI Feature Store
+- It is a centralized repository to organize, store, and serve machine learning features.
+- It aggregates all the different features from different sources and updates them to make them available from a central repository.
+- Upon engineers need to model something, they can use the features available in the Feature Store dictionary to build a dataset.
+``` Benefits
+1. Features are shareable for training or serving tasks: Features are managed and served from a central repository, which helps maintain consistency across your organization.
+2. Features are reusable: Helps save time and reduces duplicative efforts, especially for high-value features.
+3. Features are scalable: Features automatically scale to provide low-latency serving, so you can focus on developing the logic to create the features without worrying about deployment.
+4. Features are easy to use: Feature Store is built on an easy-to-navigate user interface.
+```
 
 
