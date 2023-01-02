@@ -228,12 +228,14 @@ aggregations and windowing?
 Popular soluton for pipeline design. It’s an open source, unified programming model to define and execute data processing pipelines, including ETL, batch, and stream processing.
 ```
 1. Apache Beam is unified, which means it uses a single programming model for both batch and streaming data.
-2. It’s portable, which means it can work on multiple execution environments, like Dataflow and Apache Spark, among others.
+2. It’s portable, which means it can work on multiple execution environments, like Dataflow and Apache Spark,
+among others.
 3. It’s extensible, which means it allows you to write and share your own connectors and transformation libraries.
 4. Apache Beam provides pipeline templates, so you don’t need to build a pipeline from nothing.
 5. It can write pipelines in Java, Python, or Go.
-6. The Apache Beam software development kit, or SDK, is a collection of software development tools in one installable
-package. It provides a variety of libraries for transformations and data connectors to sources and sinks.
+6. The Apache Beam software development kit, or SDK, is a collection of software development tools in one
+installable package. It provides a variety of libraries for transformations and data connectors to sources
+and sinks.
 7. Apache Beam creates a model representation from your code that is portable across many runners.
 ```
 
