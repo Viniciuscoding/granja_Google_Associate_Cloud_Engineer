@@ -374,11 +374,11 @@ developing the logic to create the features without worrying about deployment.
 | **N(dog**) |   FP   |   TN   |
 
 ### Recall
-Refers to all the positive cases, and looks at how many were predicted correctly.
-R = TP / (TP + FN)
+Refers to all the positive cases, and looks at how many were predicted correctly.<br>
+```R = TP / (TP + FN)```
 
 ### Precision
-Refers to all the cases predicted as positive and how many are actually positive.
-P = TP / (FP + TP)
+Refers to all the cases predicted as positive and how many are actually positive.<br>
+```P = TP / (FP + TP)```
 
 
