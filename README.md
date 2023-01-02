@@ -365,13 +365,13 @@ developing the logic to create the features without worrying about deployment.
 ## Confusion Matrix
 |              | Predicted Value |  
 |--------------|-----------------|
-| Actual Value |    AV vs PV     |
+| **Actual Value** |    AV vs PV     |
 
 
 |        | P(cat) | N(dog) |
 |--------|--------|--------|
-| P(cat) |   TP   |   FN   |
-| N(dog) |   FP   |   TN   |
+| **P(cat)** |   TP   |   FN   |
+| **N(dog**) |   FP   |   TN   |
 
 ### Recall
 Refers to all the positive cases, and looks at how many were predicted correctly.
