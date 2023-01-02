@@ -365,7 +365,7 @@ developing the logic to create the features without worrying about deployment.
 ## Confusion Matrix
 |              | Predicted Value |  
 |--------------|-----------------|
-| **Actual Value** |    AV vs PV     |
+| **Actual Value** |    AV vs PV    |
 
 
 |        | P(cat) | N(dog) |
