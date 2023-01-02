@@ -386,11 +386,12 @@ Refers to all the cases predicted as positive and how many are actually positive
 ## MLOps
 Machine Learning Development + Operations
 
-ML = Upload Data + Engineering Feature + Train Model + Evaluate Model <br>
-Operations = Deploy + Monitor + Release
+**ML**         = Upload Data + Engineering Feature + Train Model + Evaluate Model <br>
+**Operations** = Deploy + Monitor + Release
 
-ML Goal = Solve production challenges related to machine learning<br>
-Operations = Building an intergrated system + Operating in production
+### Goals
+**ML**         = Solve production challenges related to machine learning<br>
+**Operations** = Building an intergrated system + Operating in production
 
 ```
 Practicing MLOps means advocating for automation and monitoring at each step of 
