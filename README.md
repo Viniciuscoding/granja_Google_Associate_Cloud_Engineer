@@ -384,6 +384,8 @@ Refers to all the cases predicted as positive and how many are actually positive
 
 
 ## MLOps
+[Google Cloud MLOps Gi](https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning#mlops_level_1_ml_pipeline_automation)
+
 Machine Learning Development + Operations
 
 **ML** = Upload Data + Engineering Feature + Train Model + Evaluate Model <br>
