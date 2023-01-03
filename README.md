@@ -421,3 +421,25 @@ It automates, monitors, and governs machine learning systems by orchestrating th
 ### Vertex AI Workbench
 It is a notebook tool that helps to define one's own pipeline. You can do this with prebuilt pipeline components, which means that you primarily need to specify how the pipeline is put together using components as building blocks
 
+### Machine Learning Workflow
+#### Data Preparation
+STEP 1: Data Uploaing
+
+STEP 2: Feature Engineering
+
+**Data Types:**<br>
+1. Streaming vs Batch Data
+2. Structured vs Unstructured Data
+
+#### Model Training
+STEP 1: Training Data
+
+STEP 2: Evaluating Data
+
+#### Model Serving
+STEP 1: Deployement
+STEP 2: Monitoring
+STEP 3: Managed
+
+
+
