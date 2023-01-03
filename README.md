@@ -54,11 +54,28 @@ Google's network carries as much as 40% of the world's Internet traffic every da
 The requiring computing power for ML models was doubling every 2 years until 2012.
 From 2013 to now requiring computing power for ML models was doubling every 3.5 months!
 ```
+### ML Expectations
+```
+1. Collecting data is often the longest and hardest part of an ML project, and the one most likely to fail.
+2. Manual analysis helps you fail fast and try new ideas in a more agile way.
+3. To build a good ML model, you have to know your data. If you do not know analytics you cannot do ML.
+4. ML is a journey towards automation and scale.
+5. In ML it is necessary to build a Streaming Pipeline in addition to a Batch Bipeline.
+```
+### ML Strategy
+```
+Simple ML and more data > Fancy ML and small data.
+```
+### Enterprise Data
+```
+90% of Enterprise data is unstructured such as emails, video footage, texts, reports, catalogs,
+fashion show, events, news, etc.
+```
 ### Renewable Energy
 ```
 - Google is one of the world's largest corporate purchasers of wind and solar energy.
 - Google has been a hundred percent carbon neutral since 2007.
-- Tts data centers energy source will shortly reach a hundred percent renewable energy.
+- Its data centers energy source will shortly reach a hundred percent renewable energy.
 ```
 ### Payments and reliability
 ```
@@ -67,6 +84,7 @@ Google was the first major Cloud provider to deliver per second billing for its 
 Google gives customers the ability to run their applications elsewhere, 
 if Google becomes no longer the best provider for their needs
 ```
+
 ## BILLING
 GCP provides four tools to help with billing: 
 **Budgets and Alerts:** You can define budgets either per billing account or per GCP project. A budget can be a fixed limit or you can tie it to another metric.
@@ -172,8 +190,6 @@ It is information stored in a non-tabular form such as documents images and audi
 
 #### Structured Data
 It is information stored in a non-tabular form. There are two types of such data: **transactional workloads** and **analytical workloads**.
-
-
 
 
 ## Data Engineering for Streaming Data
