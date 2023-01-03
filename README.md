@@ -66,10 +66,40 @@ performance aspect you care about is scaling to a lot of data, distributed train
 though, the key performance aspect is speed of response and high QPS.
 7. Lots of ML frameworks exist for training, but not so many are equaly capable operationalization.
 ```
+### ML Reality
+```
+1. Most ML value comes along the way.
+2. ML improves almost everythign it touches.
+3. ML is hard, so it is hard for competitors too.
+4. ML is a great differentiator. 
+```
 ### ML Strategy
 ```
 Simple ML and more data > Fancy ML and small data.
 ```
+### Top 10 ML Pitfalls
+1. Training your own ML algorithm would be faster than writting the software.
+
+2. Start an ML without data analysis.
+
+3. Assume the data is ready to use.
+
+4. Not keeping humans in the loop.
+
+5. Product launch focused on the ML algorithm only.
+
+6. Optmizing ML model for wrong thing.
+
+7. Is the ML algorithm really improving things in the real world.
+
+8. Using a pre-trained algorithm vs building your own.
+
+9. Training ML algorithms only once.
+- ML Algorithms must be trained more than once. Training requires resources.
+
+10. Trying to design your own perception or NLP algorithm.
+
+
 ### Enterprise Data
 ```
 90% of Enterprise data is unstructured such as emails, video footage, texts, reports, catalogs,
