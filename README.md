@@ -61,6 +61,10 @@ From 2013 to now requiring computing power for ML models was doubling every 3.5 
 3. To build a good ML model, you have to know your data. If you do not know analytics you cannot do ML.
 4. ML is a journey towards automation and scale.
 5. In ML it is necessary to build a Streaming Pipeline in addition to a Batch Bipeline.
+6. The performance metrics you care about change between training and predictions as well. During training, the key
+performance aspect you care about is scaling to a lot of data, distributed training if you will. During prediction, 
+though, the key performance aspect is speed of response and high QPS.
+7. Lots of ML frameworks exist for training, but not so many are equaly capable operationalization.
 ```
 ### ML Strategy
 ```
@@ -92,8 +96,8 @@ GCP provides four tools to help with billing:
 **Reports:** is a visual tool in the GCP console that allows you to monitor your expenditure.
 **Quotas:** designed to prevent the over-consumption of resources, whether because of error or malicious attack. There are two types of quotasL rate quotas and allocation quotas
 - **Rate Quotas:** reset after a specific time. For example, by default, the Kubernetes Engine service sets a quota of a 1000 calls to its API from each GCP project every 100 seconds. After that 100 seconds, the limit is reset.
-- **Allocation Quotas:** govern the number of resources you can have in your projects. For example, by default, each GCP project has a quota allowing it no more than five Virtual Private Cloud networks. Although projects all start with the same quotas, you can change some of them by requesting an increase from Google Cloud support.
-
+- **Allocation Quotas:** govern the number of resources you can have in your projects. For example, by default, each GCP project has a quota allowing it 
+no more than five Virtual Private Cloud networks. Although projects all start with the same quotas, you can change some of them by requesting an increase from Google Cloud support.
 
 ## CLOUD SECURITY
 - Google enables **hardware encryption support** in hard drives and SSDs. ```That's how Google achieves encryption at rest of customer data.```
@@ -456,6 +460,24 @@ STEP 2: Evaluating Data
 STEP 1: Deployement
 STEP 2: Monitoring
 STEP 3: Managed
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Glossary
+**Training-serving skew:** is a difference between model performance during training and performance during serving. This skew can be caused by:
+- A discrepancy between how you handle data in the training and serving pipelines.
+- A change in the data between when you train and when you serve.
+- A feedback loop between your model and your algorithm.
 
 
 
