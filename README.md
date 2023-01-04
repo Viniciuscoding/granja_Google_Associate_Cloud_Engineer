@@ -77,10 +77,10 @@ though, the key performance aspect is speed of response and high QPS.
 ```
 Simple ML and more data > Fancy ML and small data.
 ```
-### Top 10 ML Pitfalls
+### Top 11 ML Pitfalls
 1. Training your own ML algorithm would be faster than writting the software.
 
-2. Start an ML without data analysis.
+2. Start creating or using MLs without data analysis.
 
 3. Assume the data is ready to use.
 
@@ -88,7 +88,7 @@ Simple ML and more data > Fancy ML and small data.
 
 5. Product launch focused on the ML algorithm only.
 
-6. Optmizing ML model for wrong thing.
+6. Optmizing ML model for wrong things.
 
 7. Is the ML algorithm really improving things in the real world.
 
@@ -98,6 +98,14 @@ Simple ML and more data > Fancy ML and small data.
 - ML Algorithms must be trained more than once. Training requires resources.
 
 10. Trying to design your own perception or NLP algorithm.
+
+11. Trying to jump to a fully machine learned, automated end-to-end, auto-magic everything solution.
+- Everyone wants to make this leap. However, it usually doesn't lead to great products or organization outcomes. Google has seen it internally and within their partner organizations.
+12. Very high expectations of success
+- 85% of Machine Learning Projects Fail
+- [According to Gartner](https://www.gartner.com/en/newsroom/press-releases/2018-02-13-gartner-says-nearly-half-of-cios-are-planning-to-deploy-artificial-intelligence) it is predicted that through 2022, 85 percent of AI projects will deliver erroneous outcomes due to bias in data, algorithms or the teams responsible for managing them.
+
+
 
 
 ### Enterprise Data
