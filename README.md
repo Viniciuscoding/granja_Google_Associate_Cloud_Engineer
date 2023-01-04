@@ -81,7 +81,8 @@ Simple ML and more data > Fancy ML and small data.
 1. Training your own ML algorithm would be faster than writting the software.
 
 2. Start creating or using MLs without data analysis.
-
+- It is necessary a Data Strategy first before a Machine Learning strategy. 
+- "There is no Machine Learning without data, and there is no Machine Learning success without good data" by Robie Allen
 3. Assume the data is ready to use.
 - If you can't make a histogram chart of your data neither can your ML. This is because most MLs are usually making many plots and performing regression on them.
 
@@ -110,6 +111,8 @@ Simple ML and more data > Fancy ML and small data.
 13. Thinking ML will completely exchange the human workforce.
 - That's a very high expectation for an ML system to meet. You should think about ML as a way to expand or scale the impact of your people, not as a way of completely removing them.   
 
+14. An ML model will bring higher returns very quick.
+- Can you guess how well a company will do with just 1 or 2 quarters of data? Probably not because it takes at least a full year of a public company's returns information for investors and market to better access how well a company is doing now and two full years of data to forecast its future performance.
 
 
 ### Enterprise Data
