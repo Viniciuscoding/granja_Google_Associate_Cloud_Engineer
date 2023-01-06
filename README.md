@@ -507,13 +507,41 @@ STEP 2: Monitoring
 STEP 3: Managed
 
 
+## Best Practices for Machine Learning Development on GCP
 
+### Best Practices for Preparing and Storing Data
+1. Avoid storing data in block storage like netwrok file systems or VM hard disks.
+2. Avoid reading data directly from databases like Cloud SQL.
+#### Structured Data (BigQuery)
+1. Store **tabular** and **intermidiate processed** data in BigQuery.
+2. Use Vertex AI Feature Store with structured data.
+3. For optimal speed, better storing **materialized data** than using **views** or **subqueries** for training data.
 
+#### Unstructured Data (Cloud Storage)
+1. Store image, video, audio, and unstructured data in Cloud Storage.
+2. This also applies to TFRecord files if using TensorFlow or AVRO files if using other framework.
+3. Improve write and read throughput to Cloud Storage by mombining many individual images, videos or audio clips into large files.
+4. Use Vertex Data Labeling for unstructured data.  
 
+#### Vertex AI Feature Store
+1. Search Vertex AI Feature Store.
+1.1. Search to see if a feature already exists. 
+1.2. Fetch those features for your training labels using Vertex AI Feature Store's batch serving capability.
+2. Create a new feature.
+2.1. Create a new feature using your Cloud Storage bucker or BigQuwry location.
+2.2. Fetch raw data from your data lake and write your scripts to perform feature processing.
+2.3. Join the feature values and the new feature values. Merging those feature values produces the training data set.
+2.4. It is a solution for online serving of the features to online prediction use cases.
+2.5. You can share features among others in the organization for their own ML models.
 
+### Best Practices for Training
+1. Use notebooks intances for small datasets.
+2. For large datasets, distributed training, or scheduled training, it is recommended using Vertex Training service.
 
-
-
+#### Training with pre-built containers on Vertex AI
+1. **Python Source Distribution:** Training application code package as Python source distribution. Can include custom Python dependencies or others.
+2. **Cloud Storage Bucket:** Push the package training application code to Google Cloud Storage bucket.
+3. **Vertex Training:** Configure and run custom job on Vertex Training with pre-built containers.
 
 
 
