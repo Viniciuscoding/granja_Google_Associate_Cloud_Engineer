@@ -524,14 +524,14 @@ STEP 3: Managed
 4. Use Vertex Data Labeling for unstructured data.  
 
 #### Vertex AI Feature Store
-1. Search Vertex AI Feature Store.
-1.1. Search to see if a feature already exists. 
-1.2. Fetch those features for your training labels using Vertex AI Feature Store's batch serving capability.
-2. Create a new feature.
-2.1. Create a new feature using your Cloud Storage bucker or BigQuwry location.
-2.2. Fetch raw data from your data lake and write your scripts to perform feature processing.
-2.3. Join the feature values and the new feature values. Merging those feature values produces the training data set.
-2.4. It is a solution for online serving of the features to online prediction use cases.
+1. Search Vertex AI Feature Store.<br>
+1.1. Search to see if a feature already exists.<br>
+1.2. Fetch those features for your training labels using Vertex AI Feature Store's batch serving capability.<br>
+2. Create a new feature.<br>
+2.1. Create a new feature using your Cloud Storage bucker or BigQuwry location.<br>
+2.2. Fetch raw data from your data lake and write your scripts to perform feature processing.<br>
+2.3. Join the feature values and the new feature values. Merging those feature values produces the training data set.<br>
+2.4. It is a solution for online serving of the features to online prediction use cases.<br>
 2.5. You can share features among others in the organization for their own ML models.
 
 ### Best Practices for Training
@@ -543,8 +543,24 @@ STEP 3: Managed
 2. **Cloud Storage Bucket:** Push the package training application code to Google Cloud Storage bucket.
 3. **Vertex Training:** Configure and run custom job on Vertex Training with pre-built containers.
 
+### Best Practices for Explainable AI
+1. Offers feature attributions to provide insights into why models generate predictions.
+2. Details the importance of each feature that a model uses as input to make a prediction.
+3. Supports custom-trained models based on tabular and image data.
+#### Vertex Training
+1. Maximize a model's predictive accuracy.
+2. Provides an automated model enhancer to test different hyperparameter configurations when training your model.
 
+### Best Practices for using Workbench Notebooks
+1. Use Notebooks to evaluate and understand your models.
+2. Notebooks offers What-if-Tool (WIT) and Language Interpretability Tool (LIT)
 
+### Best Practices for usin Vertex AI TensorBoard
+1. It is an enterprise-ready managed solution.
+2. Vertex AI TensorBoard service lets you track experiment metrics such as loss and accuracy over time.
+3. Visualize a model graph.
+4. Project enbeddings to a lower dimension space.
+5. Allows cost effective, secure solutions, and easy colaboration among Data Scientists and ML Researchers to track, compare and share experiments.
 
 ## Glossary
 **Training-serving skew:** is a difference between model performance during training and performance during serving. This skew can be caused by:
