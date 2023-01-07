@@ -547,20 +547,73 @@ STEP 3: Managed
 1. Offers feature attributions to provide insights into why models generate predictions.
 2. Details the importance of each feature that a model uses as input to make a prediction.
 3. Supports custom-trained models based on tabular and image data.
+
 #### Vertex Training
 1. Maximize a model's predictive accuracy.
 2. Provides an automated model enhancer to test different hyperparameter configurations when training your model.
 
 ### Best Practices for using Workbench Notebooks
-1. Use Notebooks to evaluate and understand your models.
-2. Notebooks offers What-if-Tool (WIT) and Language Interpretability Tool (LIT)
-
+1. Use Notebooks to evaluate (development) and understand (experimentation) your models.
+2. Use for writing code, starting jobs, running queries, and checking status.
+3. Notebooks offers What-if-Tool (WIT) and Language Interpretability Tool (LIT).
+4. Create a notebook for each team member.
+5. Use Vertex SDK for Python.
+6. Secure Personaly Identifiable Information (PII) in Notebooks.<br>
+6.1. Apply data governance and security policies to help protect your Notebooks that contain PII data.<br>
+6.2. Follow Notebooks security blueprint: Protecting PII data guide.
 ### Best Practices for usin Vertex AI TensorBoard
 1. It is an enterprise-ready managed solution.
 2. Vertex AI TensorBoard service lets you track experiment metrics such as loss and accuracy over time.
 3. Visualize a model graph.
 4. Project enbeddings to a lower dimension space.
 5. Allows cost effective, secure solutions, and easy colaboration among Data Scientists and ML Researchers to track, compare and share experiments.
+
+## Best Practices for Data Preprocessing
+
+### Preprocessed Features
+1. BigQuery for tabular data
+2. Dataflow to process unstructured data
+3. Use Dataflow to convert the unstructured data into binary data formats like TFRecord to improve ingestion performance during training.
+4. TensorFlow Extended for leveraging TensorFlow ecosystem.
+5. TensorFlow Transform is the TensorFlow component that enables defining and executing a preprocessing function to transform your data.
+
+## Responsible AI Development
+
+### Origin of Bias
+**Interaction Bias:** People drew more all-stars than hills in a recent game. The AI did not recognize hills.
+**Latent Bias:** Training a model to identify famous phisicists is likely to be bias towards men.
+**Selection Bias:** Chosing photos from your family to train a model to identify anybody.
+**Confirmation Bias:** Refers to only looking for data which confirm your hypotheses.
+**Reporting Bias:** Refers to choices in data that reveal certain aspects about the trainers or their opinions.
+**Automation Bias:** Refers to the biases which appear when the data we use is only the data we can easily automate.
+
+### Checklist for Bias-Related Issues
+
+Biometrics | Country | Dialect | Health | Income | Language | Location | Race | Religion | Sexual Orientation | Skin Color | Socialeconomic Status
+
+### What-If Tool
+1. It is available for free within the TensorBoard.
+2. Designed to let you visualize inference results.
+3. Edit data a data point.
+4. See how your model performs.
+5. Explore the effects of a single feature.
+6. Arrange examples for similarity.
+7. View confusion matrices and other metrics.
+8. Test algorithmic fairness constraints.
+
+
+
+
+### ML Trade-Offs
+
+### Equality of Opportunity
+
+### Understand Your Data
+
+
+
+
+
 
 ## Glossary
 **Training-serving skew:** is a difference between model performance during training and performance during serving. This skew can be caused by:
