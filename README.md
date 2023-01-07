@@ -428,6 +428,9 @@ developing the logic to create the features without worrying about deployment.
 ```
 
 ## Confusion Matrix
+
+
+
 |              | Predicted Value |  
 |--------------|-----------------|
 | **Actual Value** |    AV vs PV    |
@@ -438,10 +441,10 @@ developing the logic to create the features without worrying about deployment.
 | **P(cat)** |   TP   |   FN   |
 | **N(dog**) |   FP   |   TN   |
 
-**True Positive:** Things that you correctly predicted. Label says something exists and the model predict it.<br>
-**False Negatives (Type II error):** Things that you incorrectly did not predict. Things you exclude when it should be included. Label says something doesn't exist but the model predicts it.<br>
-**False Positive (Type I Error):** Things that you incorrectly predict. Things you include when it should be excluded. Label says something doesn;t exist but the model predicts it.<br>
-**True Negative:** Things that you correctly excluded.
+**True Positive:** Things that you correctly predicted. Things you include that should be included. Label says something exists and the model predicts it.<br>
+**False Negatives (Type II error):** Things that you incorrectly did not predict. Things you exclude when it should be included. Label says something exists but the model doesn't predict it.<br>
+**False Positive (Type I Error):** Things that you incorrectly predict. Things you include when it should be excluded. Label says something doesn't exist but the model predicts it.<br>
+**True Negative:** Things that you correctly excluded. Things you exclude that should be excluded. Label says something doesn't exist and the model doesn't predict it.
 
 ### Recall
 Refers to all the positive cases, and looks at how many were predicted correctly.<br>
@@ -606,18 +609,18 @@ Biometrics | Country | Dialect | Health | Income | Language | Location | Race | 
 7. View confusion matrices and other metrics.
 8. Test algorithmic fairness constraints.
 
-
-
-
 ### ML Trade-Offs
 
 ### Equality of Opportunity
 
+
 ### Understand Your Data
 
 
-
-
+## Facets (dataset errors finder)
+1. Developed by Google and Open-Sourced
+2. **Facets Overview:** Provide users a quick understanding o fthe distribution of values accross features.
+3. **Facets Dive:** Provide users an easy-to-customize, intuitive interface.
 
 
 ## Glossary
