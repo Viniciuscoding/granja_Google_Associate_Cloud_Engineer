@@ -438,6 +438,11 @@ developing the logic to create the features without worrying about deployment.
 | **P(cat)** |   TP   |   FN   |
 | **N(dog**) |   FP   |   TN   |
 
+**True Positive:** Things that you correctly predicted. Label says something exists and the model predict it.<br>
+**False Negatives (Type II error):** Things that you incorrectly did not predict. Things you exclude when it should be included. Label says something doesn't exist but the model predicts it.<br>
+**False Positive (Type I Error):** Things that you incorrectly predict. Things you include when it should be excluded. Label says something doesn;t exist but the model predicts it.<br>
+**True Negative:** Things that you correctly excluded.
+
 ### Recall
 Refers to all the positive cases, and looks at how many were predicted correctly.<br>
 ```R = TP / (TP + FN)```
