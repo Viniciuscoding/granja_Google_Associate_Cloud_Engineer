@@ -645,8 +645,40 @@ w0, w1 = tf.Variable(0.0), tf.Variable(0.0)
 
 dw0, dw1 = compute_gradients(X, Y, w0, w1)
 ```
-
 - The function is expressed with TensorFlow ops only!
+
+## Tensorflow Dataset Manipulation
+
+`Dataset = tf.data` can do more than just ingesting data.<br>
+
+
+`Feature Columns = tf.feature_column` tells the model what inputs to expect.<br>
+- Feature columns take care of packing the inputs into the input vector of the model.
+For example, one-hot enconding bellow.
+```
+tf.feature_column.categorical_column_with_vocabulary_list("type", ["house","apt"])
+"house" = 1, 0
+"apt"   = 0, 1
+```
+Other examples of feature columns"
+```
+tf.feature_column.bucketized_column(..)
+tf.feature_column.embedding_column(..)
+tf.feature_column.crossed_column(..) # Enables a model to lean separate for combination of features.
+tf.feature_column.categorical_column_with_hash_bucket(..)
+...
+```
+
+
+### Embeddings
+Lower Dimensions = Less Accuracy + More Lossy Compression<br>
+vs<br>
+Higher Dimensions = Overfitting + Slow Training
+
+
+
+
+
 
 ## Glossary
 **Training-serving skew:** is a difference between model performance during training and performance during serving. This skew can be caused by:
