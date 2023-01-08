@@ -626,14 +626,26 @@ A tensor is an D-dimensional array of data. They behave like numpy n-dimensional
 **tf.constant** produces constant tensors.<br>
 **tf.Variable** produces tensors that can be modified.
 
-"reshape() by itself cannot be used to transpose a matrix unless the matrix happens to be a vector. If the matrix is not a vector then transpose alters the internal storage order of the elements, whereas reshape() never does.
-For example, internally |1 2|<br>
-                        |3 4|<br>
-is stored in the order 1 3 2 4,
-and transpose of |1 2|<br>
-                 |3 4| would be [1 3|
-                                 2 4] which would be stored in the order 1 2 3 4. You can see that the 2 and 3 have swapped internal places in the transpose. Reshape never swaps internal orderings."
+```
+reshape() by itself cannot be used to transpose a matrix unless the matrix happens to be a vector. If the matrix is not a vector then transpose alters the internal storage order of the elements, whereas reshape() never does.
+For example, internally [1 2; 3 4] is stored in the order 1 3 2 4, and transpose of [1 2;3 4] would be [1 3;2 4] which would be stored in the order 1 2 3 4. You can see that the 2 and 3 have swapped internal places in the transpose. Reshape never swaps internal orderings.
+```
+by [Walter Roberson](https://www.mathworks.com/matlabcentral/answers/32914-transposing-matrix-using-reshape)<br>
 
+### GradientTape records operations for automatic differentiation
+TensorFlow can compute the derivative of a function with respect to any paremeter.<br>
+- The computation is recorded with GradientTape (a context manager).
+``` def compute_gradients(X, Y, w0, w1):
+        with tf.GradientTape() as tape:
+            loss = loss_mse(X, Y, w0, w1)
+        return tape.gradient(loss, [w0, w1])
+w0 = tf.Variable(0.0)
+w1 = tf.Variable(0.0)
+
+dw0, dw1 = compute_gradients(X, Y, w0, w1)
+```
+
+- The function is expressed with TensorFlow ops only!
 
 ## Glossary
 **Training-serving skew:** is a difference between model performance during training and performance during serving. This skew can be caused by:
