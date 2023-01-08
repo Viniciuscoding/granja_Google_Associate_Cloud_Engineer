@@ -635,12 +635,13 @@ by [Walter Roberson](https://www.mathworks.com/matlabcentral/answers/32914-trans
 ### GradientTape records operations for automatic differentiation
 TensorFlow can compute the derivative of a function with respect to any paremeter.<br>
 - The computation is recorded with GradientTape (a context manager).
-``` def compute_gradients(X, Y, w0, w1):
-        with tf.GradientTape() as tape:
-            loss = loss_mse(X, Y, w0, w1)
-        return tape.gradient(loss, [w0, w1])
-w0 = tf.Variable(0.0)
-w1 = tf.Variable(0.0)
+```
+def compute_gradients(X, Y, w0, w1):
+    with tf.GradientTape() as tape:
+        loss = loss_mse(X, Y, w0, w1)
+    return tape.gradient(loss, [w0, w1])
+
+w0, w1 = tf.Variable(0.0), tf.Variable(0.0)
 
 dw0, dw1 = compute_gradients(X, Y, w0, w1)
 ```
