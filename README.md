@@ -626,6 +626,13 @@ A tensor is an D-dimensional array of data. They behave like numpy n-dimensional
 **tf.constant** produces constant tensors.<br>
 **tf.Variable** produces tensors that can be modified.
 
+"reshape() by itself cannot be used to transpose a matrix unless the matrix happens to be a vector. If the matrix is not a vector then transpose alters the internal storage order of the elements, whereas reshape() never does.
+For example, internally |1 2|<br>
+                        |3 4|<br>
+is stored in the order 1 3 2 4,
+and transpose of |1 2|<br>
+                 |3 4| would be [1 3|
+                                 2 4] which would be stored in the order 1 2 3 4. You can see that the 2 and 3 have swapped internal places in the transpose. Reshape never swaps internal orderings."
 
 
 ## Glossary
