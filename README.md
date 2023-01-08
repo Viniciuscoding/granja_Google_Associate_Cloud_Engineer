@@ -613,7 +613,6 @@ Biometrics | Country | Dialect | Health | Income | Language | Location | Race | 
 
 ### Equality of Opportunity
 
-
 ### Understand Your Data
 
 
@@ -621,6 +620,12 @@ Biometrics | Country | Dialect | Health | Income | Language | Location | Race | 
 1. Developed by Google and Open-Sourced
 2. **Facets Overview:** Provide users a quick understanding o fthe distribution of values accross features.
 3. **Facets Dive:** Provide users an easy-to-customize, intuitive interface.
+
+## TensorFlow
+A tensor is an D-dimensional array of data. They behave like numpy n-dimensional arrays except that:<br>
+**tf.constant** produces constant tensors.<br>
+**tf.Variable** produces tensors that can be modified.
+
 
 
 ## Glossary
