@@ -669,11 +669,16 @@ tf.feature_column.categorical_column_with_hash_bucket(..)
 ...
 ```
 
-
 ### Embeddings
 Lower Dimensions = Less Accuracy + More Lossy Compression<br>
 vs<br>
 Higher Dimensions = Overfitting + Slow Training
+
+
+
+
+
+
 
 
 
