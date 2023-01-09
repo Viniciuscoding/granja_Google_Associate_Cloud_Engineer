@@ -674,7 +674,33 @@ Lower Dimensions = Less Accuracy + More Lossy Compression<br>
 vs<br>
 Higher Dimensions = Overfitting + Slow Training
 
+## Keras
+Keras processing layers: `text preprocessing`, `numerical features preprocessing`, `categorical features preprocessing`, `image preprocessing`, and `image data augmentation`.
 
+### Text Features Vectorization
+`tf.keras.layers.TextVectorization` -> turns raw strings into and encoded representation thta can be read by an Embedding layer or Dense layer.<br>
+
+### Numerical Features Preprocessing
+`tf.keras.layers.Discretization` -> turns continous numerical features into bucket data with discrete ranges.
+
+### Categorical Features Preprocessing
+`tf.keras.layers.CategoryEncoding` -> turns integer categorical features into one-hot, multi-hot, or count dense ecodings.<br>
+`tf.keras.layers.Hashing` -> performs categorical feature hashing, also known as the "hashing trick."<br>
+`tf.keras.layers.StringLookup` -> turns strings categorical values into an encoded representation that can be read by an Embedding or Dense layer.<br>
+`tf.keras.layers.IntegerLookup` -> turns integer categorical values into an encoded representation that can be read by an Embedding or Dense layer.<br>
+
+### The adapt() method
+Stateful preprocessing layers that compute based on training data:
+- TextVectorization: Holds mapping between string tokens and integer indices.
+- StringLookup and IntegerLookup: Holds a mapping between inputs values and integer indices.
+- Normalization: Holds the mean and standard deviation of the features.
+- Discreditization: Holds information about value bucket boundaries.
+```
+NOTE: These layers are non-trainable. Their state is not set during training. It must be set before training.
+```
+
+
+Categorical Features Processing
 
 
 
