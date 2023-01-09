@@ -678,7 +678,7 @@ Higher Dimensions = Overfitting + Slow Training
 Keras processing layers: `text preprocessing`, `numerical features preprocessing`, `categorical features preprocessing`, `image preprocessing`, and `image data augmentation`.
 
 ### Text Features Vectorization
-`tf.keras.layers.TextVectorization` -> turns raw strings into and encoded representation thta can be read by an Embedding layer or Dense layer.<br>
+`tf.keras.layers.TextVectorization` -> turns raw strings into and encoded representation that can be read by an Embedding or Dense layer.<br>
 
 ### Numerical Features Preprocessing
 `tf.keras.layers.Discretization` -> turns continous numerical features into bucket data with discrete ranges.
@@ -698,6 +698,7 @@ Stateful preprocessing layers that compute based on training data:
 ```
 NOTE: These layers are non-trainable. Their state is not set during training. It must be set before training.
 ```
+### Feature Columns
 
 
 Categorical Features Processing
@@ -716,8 +717,8 @@ Categorical Features Processing
 - A discrepancy between how you handle data in the training and serving pipelines.
 - A change in the data between when you train and when you serve.
 - A feedback loop between your model and your algorithm.
-**Compulation:** 
-**Distributed Training:**
-**Model Definition:**
+**Compulation:**<br>
+**Distributed Training:**<br>
+**Model Definition:**<br>
 
 
