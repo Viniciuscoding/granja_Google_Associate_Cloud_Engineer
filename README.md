@@ -737,7 +737,23 @@ Categorical Features Processing
 1. Not advisable  for multiple inputs and outputs.
 2. Any of the layers in the model have multiple inputs and multiple outputs that, that model needs to do layer sharing or the model has a nonlinear topology such as a residual connection or if it multi-branches. 
 
+### Functional Model
+Functional API gives your model the ability to have multiple inputs and outputs.<br>
+1. It allows for models to share layers and actually it's a little bit more than that.
+2. It allows you to define ad hoc network graphs, should you need. With that functional API, models are defined by creating instances of layers and then connecting them directly to each other in pairs, then defining a model that specifies the layers act as the input and the output to the model when stringing everything together.
+3. Create models that are more flexible than the sequential API.
+4. It can handle models with nonlinear topology, models with shared layers, and models with multiple inputs or outputs, so consider that functional API in those use cases.
+5. The API also makes it easy to manipulate multiple inputs and outputs which is not possible in Sequencial API.
 
+#### Functional Model Pros
+1. Less verbose than using keras.Model subclasses.
+2. Validates your model while you are defining it.
+3. Your model is plottable and inspectable.
+4. Your model can be serialized or cloned.
+
+#### Functional Model Cons
+1. Does not support deynamic architectures.
+2. Sometimes you have to write from scratch and you need to build subclasses, e.g. custom training or inference layers.
 
 ## Activation Function
 Also known as Non-linear Transformation Layer. 
@@ -794,18 +810,25 @@ It improves AdaGrad by avoiding and reducing LR to zero
 Callbacks are utilities called at certain points during model training for activities such as logging and visualization using tools such as TensorBoard. Saving the training iterations to a variable allows for plotting of all your chosen evaluation metrics like mean absolute error, root mean squared error, accuracy, et cetera, versus the epochs.
 
 
-
-
-
+## Regularization
+Refers to any technique that helps generalize a model.
+```
+A generalized model performs well not just on training data, but also on never-seen test data.
+```
+### L1 Regularization
+L1 Norm measures the absolute value of distance a and b
+### L2 Regularization (weight decay)
+L2 Norm is the Euclidean Distance. It is the square root of the sum of the squares.
 
 
 ## Glossary
 **Training-serving skew:** is a difference between model performance during training and performance during serving. This skew can be caused by:
 - A discrepancy between how you handle data in the training and serving pipelines.
 - A change in the data between when you train and when you serve.
-- A feedback loop between your model and your algorithm.
+- A feedback loop between your model and your algorithm.<br>
 **Compulation:**<br>
 **Distributed Training:**<br>
 **Model Definition:**<br>
+**Occam's razor:L** When presented with competing hypothetical answers to a problem, one should select the one that makes the fewest assumptions.<br>
 
 
