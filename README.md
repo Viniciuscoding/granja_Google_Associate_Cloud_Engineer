@@ -674,6 +674,34 @@ Lower Dimensions = Less Accuracy + More Lossy Compression<br>
 vs<br>
 Higher Dimensions = Overfitting + Slow Training
 
+
+## TensorFlow SavedModel
+SavedModel is a universal serialization format for TensorFlow models.
+1. SavedModel provides a language neutral format to save your machine learning models that is both recoverable and hermetic.
+2. It enables higher level systems and tools to produce, consume and transform your TensorFlow models. The resulted SavedModel is then servable.
+3. Models saved in this format can be restored using the tf.
+
+Save a model using SavedModel in the `gcloud ai-platform`.
+```
+gcloud ai-platform versions create \
+--model=$MODEL_NAME $VERSION NAME \
+--framework=tensorflow \
+--python-version=3.5 \
+--runtime-version=2.1 \
+--origin=$EXPORT_PATH \
+--staging-bucket=gs://$BUCKET
+```
+Deploy the model saved using SavedModel commands on `gcloud ai-platform`.
+```
+input.json = {"sq_footage": 3140, "type": 'house'} #This is an input to test the model loaded.
+
+gcloud ai-platform predict \
+--model propertyprice \
+--version dnn \
+--json-instances input.json
+```
+
+
 ## Keras
 Keras processing layers: `text preprocessing`, `numerical features preprocessing`, `categorical features preprocessing`, `image preprocessing`, and `image data augmentation`.
 
