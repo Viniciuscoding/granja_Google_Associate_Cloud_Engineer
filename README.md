@@ -703,12 +703,40 @@ NOTE: These layers are non-trainable. Their state is not set during training. It
 
 Categorical Features Processing
 
+## Keras Models
+
+### Sequential Model
+1. Not advisable  for multiple inputs and outputs.
+2. Any of the layers in the model have multiple inputs and multiple outputs that, that model needs to do layer sharing or the model has a nonlinear topology such as a residual connection or if it multi-branches. 
 
 
 
+## Activation Function
+Also known as Non-linear Transformation Layer. 
 
+1. Act as a transtition point between layers, and so you get nonlinearity.
+2. Adding in this noliniear transformation is the only way to stop the neural network to condense down into a shallow network.
 
+### Rectified Linear Unit (ReLU)
 
+1. ReLU hidden activations often have 10 times the speed of training than networks with Sigmoid hidden activations.
+2. Due to the negative domain's function always being zero, one can end up with ReLU layers dying. When updating the weights, since one have to multiply error's derivative by the activation, one end up with a gradient zero.
+
+### Softplus
+1. The logistics sigmoid function is a smooth approximation of the derivative of the rectifier (ReLU).
+
+### Leaky ReLU
+1. Rectifier that allows small negative values when the input is less than zero.
+
+### Parametric ReLU
+1. Learns parameters that controls the leakiness and shape of the function.
+2. It adaptively learns parameters of the rectifiers.  
+
+### Exponetial Linear Unit (ELU)
+1. It is generalization of ReLU that uses parameterized exponential function to transform from positive to small negative values.
+
+### Gaussian Error Linear Unit (GELU)
+1. Nonlinearity results in the expected transformation of a stochastic regularizer , which randomly applies the identity or zero map to the neuron's inut.
 
 
 
