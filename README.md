@@ -739,6 +739,37 @@ Also known as Non-linear Transformation Layer.
 1. Nonlinearity results in the expected transformation of a stochastic regularizer , which randomly applies the identity or zero map to the neuron's inut.
 
 
+## Keras Optmizers
+
+### Stochastic Gradient Descent (SGD)
+
+### Adam
+Adam is not an acronym. It is an extension to Stochastic gradient decent and can be used in place of classical stochastic gradient descent to update network weights more efficiently. [PAPER: Adam: A method for Stochastic Optimization](https://arxiv.org/pdf/1412.6980.pdf)
+
+1. It is a procedure to update the network weights iteratively based in training data.
+2. Invariability due to the diagonal rescaling of the gradients.
+3. Well-suited for models that have large and large and large data sets.
+4. When you have a lot of parameters that you're adjusting.
+5. Problems with very noisy or sparse gradients and nonstationary objectives.
+
+### Momentum
+It reduces learning rate when the gradient values are small
+### AdaGrad
+It gives frequently occurring features low learning rates
+### Adadelta
+It improves AdaGrad by avoiding and reducing LR to zero
+### Follow the Regularized Leader (FTRL)
+1. It works well on wide models.
+2. FTRL, liek Adam, make really good defaults for deep neural nets as well as linear models that you're building.
+
+## Callbacks
+Callbacks are utilities called at certain points during model training for activities such as logging and visualization using tools such as TensorBoard. Saving the training iterations to a variable allows for plotting of all your chosen evaluation metrics like mean absolute error, root mean squared error, accuracy, et cetera, versus the epochs.
+
+
+
+
+
+
 
 ## Glossary
 **Training-serving skew:** is a difference between model performance during training and performance during serving. This skew can be caused by:
