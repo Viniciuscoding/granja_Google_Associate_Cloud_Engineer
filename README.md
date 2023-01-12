@@ -822,7 +822,7 @@ L2 Norm is the Euclidean Distance. It is the square root of the sum of the squar
 
 
 ## Glossary
-**Training-serving skew:** is a difference between model performance during training and performance during serving. This skew can be caused by:
+**Training-serving skew:** is a difference between model performance during training and performance during serving. This skew can be caused by:<br>
 - A discrepancy between how you handle data in the training and serving pipelines.
 - A change in the data between when you train and when you serve.
 - A feedback loop between your model and your algorithm.<br>
@@ -830,5 +830,10 @@ L2 Norm is the Euclidean Distance. It is the square root of the sum of the squar
 **Distributed Training:**<br>
 **Model Definition:**<br>
 **Occam's razor:L** When presented with competing hypothetical answers to a problem, one should select the one that makes the fewest assumptions.<br>
-
+**Root Mean Squared Error (RMSE):** <br>
+```
+RMSE is a useful way to see how well a model is able to fit a dataset.
+Ther larger the RMSE, the larger the difference between the predicted and observed values. This means the worse a model fits the data.
+Conversely, the smaller the RMSE, the better a model is able to fit the data.
+```
 
