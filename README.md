@@ -630,8 +630,11 @@ A tensor is an D-dimensional array of data. They behave like numpy n-dimensional
 **tf.Variable** produces tensors that can be modified.
 
 ```
-reshape() by itself cannot be used to transpose a matrix unless the matrix happens to be a vector. If the matrix is not a vector then transpose alters the internal storage order of the elements, whereas reshape() never does.
-For example, internally [1 2; 3 4] is stored in the order 1 3 2 4, and transpose of [1 2;3 4] would be [1 3;2 4] which would be stored in the order 1 2 3 4. You can see that the 2 and 3 have swapped internal places in the transpose. Reshape never swaps internal orderings.
+reshape() by itself cannot be used to transpose a matrix unless the matrix happens to be a vector. If the matrix
+is not a vector then transpose alters the internal storage order of the elements, whereas reshape() never does.
+For example, internally [1 2; 3 4] is stored in the order 1 3 2 4, and transpose of [1 2;3 4] would be [1 3;2 4] 
+which would be stored in the order 1 2 3 4. You can see that the 2 and 3 have swapped internal places in the transpose.
+Reshape never swaps internal orderings.
 ```
 by [Walter Roberson](https://www.mathworks.com/matlabcentral/answers/32914-transposing-matrix-using-reshape)<br>
 
@@ -835,8 +838,17 @@ L2 Norm is the Euclidean Distance. It is the square root of the sum of the squar
 **Occam's razor:L** When presented with competing hypothetical answers to a problem, one should select the one that makes the fewest assumptions.<br>
 **Root Mean Squared Error (RMSE):** <br>
 ```
-RMSE is a useful way to see how well a model is able to fit a dataset.
-Ther larger the RMSE, the larger the difference between the predicted and observed values. This means the worse a model fits the data.
-Conversely, the smaller the RMSE, the better a model is able to fit the data.
+1. RMSE is a useful way to see how well a model is able to fit a dataset.
+2. The larger the RMSE, the larger the difference between the predicted and observed values.
+This means the worse a model fits the data.
+3. Conversely, the smaller the RMSE, the better a model is able to fit the data.
 ```
+
+
+
+
+
+
+
+
 
