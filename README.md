@@ -828,8 +828,15 @@ L2 Norm is the Euclidean Distance. It is the square root of the sum of the squar
 
 ## Feature Engineering
 "It is the process of transforming raw data into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy on unseen data." Dr. Andrew Ng<br>
-Different problems in the same domain may need different features. It depends on you and your subject matter expertise to determine which fields you want to start with for your hypothesis.
-
+Different problems in the same domain may need different features. It depends on you and your subject matter expertise to determine which fields you want to start with for your hypothesis.<br>
+Feature engineering it an iterative process.<br>
+### Feature engineering types
+**Using indicator variables to isolate key information:** Isolates a specific area for a training dataset.<br>
+**Highlighting interactions between two or more features:** Sum of two featuers, product of two feature, etc.<br>
+**Representing the same feature in a different way:**<br>
+1. Create new feature "grade" with "Elementary School","Middle School", and "High School" as classes.
+2. Group similar classes, and then group the remaining ones into a single "Other" class.
+3. Transform categorical features into dummy variables.
 
 
 
@@ -851,7 +858,7 @@ Different problems in the same domain may need different features. It depends on
 This means the worse a model fits the data.
 3. Conversely, the smaller the RMSE, the better a model is able to fit the data.
 ```
-
+**Data Dredging:** It is the statistical manipulation of data in order to find patterns which can be presented as statistically significant, when in reality there is no underlying effect.
 
 
 
