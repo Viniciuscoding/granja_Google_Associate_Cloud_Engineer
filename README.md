@@ -499,8 +499,7 @@ It is a notebook tool that helps to define one's own pipeline. You can do this w
 
 ### Machine Learning Workflow
 #### Data Preparation
-STEP 1: Data Uploaing
-
+STEP 1: Data Uploading<br>
 STEP 2: Feature Engineering
 
 **Data Types:**<br>
@@ -508,8 +507,7 @@ STEP 2: Feature Engineering
 2. Structured vs Unstructured Data
 
 #### Model Training
-STEP 1: Training Data
-
+STEP 1: Training Data<br>
 STEP 2: Evaluating Data
 
 #### Model Serving
@@ -825,6 +823,13 @@ A generalized model performs well not just on training data, but also on never-s
 L1 Norm measures the absolute value of distance a and b
 ### L2 Regularization (weight decay)
 L2 Norm is the Euclidean Distance. It is the square root of the sum of the squares.
+
+
+
+## Feature Engineering
+"It is the process of transforming raw data into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy on unseen data." Dr. Andrew Ng
+
+
 
 
 ## Glossary
