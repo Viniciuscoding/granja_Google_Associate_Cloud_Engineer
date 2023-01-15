@@ -827,7 +827,10 @@ L2 Norm is the Euclidean Distance. It is the square root of the sum of the squar
 
 
 ## Feature Engineering
-"It is the process of transforming raw data into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy on unseen data." Dr. Andrew Ng
+"It is the process of transforming raw data into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy on unseen data." Dr. Andrew Ng<br>
+Different problems in the same domain may need different features. It depends on you and your subject matter expertise to determine which fields you want to start with for your hypothesis.
+
+
 
 
 
