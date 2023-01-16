@@ -839,10 +839,21 @@ Feature engineering it an iterative process.<br>
 3. Transform categorical features into dummy variables.
 
 ### Feature Points
-1. Look for good features and avoid bad features.
-2. Features should be known at prediction-time.
-3. Features should be numeric.
-4. Features should have enough examples.
+1. Features should be related to the objective. Look for good features and avoid bad features.
+3. Features should be known at prediction-time.
+4. Features should be numeric.
+5.1. The vocabulary and the mapping of the vocabulary needs to be identical at prediction time. If new data is added in problems arise for sparce columns (one-hot encoding).
+6. Features should have enough examples.
+7. 
+
+
+
+
+
+
+
+
+
 
 ## Glossary
 **Training-serving skew:** is a difference between model performance during training and performance during serving. This skew can be caused by:<br>
