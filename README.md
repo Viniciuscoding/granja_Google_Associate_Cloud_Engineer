@@ -838,9 +838,11 @@ Feature engineering it an iterative process.<br>
 2. Group similar classes, and then group the remaining ones into a single "Other" class.
 3. Transform categorical features into dummy variables.
 
-
-
-
+### Feature Points
+1. Look for good features and avoid bad features.
+2. Features should be known at prediction-time.
+3. Features should be numeric.
+4. Features should have enough examples.
 
 ## Glossary
 **Training-serving skew:** is a difference between model performance during training and performance during serving. This skew can be caused by:<br>
