@@ -846,7 +846,19 @@ Feature engineering it an iterative process.<br>
 6. Features should have enough examples.
 7. 
 
+## BigQuery Preprocessing
+It involves two aspects, representation transformation and feature construction.<br>
 
+### Representation Transformation
+1. Feature representation is converting a numeric feature to a categorical feature through bucketization.
+2. Converting categorical features to a numeric representation through one-hot encoding, learning with counts, sparse feature embeddings, etc.
+3. Some models work only with numeric or categorical features.
+4. Other models handle mixed type features. Even when models handle both types.
+
+### Feature Construction
+1. Polynomial expansion by using **univariate mathematical functions**.
+2. **Feature crossing** to capture feature interactions.
+3. Using **business logic** from the domain of the ML use case. 
 
 
 
