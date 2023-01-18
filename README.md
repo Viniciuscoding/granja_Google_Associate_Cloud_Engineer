@@ -886,7 +886,10 @@ It involves two aspects, representation transformation and feature construction.
 2. The larger the RMSE, the larger the difference between the predicted and observed values.
 This means the worse a model fits the data.
 3. Conversely, the smaller the RMSE, the better a model is able to fit the data.
+4. One nice property of RMSE is that the error is given in the units being measured, 
+so you can tell very directly how incorrect the model might be on the unseen data.
 ```
+
 **Data Dredging:** It is the statistical manipulation of data in order to find patterns which can be presented as statistically significant, when in reality there is no underlying effect.
 
 
