@@ -875,7 +875,7 @@ It involves two aspects, representation transformation and feature construction.
 **Distributed Training:**<br>
 **Model Definition:**<br>
 **Occam's razor:L** When presented with competing hypothetical answers to a problem, one should select the one that makes the fewest assumptions.<br>
-**Root Mean Squared Error (RMSE):** <br>
+**Root Mean Squared Error (RMSE):** RMSE measures the difference between the predictions of a model and the observed values. A large RMSE is equivalent to a large average error, so smaller values of RMSE are better.<br>
 ```
 1. RMSE is a useful way to see how well a model is able to fit a dataset.
 2. The larger the RMSE, the larger the difference between the predicted and observed values.
