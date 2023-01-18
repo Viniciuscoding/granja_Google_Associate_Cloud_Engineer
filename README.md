@@ -857,8 +857,13 @@ It involves two aspects, representation transformation and feature construction.
 ### Feature Construction
 1. Polynomial expansion by using **univariate mathematical functions**.
 2. **Feature crossing** to capture feature interactions.
+2.1. It is all about memorization. Memorization is the oposite of generalization, which is what machine learning aims to do. The goal of ML is generalization.
 3. Using **business logic** from the domain of the ML use case. 
 
+
+Does the feature cross of all the combinations: `ML.FEATURE_CROSS(STRUCT(features))`<br>
+Specify all the preprocessing during model: `TRANSFORM (ML.FEATURE_CROSS(STRUCT(features)), ML.BUCKETIZE(f, split_points) etc...)`<br>
+Where split_points is an array: `ML.BUCKETIZE(f, split_points)`
 
 
 
