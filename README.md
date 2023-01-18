@@ -871,10 +871,15 @@ It involves two aspects, representation transformation and feature construction.
 - A discrepancy between how you handle data in the training and serving pipelines.
 - A change in the data between when you train and when you serve.
 - A feedback loop between your model and your algorithm.<br>
-**Compulation:**<br>
-**Distributed Training:**<br>
-**Model Definition:**<br>
+
+**Compulation:**
+
+**Distributed Training:**
+
+**Model Definition:**
+
 **Occam's razor:L** When presented with competing hypothetical answers to a problem, one should select the one that makes the fewest assumptions.<br>
+
 **Root Mean Squared Error (RMSE):** RMSE measures the difference between the predictions of a model and the observed values. A large RMSE is equivalent to a large average error, so smaller values of RMSE are better.<br>
 ```
 1. RMSE is a useful way to see how well a model is able to fit a dataset.
