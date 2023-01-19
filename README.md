@@ -859,7 +859,7 @@ It involves two aspects, representation transformation and feature construction.
 2. **Feature crossing** to capture feature interactions.<br>
 2.1. It is all about memorization. Memorization is the oposite of generalization, which is what machine learning aims to do. The goal of ML is generalization.<br>
 2.2. It only works on large data sets.<br>
-2.3. Feature crosses lead to sparcity.<br>
+2.3. Feature crosses lead to sparcity. Sparce models contain fewer features, soon, they are easier to train on limited data with less chances of overfitting.<br>
 3. Using **business logic** from the domain of the ML use case. 
 
 
@@ -870,7 +870,16 @@ Where split_points is an array: `ML.BUCKETIZE(f, split_points)`
 ### Memorization
 Memorization works when you have so much data that for any single grid cell within your input space the distribution of data is statistically significant. When that is the case, you can memorize. You are essentially just learning the mean for every grid cell.
 
+### Spatial Features
+**ST_Distance:** returns the shortest distance in meters between two non-empty geographies.<br>
+**ST_GeoPoint:** 
 
+### BUCKETIZE (BigQuery clause)
+It is a preprocessing function that creates buckets or bins. That is, it bucketizes a continuous numerical feature into a string feature with bucket names as the value.
+
+### TRANSFORM (BigQuery clause)
+When the TRANSFORM clause is used, user specify transforms during training will be automatically applied during model serving, prediction, evaluation, etc.<br>
+1. TRANSFORM clause ensures that transformations are automatically applied during prediction.
 
 
 
