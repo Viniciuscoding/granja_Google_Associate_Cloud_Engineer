@@ -824,7 +824,14 @@ L1 Norm measures the absolute value of distance a and b
 ### L2 Regularization (weight decay)
 L2 Norm is the Euclidean Distance. It is the square root of the sum of the squares.
 
+- Regression model that uses the L1 regularization technique is called **Lasso Regression**.<br>
+- Regression model that uses the L2 Regularization technique is called **Ridge Regression.**<br>
 
+**Lasso vs Ridge difference**<br>
+```
+Lasso shrinks the less important feature’s coefficient to zero, thus removing some features altogether.
+Ridge regression adds “squared magnitude” of coefficient as a penalty term to the loss function.
+```
 
 ## Feature Engineering
 "It is the process of transforming raw data into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy on unseen data." Dr. Andrew Ng<br>
