@@ -888,7 +888,29 @@ It is a preprocessing function that creates buckets or bins. That is, it bucketi
 When the TRANSFORM clause is used, user specify transforms during training will be automatically applied during model serving, prediction, evaluation, etc.<br>
 1. TRANSFORM clause ensures that transformations are automatically applied during prediction.
 
+## Dataflow (Data Processing Pipeline)
+Uses open-source API (Apache Beam) to execute Flink, Spark, Parallen tasks, etc.
 
+### Apache Beam Pipeline
+1. Pipeline must have a source, which is where the pipeline gets input data.
+2. The pipeline has a series of steps. Each of the steps in Beam is called a transform.
+```
+Each transform works on a structure called PCollection.
+I'll return to a detailed explanation of PCollections shortly.
+For now, just remember that every transform gets a PCollection as input and outputs the
+result to another PCollection. The result of the last transform in a pipeline is important.
+```
+3. None of the pipeline operators actually run the pipelineYou need a runner to run the pipeline. A runner takes the pipeline code and executes.
+4. Runners are platform-specific, meaning that there's a dataflow runner for executing a pipeline on Cloud dataflow. There's also a direct runner that will execute a pipeline on your local computer. You can even implement your own custom runner for your own distributed computing platform. 
+5. PCollection is like a data structure with pointers to where the dataflow cluster stores your data. That's how dataflow can provide elastic scaling of the pipeline.
+6. Dataflow is elastic and can use a cluster of servers for your pipeline. So PCollection is like a data structure with pointers to where the dataflow cluster stores your data.
+7. One way to implement the transformation is to take a PCollection of strings, which are called lines in the code, and return a PCollection of integers. This specific transform step in the code computes the length of each line.
+```
+
+```
+8. Apache Beam SDK comes with a variety of connectors that enable dataflow to read from many data sources, including text files in Google Cloud Storage or file systems.
+9. With different connectors, it's possible to read even from real time streaming data sources, like Google Cloud Pub/Sub or Kafka.
+10. There are connectors for Cloud Storage, Pub/Sub, BigQuery and more.
 
 ## Glossary
 **Training-serving skew:** is a difference between model performance during training and performance during serving. This skew can be caused by:<br>
