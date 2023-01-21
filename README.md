@@ -912,6 +912,42 @@ result to another PCollection. The result of the last transform in a pipeline is
 9. With different connectors, it's possible to read even from real time streaming data sources, like Google Cloud Pub/Sub or Kafka.
 10. There are connectors for Cloud Storage, Pub/Sub, BigQuery and more.
 
+
+## TensorFlow Transform
+
+### TFX
+TFX is an end-to-end ML platform based on TensorFlow.
+NOTE: `Artifacts produced by tf.Transform's are consumed at both training and serving time to avoid skew.`
+
+### Problems with typical ML Pipeline
+```
+1. Need to keep batch and live processing in sync.
+2. All other tooling, such as evaluation, must be kept in sync with batch processing.
+```
+### Partial solutions for ML Pipeline
+```
+Do everything in the training graph
+1. Loses the benefits of matearialization.
+2. Doesn't allow for "reduces".
+Do everything in the training graph + using statistics/vocabs generated from raw data.
+1. Only allows for stats/vocabs on raw data.
+2. Doesn't address materialization.
+Transform does batch process but also emits a tf.Graph that can be used to repeat these transformations in survey.
+1. By combining this graph with the trained model graph into a single serving graph,
+you can guarantee that the same operations that were done to the training data
+```
+ 
+
+
+
+
+
+
+
+
+
+
+
 ## Glossary
 **Training-serving skew:** is a difference between model performance during training and performance during serving. This skew can be caused by:<br>
 - A discrepancy between how you handle data in the training and serving pipelines.
