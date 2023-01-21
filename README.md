@@ -892,8 +892,10 @@ When the TRANSFORM clause is used, user specify transforms during training will 
 Uses open-source API (Apache Beam) to execute Flink, Spark, Parallen tasks, etc.
 
 ### Apache Beam Pipeline
-1. Pipeline must have a source, which is where the pipeline gets input data.
-2. The pipeline has a series of steps. Each of the steps in Beam is called a transform.
+1. Beam is a way to write elastic data processing pipelines.
+2. A Pipeline is a directed graph of steps.
+3. Pipeline must have a source, which is where the pipeline gets input data.
+4. The pipeline has a series of steps. Each of the steps in Beam is called a transform.
 ```
 Each transform works on a structure called PCollection.
 I'll return to a detailed explanation of PCollections shortly.
@@ -906,7 +908,16 @@ result to another PCollection. The result of the last transform in a pipeline is
 6. Dataflow is elastic and can use a cluster of servers for your pipeline. So PCollection is like a data structure with pointers to where the dataflow cluster stores your data.
 7. One way to implement the transformation is to take a PCollection of strings, which are called lines in the code, and return a PCollection of integers. This specific transform step in the code computes the length of each line.
 ```
-
+pipe = beam.Pipeline()
+(pipe
+| beam.io.ReadStringsFromPubSub('project/topic')
+| beam.WindowInto(SlidingWindows(60))
+| beam.Map(Transform)
+| beam.GroupByKey()
+| beam.FlatMap(Filter)
+| beam.io.WriteToBigQuery(table)
+)
+pipe.run()
 ```
 8. Apache Beam SDK comes with a variety of connectors that enable dataflow to read from many data sources, including text files in Google Cloud Storage or file systems.
 9. With different connectors, it's possible to read even from real time streaming data sources, like Google Cloud Pub/Sub or Kafka.
@@ -916,8 +927,11 @@ result to another PCollection. The result of the last transform in a pipeline is
 ## TensorFlow Transform
 
 ### TFX
-TFX is an end-to-end ML platform based on TensorFlow.
-NOTE: `Artifacts produced by tf.Transform's are consumed at both training and serving time to avoid skew.`
+TFX is an end-to-end ML platform based on TensorFlow.<br>
+NOTE: `Artifacts produced by tf.Transform's are consumed at both training and serving time to avoid skew.`<br>
+```
+tf.transform is a hybrid of Apache Beam and TensorFlow
+```
 
 ### Problems with typical ML Pipeline
 ```
@@ -937,8 +951,15 @@ Transform does batch process but also emits a tf.Graph that can be used to repea
 you can guarantee that the same operations that were done to the training data
 ```
  
+NOTE:
+```
+Gradient ascent works better input raw data is scaled. In order to do that, you will first have to find the minimum
+and the maximum of the numeric feature over the entire training data set. And then you will scale every input value
+by the min and max that were computed on the training data set.
+```
 
-
+## Supporting Serving
+For serving, we need to write out the transformation data<br>
 
 
 
