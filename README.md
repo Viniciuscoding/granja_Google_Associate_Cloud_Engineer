@@ -925,13 +925,19 @@ pipe.run()
 
 
 ## TensorFlow Transform
+It is a hybrid of Apache and TensorFlow.
 
 ### TFX
 TFX is an end-to-end ML platform based on TensorFlow.<br>
 NOTE: `Artifacts produced by tf.Transform's are consumed at both training and serving time to avoid skew.`<br>
 ```
-tf.transform is a hybrid of Apache Beam and TensorFlow
+1. tf.transform is a hybrid of Apache Beam and TensorFlow
+2. One of the goals of tf.Transform is to provide a TensorFlow graph for preprocessing that can be incorporated
+into the serving graph (and, optionally, the training graph).
 ```
+
+### Preprocessing function
+The Preprocessing function is the most important concept of tf.Transform. It is a logical description of a transformation of the dataset. The preprocessing function accepts and returns a dictionary of tensors, where a tensor means Tensor or 2D SparseTensor.
 
 ### Problems with typical ML Pipeline
 ```
@@ -950,7 +956,7 @@ Transform does batch process but also emits a tf.Graph that can be used to repea
 1. By combining this graph with the trained model graph into a single serving graph,
 you can guarantee that the same operations that were done to the training data
 ```
- 
+
 NOTE:
 ```
 Gradient ascent works better input raw data is scaled. In order to do that, you will first have to find the minimum
