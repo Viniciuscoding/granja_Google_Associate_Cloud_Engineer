@@ -965,8 +965,30 @@ by the min and max that were computed on the training data set.
 ```
 
 ## Supporting Serving
-For serving, we need to write out the transformation data<br>
+For serving, we need to write out the transformation data.<br>
 
+## ML Development
+
+### Activities involved in ML Development
+1. Experimentation
+2. Training Operationalization
+3. 
+
+### Training Operationalization
+It is an automated training pipeline with the purpose to help the model be repeatedly retrained.
+
+```
+NOTE: Process that Data Scientists use to develop the models on an experimentation platform.
+1. Problem Definition
+2. Data Selection
+3. Data Exploration
+4. Feature Engineering
+5. Model Propotyping
+6. Model Validation
+```
+
+### Model Prototyping
+It is the process algorithm selection, model training, hyperparameter tuning, and model evaluation in the Experimentation and Prototyping activity.
 
 
 
