@@ -420,6 +420,15 @@ It is managed cloud service for machine learning engineers and data scientists t
 - It aggregates all the different features from different sources and updates them to make them available from a central repository.
 - Upon engineers need to model something, they can use the features available in the Feature Store dictionary to build a dataset.
 
+
+
+### Three Key ML Features Challenges 
+- Hard to share and reuse
+- Hard to serve in production, reliably with low latency
+- Inadvert skew in feature values between training and serving
+
+**Feature Management Pain Points:**`hard to reuse, hard to serve, and training-serving skewness.`
+
 ### Benefits
 ``` 
 1. Features are shareable for training or serving tasks: Features are managed and served from a central repository,
@@ -429,6 +438,14 @@ which helps maintain consistency across your organization.
 developing the logic to create the features without worrying about deployment.
 4. Features are easy to use: Feature Store is built on an easy-to-navigate user interface.
 ```
+
+### Fully Managed Feature Store
+It is a rich feature repository to server, share and re-use ML features.
+- **Share and resus ML features across use cases:** `Centralized feature repository with easy APIs to search & discover features, fetch them for training/serving and manage permissions.`
+- **Serve ML Features at scale with low latency:** `Offload the operational overhead of handling infrastructure for low latency scalable feature serving.`
+- **Alleviate training serving skewness:** `Compute feature values once, re-use for training and serving. Track & monitor for drift and other quality issues.`
+- **Batch and Streaming Feature Ingestion:** `Ingest features efficiently in large batches, or in real-time as data streams in.`
+
 
 ## Confusion Matrix
 
@@ -999,17 +1016,70 @@ Data Plex
 Analytics Hub
 ```
 
+## Data Catalog
 
+### Challenges
+Data stakeholders (consumers, producers and administrators) within an organization face a number of challenges:
+#### Searching for insightful data
+- Data consumers don't know what data is where. They have to navigate data "swamps" they stumble into.
+- Data consumers don't know what data to use to get insights because most data is not well documeted and, even if documented, is not well maintained.
+- Data can't be found and is often lost when it resides only in people's minds.
 
+#### Understanding data
+- Is the data fresh, clean, validated, approved for use in production?
+- Which data set out of several duplicate sets is relevant and up-to-date?
+- How does one data set relate to another?
+- Who is using data set related to another?
+- Who and what processes are transforming the data?
 
+#### Making data useful
+- Data producers don't have an efficient way to put forward their data for consumers. If there's no self-service, consumers may overwhelm producers. Several data engineers can't manually provide data to thousands of data analysts.
+- Valuable time is lost if data consumers have to find out how to request data access, request it, wait without a defined response time, escalate, and wait again.
 
+## Dataplex
+Organize and manage your data in a way that makes sense for your business without data movement or duplication. It provides logical constructs like lakes, data zones and assets that enable you to abstract away underlying storage systems and become the foundation for setting policies around data access, security, life-cycle management, and more.
 
+1. Achieve freedom of choice.
+2. Store data wherever you want.
+3. Choose the best analytics tools for the job.
+4. Enforce consistent controls.
+5. Use built-in fata intelligence.
+6. Automate data management.
+7. Get access to higher quality data.
 
+### Making high quality data available for analytics and Data Science
+1. Structure Data | Semi-structured Data | Unstructured Data
+2. Automatic metadata extraction and classification
+3. Apply data validation and quality checks
+4. Data Catalog (for search & discovery) and Unified Metadata (accross BigQuery and Open Source)
 
+### Attach data to zones
+1. Landing Zone
+2. Structured Zone
+3. Refined Zone
 
+## Analytics Hub
+Exchanges data analytics assets across organizations to address challenges of data reliability and cost. You can exchange data, ML models, or other analytics assets, and easily publish or subscribe to shared datasets in an open, secure, and privacy-safe environment.
+```
+Analytics Hub makes it convenient for you to build a data ecosystem. 
+This data ecosystem could include, public exchanges like data from the World Bank,industry exchanges
+from healthcare and retail, commercial exchanges that will include logistics, consumer, and energy data,
+and also Google exchanges, which include, patents, web analytics, and trend data.
+```
 
+### Traditional data sharing ecosystems challenges
+Traditional data sharing requires batch data pipelines that extract data from databases, store it in flat files, and transmit them to the consumer where they are ingested into another database.
+1. **Expensive and fragile data pipelines:** Pipelines are expensive to run, but any changes to the source data can cause them to break.
+2. **Unecessary data replication:** Pipelines result in multiple copies of the data which bring unnecessary cost, especially with multi-petabyte datasets.
+3. **Late arriving or asynchronous data assets:** The time required by batch pipelines also means that data is late arriving, leading to less timely business decisions.
+4. **Loss of visibility and control of data:** Traditional data sharing techniques, also bypass data governance processes. As a provider of data, how do you know how your data is being used?
+5. **Commercialization of data workflows management:** If you want to monetize your data, how do you manage subscriptions and entitlements
+```
+NOTE: Altogether, these challenges mean that organizations are unable to realize the true potential
+to transform their business with shared data.
+```
 
-
+### # Roles in D
 
 
 
