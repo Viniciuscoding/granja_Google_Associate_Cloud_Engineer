@@ -991,6 +991,22 @@ NOTE: Process that Data Scientists use to develop the models on an experimentati
 It is the process algorithm selection, model training, hyperparameter tuning, and model evaluation in the Experimentation and Prototyping activity.
 
 
+## Google's Enterprise Data Management and Governance Tools
+```
+Feature Store
+Data Catalog
+Data Plex
+Analytics Hub
+```
+
+
+
+
+
+
+
+
+
 
 
 
