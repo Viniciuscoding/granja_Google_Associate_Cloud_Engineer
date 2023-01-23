@@ -602,6 +602,7 @@ STEP 3: Managed
 3. Use Dataflow to convert the unstructured data into binary data formats like TFRecord to improve ingestion performance during training.
 4. TensorFlow Extended for leveraging TensorFlow ecosystem.
 5. TensorFlow Transform is the TensorFlow component that enables defining and executing a preprocessing function to transform your data.
+6. DataProc is recommended for customers with existing implementation using Hadoop with Spark to perfom ETL, or who want to levarage their experience with Hadoop on-premises to create a cloud-based solution.
 
 ## Responsible AI Development
 
