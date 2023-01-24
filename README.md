@@ -1017,6 +1017,10 @@ Analytics Hub
 Dataprep
 ```
 
+### Online Serving
+Online serving is for low-latency data retrieval of small batches of data for real-time processing.
+
+
 ## Data Catalog
 
 ### Challenges
