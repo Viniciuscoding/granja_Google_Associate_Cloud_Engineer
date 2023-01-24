@@ -600,9 +600,8 @@ STEP 3: Managed
 1. BigQuery for tabular data
 2. Dataflow to process unstructured data
 3. Use Dataflow to convert the unstructured data into binary data formats like TFRecord to improve ingestion performance during training.
-4. TensorFlow Extended for leveraging TensorFlow ecosystem to prepare your data for training.
+4. TensorFlow Extended for leveraging TensorFlow ecosystem.
 5. TensorFlow Transform is the TensorFlow component that enables defining and executing a preprocessing function to transform your data.
-6. DataProc is recommended for customers with existing implementation using Hadoop with Spark to perfom ETL, or who want to levarage their experience with Hadoop on-premises to create a cloud-based solution.
 
 ## Responsible AI Development
 
@@ -1080,7 +1079,71 @@ NOTE: Altogether, these challenges mean that organizations are unable to realize
 to transform their business with shared data.
 ```
 
-### # Roles in D
+### 3 Roles in Analytics Hub
+1. Data Publisher
+2. Exchange Administrator
+3. Data Subscriber
+
+### Exchanges
+They are collections of data and analytics assets designed for sharing. Administrators can easily curate an exchange by managing the dataset listings within the exchange.
+
+### Shared datasets
+They are collections of tables and views in BigQuery defined by data publisher and make up the unit of cross-project or cross-organization sharing.
+
+
+## Dataprep
+Dataprep is a tool to instantly prepare data. Dataprep will produce Dataflow jobs. You can automate or schedule Dataprep jobs because of Dataflow.
+
+1. Discover
+2. Cleanse
+3. Structure
+4. Enrich
+5. Validate
+
+```
+NOTE: When you are importing data into Dataprep, you are creating a reference to a source of data. When the data is required for use, Dataprep reads a sample of the source data into the application for your use through an object known as a connection.
+```
+
+### Three connection types
+This means ways to upload or download your data from Dataprep.<br>
+- **Upload/Download:** Upload data directly from a local desktop and also save it locally on export.
+- **Cloud Storage:** Read from and write to files in Cloud Storage
+- **BigQuery:** Store relational content in BigQuery, from which Dataprep can read.
+
+### Pros
+1. Automatically identify schemas, data types, possible joints, and anomalies.
+2. Anomalies detection include missing values, outliers, and duplicates, so you can skip the time-consuming work of data profiling.
+3. Offer visual representation with Histograms, Ranges and key statistical information.
+4. Automatically detect 17 different datatypes.
+5. Can trsnform structured and unstructured datasets stored in CSV, JSON or relational table formats
+6. It can store any size, from megabytes to petabytes with equal ease and simplicity.
+
+### Intelligent data cleansing with predictive transformation
+- Quickly indentify data quality issues.
+- Get automatic data transformation suggestions.
+- Standardize, structure and join datasets easily with a guided approach.
+
+### Powerful data professing
+- Process diverse datasets
+- Prepare datasets of any size
+- Built on top of Dataflow
+- Auto-scalable
+
+```
+NOTE: In Dataprep, the flows are implemented as sequence of recipes. The recipes are data processing steps built from a library of Wrangler.
+Cloud Dataprep Wrhanglers write beam code in CLoud Dataflow.
+1. Build recipes in Cloud Dataprep UI.
+2. Converts repices to Beam.
+3. Runs a Cloud Dataflow job pipeline.
+```
+### Recipes
+Recipes are a repeatable set of transformation steps, built by chaining data Wranglers together. You can include end-to-end steps from ingestion, transformation, aggregation, and save to BigQuery. You will run your Dataprep job to process your recipes against your entire dataset.
+
+
+
+
+
+
 
 
 
