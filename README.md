@@ -1161,10 +1161,12 @@ Batch size controls the number of samples that gradient is calculated on. If bat
 It is running training in parallel on many devices such as CPUs or GPUs or TPUs in order to make your training faster.
 
 ### Common Distributed Training Architectures
-#### Data Parallelism
+Data parallism and model parallism.
+
+### Data Parallelism
 it is a common architecture for distributed training where you run the same model and computation on every device. But train each of them using different training samples. Each device computes loss and gradients based on training samples it sees. Then we update the models' parameters using these gradients. The updated model is then used in the next round of computation.
 
-### Two Model Approaches
+**Two Model Approaches**<br>
 #### Async parameter server architecture
 An async parameter server architecture some devices are designated to be parameter servers and others as workers. Each worker independently fetches the latest parameters from the PS and computes gradients based on a subset of training samples. It then sends the gradients back to the PS, which then updates its copy of the parameters with those gradients. Each worker does this independently. This allows it to scale well to a large number of workers. This worked well for many models in Google, for training workers might be preempted by higher-priority production jobs, or a machine may go down for maintenance, or where there is asymmetry between the workers. These don't hurt the scaling because workers are not waiting for each other.
 #### Downside
@@ -1173,17 +1175,26 @@ The downside of this approach, however, is that workers get out of sync. They co
 #### Sync Allreduced Architecture
 In this approach, each worker holds a copy of the model's parameters. There are no special servers holding the parameters. Each worker computes gradients based on the training samples they see and communicate between themselves to propagate the gradients and update their parameters. All workers are synchronized. Conceptually, the next forward pass doesn't begin until each worker has received the gradients and updated their parameters. With fast devices in a controlled environment, the variance between the step time on each worker is small. When combined with strong communication links between the workers, the overhead of synchronization is also small. So overall this approach can lead to faster convergence. Given these two broad strategies, that is asynchronous parameter server approach and the synchronous allreduce approach
 
-### When should you pick one over the other
+#### When should you pick one over the other
 **Async parameter server approach**<br>
 1. Multiple machines. 
-2. When there are large number of not so powerful or unreliable workers. Such as a cluster of machines with just CPUs.
-3. It is supported well by TensorFlow by the estimator API's train and evaluate method.
+2. Many low-power or unreliable workers. Such as a cluster of machines with just CPUs.
+3. More mature approach. It is supported well by TensorFlow by the estimator API's train and evaluate method.
+4. Constrained by I/O.
 **Sync allreduced approach**<br>
 1. Multiple devices on one machine.
 2. When there are fast devices with strong communication links such as multiple GPUs on one host, or TPUs.
-3. Gaining a lot more traction recently because of the improvements in hardware.
+3. Fast devices with strong links. Gaining a lot more traction recently because of the improvements in hardware.
+4. Constrained by compute power.
 
+### Model Paralism
+It is when your model is so big that it doesn't fit on one device's memory. So you divide it into smaller parts that compute over the same training samples on multiple devices. For example, you could put different layers on different devices.
 
+### Vertex AI custom service benefits
+1. **Local Training First:** instead of training your model directly within your notebook instance, you can submit a training job from your notebook. The training job would automatically provision computing resources and deprovision those resources when the job is complete. There's no worrying about leaving a high-performance virtual machine configuration running.
+2. **Modulerized Architecture:** The training service can help to modularize your architecture. Put your training code into a container to operate as a portable unit. The training code can have parameters passed into it such as input data location and hyperparameters to adapt to different model type scenarios without redeployment. Also, the training code can export the trained model file, thus enabling working with other AI services in a decoupled manner.
+3. **Cloud Logging:** The training service also supports reproducibility. Each training job is tracked with inputs, outputs and the container image used. Log message are available in Cloud logging, and jobs can be monitored while running.
+4. **Distributed Training:** The training service also supports distributed training, which means that you can train models across multiple nodes in parallel. That translates into faster training times than would be possible within a single VM instance.
 
 
 
