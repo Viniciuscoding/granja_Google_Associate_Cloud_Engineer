@@ -1147,6 +1147,45 @@ Recipes are a repeatable set of transformation steps, built by chaining data Wra
 
 
 
+## Learning Rate
+Learning rate controls the size of the step in weight space. If steps are too small, the training will take a long time. If steps are too large, the training will bounce around and miss the optimal point.<br>
+`NOTE: The default value for linear aggressor estimator in TensorFlow library is set to 0.2 or one over the square root of the number of features. This assumes your feature and label values are small numbers.`
+
+## Batch size
+Batch size controls the number of samples that gradient is calculated on. If batch size is too small, we could be bouncing around because the batch may not be a good enough representation of the input. If batch size is too large, training will take a very long time.<br>
+- As a rule of thumb, 40 to 100 tends to be a good range for batch size.
+- Larger batch sizes require smaller learnign rates.
+- _Recent research suggests small mini batch sizes provide more up-to-date gradient calculations which yields more stable and reliable training. And in experimental results for the C410, C4100, and ImageNet data sets, the best performance has been consistently obtained for many batch sizes between m = 2 and m = 32. So it may be better to start with a smaller batch size._
+
+## Distributed Training
+It is running training in parallel on many devices such as CPUs or GPUs or TPUs in order to make your training faster.
+
+### Common Distributed Training Architectures
+#### Data Parallelism
+it is a common architecture for distributed training where you run the same model and computation on every device. But train each of them using different training samples. Each device computes loss and gradients based on training samples it sees. Then we update the models' parameters using these gradients. The updated model is then used in the next round of computation.
+
+### Two Model Approaches
+#### Async parameter server architecture
+An async parameter server architecture some devices are designated to be parameter servers and others as workers. Each worker independently fetches the latest parameters from the PS and computes gradients based on a subset of training samples. It then sends the gradients back to the PS, which then updates its copy of the parameters with those gradients. Each worker does this independently. This allows it to scale well to a large number of workers. This worked well for many models in Google, for training workers might be preempted by higher-priority production jobs, or a machine may go down for maintenance, or where there is asymmetry between the workers. These don't hurt the scaling because workers are not waiting for each other.
+#### Downside
+The downside of this approach, however, is that workers get out of sync. They compute parameter updates based on scale values, and this can delay convergence.
+
+#### Sync Allreduced Architecture
+In this approach, each worker holds a copy of the model's parameters. There are no special servers holding the parameters. Each worker computes gradients based on the training samples they see and communicate between themselves to propagate the gradients and update their parameters. All workers are synchronized. Conceptually, the next forward pass doesn't begin until each worker has received the gradients and updated their parameters. With fast devices in a controlled environment, the variance between the step time on each worker is small. When combined with strong communication links between the workers, the overhead of synchronization is also small. So overall this approach can lead to faster convergence. Given these two broad strategies, that is asynchronous parameter server approach and the synchronous allreduce approach
+
+### When should you pick one over the other
+**Async parameter server approach**<br>
+1. Multiple machines. 
+2. When there are large number of not so powerful or unreliable workers. Such as a cluster of machines with just CPUs.
+3. It is supported well by TensorFlow by the estimator API's train and evaluate method.
+**Sync allreduced approach**<br>
+1. Multiple devices on one machine.
+2. When there are fast devices with strong communication links such as multiple GPUs on one host, or TPUs.
+3. Gaining a lot more traction recently because of the improvements in hardware.
+
+
+
+
 
 
 
@@ -1160,7 +1199,10 @@ Recipes are a repeatable set of transformation steps, built by chaining data Wra
 
 **Compulation:**
 
-**Distributed Training:**
+**Distributed Training:** it is running training in parallel on many devices such as CPUs or GPUs or TPUs in order to make your training faster.
+
+
+**Data Parallelism:** it is a common architecture for distributed training where you run the same model and computation on every device. But train each of them using different training samples. Each device computes loss and gradients based on training samples it sees. Then we update the models' parameters using these gradients. The updated model is then used in the next round of computation.
 
 **Model Definition:**
 
