@@ -397,6 +397,10 @@ It is a unified platform which means having one digital experience to create, de
 
 Hyperparameters are the variables that govern the training process itself. For example, part of designing a DNN is deciding how many hidden layers of nodes to use between the input and output layers, and how many nodes each hidden layer should use. These variables are not directly related to the training data. They are configuration variables. Note that parameters change during a training job, while hyperparameters are usually constant during a job.
 
+### Resources
+[Hyperparameter tuning in Cloud Machine Learning Engine using Bayesian Optimization](https://cloud.google.com/blog/products/ai-machine-learning/hyperparameter-tuning-cloud-machine-learning-engine-using-bayesian-optimization)
+
+
 ### [Using Hyperparameter Tunning](https://cloud.google.com/vertex-ai/docs/training/using-hyperparameter-tuning#aiplatform_get_hyperparameter_tuning_job_sample-python)
 
 Hyperparameter tuning searches for the best combination of hyperparameter values by optimizing metric values across a series of trials. Metrics are scalar summaries that you add to your trainer, such as model accuracy. Hyperparameter tuning optimizes target variables that you specify, called hyperparameter metrics. Model accuracy, as calculated from an evaluation pass, is a common metric. Metrics must be numeric.
@@ -1196,6 +1200,20 @@ It is when your model is so big that it doesn't fit on one device's memory. So y
 3. **Cloud Logging:** The training service also supports reproducibility. Each training job is tracked with inputs, outputs and the container image used. Log message are available in Cloud logging, and jobs can be monitored while running.
 4. **Distributed Training:** The training service also supports distributed training, which means that you can train models across multiple nodes in parallel. That translates into faster training times than would be possible within a single VM instance.
 
+## Batch Prediction Requirements
+
+### BigQuery table requirements
+1. BigQuery data source tables cannot be larger than 100 gigabytes.
+2. You must use a multi-regional BigQuery dataset in the US or EU locations.
+3. If the table is in a different project, you must provide the `BigQuery Data Editor role` to the Vertex AI service account in that project.
+
+### CSV file requirements
+1. The first line of the data source must contain the name of the columns.
+2. Each data source file cannot be larger than 10 gigabytes. You can include multiple files up to a maximum size of 100 gigabytes.
+3. If the cloud storage bucket is in a different project where you use Vertex AI, you must provide the Storage Object Creator role to the Vertex AI service account in that project.
+
+
+
 
 
 
@@ -1230,11 +1248,5 @@ so you can tell very directly how incorrect the model might be on the unseen dat
 ```
 
 **Data Dredging:** It is the statistical manipulation of data in order to find patterns which can be presented as statistically significant, when in reality there is no underlying effect.
-
-
-
-
-
-
 
 
