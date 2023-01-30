@@ -1215,23 +1215,38 @@ It is when your model is so big that it doesn't fit on one device's memory. So y
 
 
 
+**Artifact Lineage:** it describes all the factors that resulted in an artifact such as training data or hyperparameters used for model training.
+```
+- The training, test, and evaluation data used to create the model.
+- The hyperparameters uesd during model training.
+- The code that was used to train the model.
+- Metadata recorded from the training and evaluation process.
+- Artifacts that desended from this model.
+```
+
+
+
+
+
 
 
 
 
 
 ## Glossary
-**Training-serving skew:** is a difference between model performance during training and performance during serving. This skew can be caused by:<br>
-- A discrepancy between how you handle data in the training and serving pipelines.
-- A change in the data between when you train and when you serve.
-- A feedback loop between your model and your algorithm.<br>
-
-**Drift Detection:** How significantly are service requests evolving over time.
+**Artifact Lineage:** it describes all the factors that resulted in an artifact such as training data or hyperparameters used for model training. One can understand differences in performance or accuracy over several pipeline runs
 
 **Compulation:**
 
 **Distributed Training:** it is running training in parallel on many devices such as CPUs or GPUs or TPUs in order to make your training faster.
 
+**Drift:** Drift occurs when the statistical properties of the inputs and the target which the model is trying to predict change over time in unforeseen ways.
+
+**Drift Detection:** How significantly are service requests evolving over time.
+
+
+
+**Data Dredging:** It is the statistical manipulation of data in order to find patterns which can be presented as statistically significant, when in reality there is no underlying effect.
 
 **Data Parallelism:** it is a common architecture for distributed training where you run the same model and computation on every device. But train each of them using different training samples. Each device computes loss and gradients based on training samples it sees. Then we update the models' parameters using these gradients. The updated model is then used in the next round of computation.
 
@@ -1248,7 +1263,10 @@ This means the worse a model fits the data.
 4. One nice property of RMSE is that the error is given in the units being measured, 
 so you can tell very directly how incorrect the model might be on the unseen data.
 ```
+**Training-serving skew:** is a difference between model performance during training and performance during serving. This skew can be caused by:<br>
+- A discrepancy between how you handle data in the training and serving pipelines.
+- A change in the data between when you train and when you serve.
+- A feedback loop between your model and your algorithm.<br>
 
-**Data Dredging:** It is the statistical manipulation of data in order to find patterns which can be presented as statistically significant, when in reality there is no underlying effect.
 
 
