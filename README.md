@@ -1226,6 +1226,39 @@ It is when your model is so big that it doesn't fit on one device's memory. So y
 
 
 
+## Best Practices
+
+### Artifact Organization
+```
+Source control repo (storage location)
+- Notebooks
+- Pipeline source code
+- Preprocessing functions
+- Model source code
+```
+```
+Experiments and ML metadata (storage location)
+- Experiments
+- Parameters
+- Metrics
+- Datasets (reference)
+- Pipeline metadata
+```
+```
+Vertex AI (storage location)
+- Trained models
+```
+```
+Artifact Registry
+- Pipeline containers
+- Custom training environments
+- Custom prediction environments
+```
+```
+Vertex Prediction
+- Deployed models
+```
+
 
 
 
