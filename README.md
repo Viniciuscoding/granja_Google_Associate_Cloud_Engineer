@@ -1226,6 +1226,8 @@ It is when your model is so big that it doesn't fit on one device's memory. So y
 - A change in the data between when you train and when you serve.
 - A feedback loop between your model and your algorithm.<br>
 
+**Drift Detection:** How significantly are service requests evolving over time.
+
 **Compulation:**
 
 **Distributed Training:** it is running training in parallel on many devices such as CPUs or GPUs or TPUs in order to make your training faster.
