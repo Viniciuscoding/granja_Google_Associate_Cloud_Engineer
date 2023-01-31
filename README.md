@@ -1285,7 +1285,11 @@ Vertex Prediction
 
 **Model Definition:**
 
+**Model Staleness:** Data that you used to train the model in the research or production environment does not represent the data that you actually have in your live system. 
+
 **Occam's razor:L** When presented with competing hypothetical answers to a problem, one should select the one that makes the fewest assumptions.<br>
+
+**PKL:** it is standard method of serialization objects in python.
 
 **Root Mean Squared Error (RMSE):** RMSE measures the difference between the predictions of a model and the observed values. A large RMSE is equivalent to a large average error, so smaller values of RMSE are better.<br>
 ```
