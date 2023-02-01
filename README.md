@@ -1213,8 +1213,6 @@ It is when your model is so big that it doesn't fit on one device's memory. So y
 3. If the cloud storage bucket is in a different project where you use Vertex AI, you must provide the Storage Object Creator role to the Vertex AI service account in that project.
 
 
-
-
 **Artifact Lineage:** it describes all the factors that resulted in an artifact such as training data or hyperparameters used for model training.
 ```
 - The training, test, and evaluation data used to create the model.
@@ -1259,11 +1257,20 @@ Vertex Prediction
 - Deployed models
 ```
 
+## Training Design Solutions
+
+### Static Training
 
 
+### Dynamic Training
 
 
-
+| Static Training | Dynamic Training |
+|:---------------------:|:---------------------:|
+| Space intensive | Compute intensive |
+| Higher storage cost | Lower storage cost |
+| Low, fixed latency | Variable latency |
+| Lower maintenance | Higher maintenance |
 
 
 ## Glossary
