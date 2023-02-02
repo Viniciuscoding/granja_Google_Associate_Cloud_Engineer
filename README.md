@@ -1257,6 +1257,24 @@ Vertex Prediction
 - Deployed models
 ```
 
+## Performance Monitoring
+```
+- Traffic Patterns
+- Error rates
+- Latency
+- Resource Utilization
+
+### Model Registry
+The machine learning model registry is a centralized tracking system that stores linage, versioning, and related metadata for published machine learning models.<br>
+**Registry can capture governance data required for auditing purposes:**<br>
+```
+1. Who trained and published a model.
+2. WHich datasets were used for training.
+3. The values of metrics measuring predictive performance.
+4. When the model was deployed to production.
+```
+
+
 ## Training Design Solutions
 
 ### Static Training
@@ -1272,9 +1290,31 @@ Vertex Prediction
 | Low, fixed latency | Variable latency |
 | Lower maintenance | Higher maintenance |
 
+## Serving Design Decisions
+### Peakedness
+**Highly Peaked:** A model that predicts the next word based on the current word, which you might find in your mobile phone keyboard app would be highly peaked bexause a small number of words account for the majority of words used.<br>
+**Low Peaked:** A model that predicted quaterly revenue for all sales verticals in order to populate a report would be right on the same verticals.<br>
+
+### 
+
+
+### Cardinality
+**Low Cardinality:** Model predicting sales revenue given organization division number.<br>
+**High Cardinality:** Model predicting lifetime value given a user friendly e-commerce platform.<br>
+
+
+
+
+
+
+
+
+
 
 ## Glossary
 **Artifact Lineage:** it describes all the factors that resulted in an artifact such as training data or hyperparameters used for model training. One can understand differences in performance or accuracy over several pipeline runs
+
+**Cardinality:** refers to the number of values in a set.
 
 **Compulation:**
 
@@ -1295,6 +1335,8 @@ Vertex Prediction
 **Model Staleness:** Data that you used to train the model in the research or production environment does not represent the data that you actually have in your live system. 
 
 **Occam's razor:L** When presented with competing hypothetical answers to a problem, one should select the one that makes the fewest assumptions.<br>
+
+**Peakedness:** is the degree to which data values are concentrated around the mean in a data distribution, or in this case, how concentraded the distribution of the prediction workload is. You can also think of it as inverse entropy.
 
 **PKL:** it is standard method of serialization objects in python.
 
