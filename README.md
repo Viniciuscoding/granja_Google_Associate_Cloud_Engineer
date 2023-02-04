@@ -77,6 +77,13 @@ though, the key performance aspect is speed of response and high QPS.
 ```
 Simple ML and more data > Fancy ML and small data.
 ```
+### ML top reasons to failure
+By International Data Corporation on May 2020
+```
+1. Lack of staff with the right expertise.
+2. Lack of production-ready data.
+3. Lack of and integrated development environment.
+```
 ### Top 13 ML Pitfalls
 1. Training your own ML algorithm would be faster than writting the software.
 
@@ -113,7 +120,14 @@ Simple ML and more data > Fancy ML and small data.
 
 14. An ML model will bring higher returns very quick.
 - Can you guess how well a company will do with just 1 or 2 quarters of data? Probably not because it takes at least a full year of a public company's returns information for investors and market to better access how well a company is doing now and two full years of data to forecast its future performance.
-
+### Designing Adaptable ML Systems
+```
+1. Recognize the ways that a model is dependent on data.
+2. Make cost-conscious engineering decisions.
+3. Know when to roll back a model to an earlier version.
+4. Debug the causes of observed model behavior.
+5. Implement a pipeline that is immune to one type of dependency.
+```
 
 ### Enterprise Data
 ```
