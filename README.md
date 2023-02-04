@@ -1309,16 +1309,18 @@ The machine learning model registry is a centralized tracking system that stores
 **Highly Peaked:** A model that predicts the next word based on the current word, which you might find in your mobile phone keyboard app would be highly peaked bexause a small number of words account for the majority of words used.<br>
 **Low Peaked:** A model that predicted quaterly revenue for all sales verticals in order to populate a report would be right on the same verticals.<br>
 
-### 
-
-
 ### Cardinality
 **Low Cardinality:** Model predicting sales revenue given organization division number.<br>
 **High Cardinality:** Model predicting lifetime value given a user friendly e-commerce platform.<br>
 
 
-
-
+### Modular program
+```
+1. Modular programs are more maintainable.
+2. Easier to reuse.
+3. Easier to test.
+4. Easier to fix because they allow engineers to focus on small pieces of code rather than the entire program.
+```
 
 
 
@@ -1331,6 +1333,8 @@ The machine learning model registry is a centralized tracking system that stores
 **Cardinality:** refers to the number of values in a set.
 
 **Compulation:**
+
+**Container:** it is an abstraction that packages applications and libraries together so that the applications can run on a greater variety of hardware and operating systems.
 
 **Distributed Training:** it is running training in parallel on many devices such as CPUs or GPUs or TPUs in order to make your training faster.
 
