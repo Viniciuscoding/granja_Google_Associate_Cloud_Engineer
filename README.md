@@ -128,6 +128,12 @@ By International Data Corporation on May 2020
 4. Debug the causes of observed model behavior.
 5. Implement a pipeline that is immune to one type of dependency.
 ```
+### ML Mismanaged Dependencies
+```
+1. Can be expensive.
+2. Low model accuracy.
+3. Long debugging.
+```
 
 ### Enterprise Data
 ```
@@ -1321,6 +1327,16 @@ The machine learning model registry is a centralized tracking system that stores
 3. Easier to test.
 4. Easier to fix because they allow engineers to focus on small pieces of code rather than the entire program.
 ```
+
+### When it comes to adapting to change
+```
+1. An upstream model.
+2. A data source maintained by another team.
+3. The relationship between features and labels.
+4. The distributions of inputs.
+```
+
+
 
 
 
