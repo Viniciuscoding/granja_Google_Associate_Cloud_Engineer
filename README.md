@@ -1334,7 +1334,7 @@ The machine learning model registry is a centralized tracking system that stores
 
 **Compulation:**
 
-**Container:** it is an abstraction that packages applications and libraries together so that the applications can run on a greater variety of hardware and operating systems.
+**Container:** it is an abstraction that packages applications and libraries together so that the applications can run on a greater variety of hardware and operating systems. This ultimately makes hosting large applications better.
 
 **Distributed Training:** it is running training in parallel on many devices such as CPUs or GPUs or TPUs in order to make your training faster.
 
