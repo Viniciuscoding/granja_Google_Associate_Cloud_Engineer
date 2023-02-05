@@ -1344,9 +1344,16 @@ The machine learning model registry is a centralized tracking system that stores
 
 
 ## Glossary
+
+**Ablation Analysis:** analysis where the value of an individual feature is computed by comparing it to a model trained without it. What might this engineer be concerned about? The engineer might be concerned about legacy and bundled features.
+
 **Artifact Lineage:** it describes all the factors that resulted in an artifact such as training data or hyperparameters used for model training. One can understand differences in performance or accuracy over several pipeline runs
 
+**Bundled Features:** are features that were added as part of a bundle, which collectively are valuable but individually may not be.
+
 **Cardinality:** refers to the number of values in a set.
+
+**Changes in the Distribution:** The statistical term for changes in the likelihood of observed values like model inputs.
 
 **Compulation:**
 
@@ -1358,15 +1365,21 @@ The machine learning model registry is a centralized tracking system that stores
 
 **Drift Detection:** How significantly are service requests evolving over time.
 
-
-
 **Data Dredging:** It is the statistical manipulation of data in order to find patterns which can be presented as statistically significant, when in reality there is no underlying effect.
 
 **Data Parallelism:** it is a common architecture for distributed training where you run the same model and computation on every device. But train each of them using different training samples. Each device computes loss and gradients based on training samples it sees. Then we update the models' parameters using these gradients. The updated model is then used in the next round of computation.
 
+**Extrapolation::** means to generalize outside the bounds of what we’ve previously seen.
+
+**Interpolation::** is the opposite of Extrapolation. It means to generalize within the bounds of what we’ve previously seen.
+
+**Legacy Features:** are older features that were added because they were valuable at the time. The have become redundant because of the implementation of new features without our knowledge.
+
 **Model Definition:**
 
 **Model Staleness:** Data that you used to train the model in the research or production environment does not represent the data that you actually have in your live system. 
+
+**Model Residuals:** it is the difference between its predictions and the labels.
 
 **Occam's razor:L** When presented with competing hypothetical answers to a problem, one should select the one that makes the fewest assumptions.<br>
 
