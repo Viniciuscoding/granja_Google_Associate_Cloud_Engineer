@@ -135,6 +135,13 @@ By International Data Corporation on May 2020
 3. Long debugging.
 ```
 
+### ML Algorithm Assumptions
+```
+1. Instances are generated at random according to some probability distribution D.
+2. Instances are independent and identically distributed.
+3. That D is stationary with fixed distributions.
+```
+
 ### Enterprise Data
 ```
 90% of Enterprise data is unstructured such as emails, video footage, texts, reports, catalogs,
@@ -1355,9 +1362,13 @@ The machine learning model registry is a centralized tracking system that stores
 
 **Changes in the Distribution:** The statistical term for changes in the likelihood of observed values like model inputs.
 
+**Cold Start:** when your model is not updating to new users, new products, and new patterns in user preference because the model only knows about your older products, it continues to recommend them long after they’ve fallen out of favor. Ultimately, users simply ignored the recommendations altogether, and made do with the site’s search functionality.
+
 **Compulation:**
 
 **Container:** it is an abstraction that packages applications and libraries together so that the applications can run on a greater variety of hardware and operating systems. This ultimately makes hosting large applications better.
+
+**Data Leakage:** it is when the label is somehow laking into the training data.
 
 **Distributed Training:** it is running training in parallel on many devices such as CPUs or GPUs or TPUs in order to make your training faster.
 
