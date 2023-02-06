@@ -134,12 +134,18 @@ By International Data Corporation on May 2020
 2. Low model accuracy.
 3. Long debugging.
 ```
-
 ### ML Algorithm Assumptions
 ```
 1. Instances are generated at random according to some probability distribution D.
 2. Instances are independent and identically distributed.
 3. That D is stationary with fixed distributions.
+```
+### ML Models' Types of Drifts
+```
+1. Data Drift: A change in P(X) is a shift in the model's input distribution.
+2. Concept Drift: A change in P(Y|X) is a shift in the actual relationship between the model's inputs and the outputs.
+3. Prediction Drift: A change in P(Ÿ|X) is a shift in the model's predictions.
+4. Label Drift: A change in P(Y Ground Truth) is a shift in the model's output or label distribution.
 ```
 
 ### Enterprise Data
@@ -1372,7 +1378,7 @@ The machine learning model registry is a centralized tracking system that stores
 
 **Distributed Training:** it is running training in parallel on many devices such as CPUs or GPUs or TPUs in order to make your training faster.
 
-**Drift:** Drift occurs when the statistical properties of the inputs and the target which the model is trying to predict change over time in unforeseen ways.
+**Drift:** Drift occurs when the statistical properties of the inputs and the target which the model is trying to predict change over time in unforeseen ways. In other words, it is the change in an entity with respect to its baseline.
 
 **Drift Detection:** How significantly are service requests evolving over time.
 
