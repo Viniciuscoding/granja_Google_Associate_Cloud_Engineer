@@ -147,7 +147,7 @@ By International Data Corporation on May 2020
 3. Prediction Drift: A change in P(Ÿ|X) is a shift in the model's predictions.
 4. Label Drift: A change in P(Y Ground Truth) is a shift in the model's output or label distribution.
 ```
-
+NOTE: Data Drift, Feature Drift, Population, and Covariate Shift describe changes in the data distribution of inputs.<br>
 ### Enterprise Data
 ```
 90% of Enterprise data is unstructured such as emails, video footage, texts, reports, catalogs,
@@ -1296,6 +1296,7 @@ Vertex Prediction
 - Error rates
 - Latency
 - Resource Utilization
+```
 
 ### Model Registry
 The machine learning model registry is a centralized tracking system that stores linage, versioning, and related metadata for published machine learning models.<br>
@@ -1350,6 +1351,14 @@ The machine learning model registry is a centralized tracking system that stores
 ```
 
 
+### Concept Drift
+
+#### Four types of Concept Drift
+**Sudden Drift:** a new concept occurs within a short time.<br>
+**Gradual Drift:** a new concept gradually replaces an old one over a period of time.<br>
+**Incremental Drift:** an old concept incrementally changes to a new concept over a period of time.<br>
+**Recurring Concepts:** an old concept may reoccur after some time.<br>
+
 
 
 
@@ -1371,6 +1380,8 @@ The machine learning model registry is a centralized tracking system that stores
 **Cold Start:** when your model is not updating to new users, new products, and new patterns in user preference because the model only knows about your older products, it continues to recommend them long after they’ve fallen out of favor. Ultimately, users simply ignored the recommendations altogether, and made do with the site’s search functionality.
 
 **Compulation:**
+
+**Concept Drift:** occurs when there is a change in the relationship between the input feature and the label, or target. It can occur due to shifts in the feature space and/or the decision boundary, so we need to be aware of these during production.
 
 **Container:** it is an abstraction that packages applications and libraries together so that the applications can run on a greater variety of hardware and operating systems. This ultimately makes hosting large applications better.
 
