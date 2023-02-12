@@ -1396,8 +1396,6 @@ Training-serving skew occurs when training data is generated differently from ho
 3. SchemaGen (Schema Generation) component: which gives you a description of your data.
 4. Example Validator component: which allows you to check for anomalies.
 
-
-
 ### Reasons to analyze and transform your data
 |Common problems|Identity effective features|
 |:--------------|:--------------------------|
@@ -1405,6 +1403,25 @@ Training-serving skew occurs when training data is generated differently from ho
 |Labels treated as features|Redundant features|
 |Features with values outside an expected range|Features that vary so widely in scale that they may slow learning|
 |Data anomalies|Features with little or no unique predictive information|
+
+### SatiticsGen data validation checks
+1. Feature min, max, mean, mode, and median.
+2. Feature correlations.
+3. Class imbalance.
+4. Check to see missing values.
+5. Histograms of features, both numerical and categorical.
+
+### SchemaGen data validation checks
+Types, Categories and Ranges of the data.<br>
+1. **Type:** indicates the feature datatype
+2. **Presence:** indicates whether the feature must be present in 100% of examples or not, so whether it’s required or optional.
+3. **Valency:** indicates the number of values required per training example.
+4. **Domain and Values:** indicates the feature domain and its values. In the case of categorical features, single indicates that each training example must have exactly one category for the feature.
+
+### Example Validator data validation checks
+1. It can detect different classes of anomalies in the data and emit validation results.
+2. The ExampleValidator pipeline component identifies any anomalies in the example data by comparing data statistics computed by the StatisticsGen pipeline component against a schema.
+3. It takes the inputs and looks for problems in the data, like missing values, and reports any anomalies.
 
 
 
