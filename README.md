@@ -1333,7 +1333,6 @@ The machine learning model registry is a centralized tracking system that stores
 **Low Cardinality:** Model predicting sales revenue given organization division number.<br>
 **High Cardinality:** Model predicting lifetime value given a user friendly e-commerce platform.<br>
 
-
 ### Modular program
 ```
 1. Modular programs are more maintainable.
@@ -1350,8 +1349,8 @@ The machine learning model registry is a centralized tracking system that stores
 4. The distributions of inputs.
 ```
 
-
 ### Concept Drift
+It is the change in relationships between the model inputs and the model output.
 
 #### Four types of Concept Drift
 **Sudden Drift:** a new concept occurs within a short time.<br>
@@ -1364,10 +1363,48 @@ The machine learning model registry is a centralized tracking system that stores
 |:-------------|:----------------|
 |Change in spamming behavior to try to fool the model|e-Commerce apps eliance on personalization, for example, the fact that people’s preferences ultimately do change over time|
 |Rule update in the app change in the limit of user messages per minute, selection bias, and non-stationary environment, training data for a given season that has no power to generalize to another season|Sensors nature of the data they collect and how it may change over time|
-|Section bias|Movie recommendations rely on user preferences and they may change|
-|Non-stationary environmnet|Demand forecasting heavily relies on time, and as we have seen, time is a major contributor to potential concept drift|
+|Section bias as training data for a given season that has no power to generalize to another season|Movie recommendations rely on user preferences and they may change|
+|Non-stationary environment training data for a given season that has no power to generalize to another season|Demand forecasting heavily relies on time, and as we have seen, time is a major contributor to potential concept drift|
+
+### Solution for Data and Concept drift
+**Data drift:** If you diagnose data drift, enough of the data needs to be labeled to introduce new classes and the model retrained.<br>
+**Concept drift:** If you diagnose concept drift, the old data needs to be relabeled and the model retrained. Periodically updating your static model with more recent historical data, for example, is a common way to mitigate concept drift. Or either discard the static model completely or you can use the existing state as the starting point for a better model to update your model by using a sample of the most recent historical data.<br>
+
+## Three Phases of a Pipeline
+1. Ingest and validade data.<br>
+1.1 TensorFlow Data Validation.<br>
+1.2 Two common use-cases of TensorFlow Data Validation within a TensorFlow Extended pipelines: `validation of continuously arriving data` and `training-serving skew detection`.
+2. Train and analyze model.<br>
+2.1. MLOps.
+3. Deploy in production.
+
+#### Validation of continuously arriving data
+On day one you generate statistics based on data from day one. Then, you generate statistics based on day two data. From there, you can validate day two statistics against day one statistics and generate a validation report. You can do the same for day three, validating day three statistics against statistics from both day two and day one.
+
+#### training-serving skew detection
+Training-serving skew occurs when training data is generated differently from how the data used to request predictions is generated.
+
+**What causes distribution skew?**<br>
+1. Possible causes might come from a change in how data is handled in training vs in production, or even a faulty sampling mechanism that only chooses a subsample of the serving data to train on. For example, if you use an average value, and for training purposes you average over 10 days, but when you request prediction, you average over the last month. In general, any difference between how you generate your training data and your serving data, the data you use to generate predictions, should be reviewed to prevent training-serving skew.
+2. Training-serving skew can also occur based on your data distribution in your training, validation, and testing data splits.
+3. To summarize, distribution skew occurs when the distribution of feature values for training data is _significantly different_ from serving data and one of the key causes for distribution skew is how data is handled or changed in training vs production.
 
 
+### The TFDV Pipeline Components
+1. ExampleGen component: which takes raw data as input and generates TensorFlow examples, it can take many input formats for example CSV, TF Record. It also splits the examples for you into Train/Eval.
+2. StaticsGen (Statistics Generation) component: which generates statistics for feature analysis.
+3. SchemaGen (Schema Generation) component: which gives you a description of your data.
+4. Example Validator component: which allows you to check for anomalies.
+
+
+
+### Reasons to analyze and transform your data
+|Common problems|Identity effective features|
+|:--------------|:--------------------------|
+|Missing Data|Informative features|
+|Labels treated as features|Redundant features|
+|Features with values outside an expected range|Features that vary so widely in scale that they may slow learning|
+|Data anomalies|Features with little or no unique predictive information|
 
 
 
