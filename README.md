@@ -1359,6 +1359,13 @@ The machine learning model registry is a centralized tracking system that stores
 **Incremental Drift:** an old concept incrementally changes to a new concept over a period of time.<br>
 **Recurring Concepts:** an old concept may reoccur after some time.<br>
 
+### Data and Concept Drift Examples
+|**Data Drift**|**Concept Drift**|
+|:-------------|:----------------|
+|Change in spamming behavior to try to fool the model|e-Commerce apps eliance on personalization, for example, the fact that people’s preferences ultimately do change over time|
+|Rule update in the app change in the limit of user messages per minute, selection bias, and non-stationary environment, training data for a given season that has no power to generalize to another season|Sensors nature of the data they collect and how it may change over time|
+|Section bias|Movie recommendations rely on user preferences and they may change|
+|Non-stationary environmnet|Demand forecasting heavily relies on time, and as we have seen, time is a major contributor to potential concept drift|
 
 
 
