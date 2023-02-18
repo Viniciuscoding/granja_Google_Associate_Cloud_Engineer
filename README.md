@@ -1426,9 +1426,8 @@ Types, Categories and Ranges of the data.<br>
 ###
 |**Constraint**|**Input/Output**|**CPU**|**Memory**|
 |:-------------|:---------------|:------|:---------|
-|**Commonly Occurs**|Large inputs. Input requires parsing. Small models|Expensive computations. Underpowered Hardware|Large number of imputs. Complex model|
-|**Take Action**|Store efficiently. Parallelize reads.  Consider batch size|Train on faster accel. Upgrade processor. Run on TPUs. Simplify model|
-|Add memory. Use fewer layers. Reduce batch size.|
+|**Commonly Occurs**|*Large inputs. *Input requires parsing. *Small models|Expensive computations. Underpowered Hardware|Large number of imputs. Complex model|
+|**Take Action**|Store efficiently. Parallelize reads.  Consider batch size|Train on faster accel. Upgrade processor. Run on TPUs. Simplify model|Add memory. Use fewer layers. Reduce batch size.|
 
 
 ## Distriduted Training
