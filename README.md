@@ -1423,6 +1423,14 @@ Types, Categories and Ranges of the data.<br>
 2. The ExampleValidator pipeline component identifies any anomalies in the example data by comparing data statistics computed by the StatisticsGen pipeline component against a schema.
 3. It takes the inputs and looks for problems in the data, like missing values, and reports any anomalies.
 
+###
+|**Constraint**|**Input/Output**|**CPU**|**Memory**|
+|:-------------|:---------------|:------|:---------|
+|**Commonly Occurs**|Large inputs. Input requires parsing. Small models|Expensive computations. Underpowered Hardware|Large number of imputs. Complex model|
+|**Take Action**|Store efficiently. Parallelize reads.  Consider batch size|Train on faster accel. Upgrade processor. Run on TPUs. Simplify model|
+|Add memory. Use fewer layers. Reduce batch size.|
+
+
 ## Distriduted Training
 Distributed training distributes training workloads across multiple mini-processors, or worker nodes. These worker nodes work in parallel to accelerate the training process. Their parallelism can be achieved via two types of distributed training architecture: **Data Paralism** and **Model Paralism**.
 
@@ -1463,13 +1471,73 @@ Model parallelism needs special care when assigning different layers to differen
 
 ## TensorFlow Distributed Training Strategies
 
+[Optimize TensorFlow performance using the Profiler](https://www.tensorflow.org/guide/profiler)
+
 ### Challenges
 1. How will you distribute the data accross the different devices.
 2. How will you accumulate the gradients during backpropagation.
 3. How will the model parameters be updated.
 
 ### Solution
-`tf.distribute.Strategy is a TensorFlow API to distribute training across multiple GPUs, multiple machines, or TPUs. There are four TensorFlow distributed training strategies that support data parallelism.`
+`tf.distribute.Strategy is a TensorFlow API to distribute training across multiple GPUs, multiple machines, or TPUs. There are four TensorFlow distributed training strategies that support data parallelism: Mirrored Strategy, Multi-Worker Mirrored Strategy, TPU Strategy, Parameter Server Strategy.`
+
+### Mirrored Strategy
+`You can use mirrored strategy when you have a single machine with multiple GPU devices.`
+
+1. Mirrored strategy will create a replica of the model on each GPU.<br>
+2. During training, one minibatch is split into n parts, where "n" equals the number of GPUs, and each part is fed to one GPU device.<br>
+3. For this setup, mirrored strategy manages the coordination of data distribution and gradient updates across all of the GPUs.
+```
+To improve training, we can use the MirroredStrategy.
+```
+### Multi-Worker Mirrored Strategy
+It implements synchronous distributed training across multiple workers, each with potentially multiple GPUs.<br>
+Similar to mirrored strategy, it creates copies of all variables in the model on each device across all workers. If you've mastered single-host training and are looking to scale training even further, then adding multiple machines to your cluster can help you get an even greater performance boost.
+
+```
+For faster training, we can use the MultiWorkerMirroredStrategy.
+```
+
+#### Cluster
+The "cluster" key contains a dictionary with the internal IPs and ports of all the machines. This is set up through TF_CONFIG.
+
+#### Worker Machines
+All machines are designated as "workers", which are the physical machines on which the replicated computation is executed.
+
+#### Chief Machine
+There needs to be one worker that takes on some extra work, such as saving checkpoints and writing summary files to TensorBoard. This machine is known as the "chief".
+
+#### tf.distribute
+1. Create a strategy object.
+2. Wrap the creation of the model parameters within the Scope of the strategy.
+3. Scale the batch size by the number of replicas in the cluster.
+
+```
+If the data is not stored in a single dataset, then TensorFlow's AutoShardPolicy will autoshard 
+the elements accross all the workers.
+```
+
+#### Saving
+Saving the model is slightly more complicated in the multi-worker case, because there needs to be different destinations for each worker. The chief worker will save to the desired model directory, while the other workers will save the model to temporary directories. It's important that these temporary directories are unique in order to prevent multiple workers from writing to the same location. Saving can contain **collective ops**, so all workers must save, not just the chief.
+
+### TPU Strategy
+TPUStrategy uses a single machine where the same model is replicated on each core with its variables synchronized (mirrored) across each replica of the model.<br>
+`The main difference, however, is that TPUStrategy will all-reduce across TPU cores, whereas MirroredStrategy will all-reduce across GPUs.`
+```
+For really fast training, we can use the TPUStrategy.
+```
+
+#### Pros
+1. TPUs read training data exclusively from Google Cloud Storage (GCS).
+2. GCS can sustain a pretty large throughput if it is continuously streaming from multiple files in parallel.
+3. Too few files: GCS will not have enough streams to get max throughput.
+4. Too many files: time will be wasted accessing each individual file.
+
+### Parameter Server Strategy
+Parameter server training cluster consists of Workers and ParameterServers. Variables are created on ParameterServers, and they are read and updated by Workers in each step.
+
+
+
 
 
 
