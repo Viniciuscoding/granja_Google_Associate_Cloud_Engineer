@@ -1423,10 +1423,13 @@ Types, Categories and Ranges of the data.<br>
 2. The ExampleValidator pipeline component identifies any anomalies in the example data by comparing data statistics computed by the StatisticsGen pipeline component against a schema.
 3. It takes the inputs and looks for problems in the data, like missing values, and reports any anomalies.
 
+## High-Performance Machine
+It is the time taken to trian a model
+
 ###
 |**Constraint**|**Input/Output**|**CPU**|**Memory**|
 |:-------------|:---------------|:------|:---------|
-|**Commonly Occurs**|*Large inputs. *Input requires parsing. *Small models|*Expensive computations. *Underpowered Hardware|*Large number of imputs. *Complex model|
+|**Commonly Occurs**|*Large inputs. *Input requires parsing. *Small models|*Expensive computations. *Underpowered Hardware|*Large number of inputs. *Complex model|
 |**Take Action**|*Store efficiently. *Parallelize reads.  *Consider batch size|*Train on faster accel. *Upgrade processor. *Run on TPUs. *Simplify model|*Add memory. *Use fewer layers. *Reduce batch size.|
 
 
@@ -1532,9 +1535,35 @@ For really fast training, we can use the TPUStrategy.
 3. Too few files: GCS will not have enough streams to get max throughput.
 4. Too many files: time will be wasted accessing each individual file.
 
-### Parameter Server Strategy
+#### Parameter Server Strategy
 Parameter server training cluster consists of Workers and ParameterServers. Variables are created on ParameterServers, and they are read and updated by Workers in each step.
 
+### tf.data API
+The tf.data API makes it possible to handle large amounts of data, read it in different file and data formats, and perform those complex transformations.
+
+**tf.data.Dataset** represents a sequence of elements in which each element consists of one or more components. For example, in an image pipeline an element might be a single training example with a pair of tensor components representing the image and its label.
+
+`The dataset API will help you create input functions for your model that load data in progressively throttling it.`
+
+**Two ways to create a dataset:**
+```
+1. A data source constructs a dataset from data stored in memory or in one or more files.
+2. Data transformation constructs a dataset from one or more tf.dataset objects.
+```
+Large datasets tend to be sharded or broken apart into multiple files, which can be loaded progressively. Remember that you train on mini batches of data. You don't even have the entire dataset in memory. `One mini batch is all you need for one training step.`
+
+There are specialized dataset classes that can read data from text files like CSVs, TensorFlow records, or fixed length record files. Datasets can be created from many different file formats.
+1. Use **TextLineDataset** to instantiate a dataset object, which is comprised of, as you might guess, one or more text files.
+2. Use **TFRecordDataset** for TFRecord files.
+3. **FixedLengthRecord Dataset** is a dataset object from fixed length recordsor one or more binary files.
+4. For anything else you can use the generic dataset class and add your own decoding code.
+
+### Performance Batch Pipelines
+1. In terms of raw processing speed, you'll want to use Cloud ML Engine batch predictions.
+2. The next fastest is to directly load the SavedModel into your Dataflow job and then invoke it.
+3. The third option, in terms of speed, is to use TensorFlow Serving on Cloud ML Engine.
+4. But if you want maintainability, the second and third options reverse. The batch prediction is still the best.
+5. Using online predictions as a microservice allows for easier upgradability and dependency management than loading up the current version into the Dataflow job.
 
 
 
