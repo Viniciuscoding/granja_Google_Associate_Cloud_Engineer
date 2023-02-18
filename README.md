@@ -1423,6 +1423,16 @@ Types, Categories and Ranges of the data.<br>
 2. The ExampleValidator pipeline component identifies any anomalies in the example data by comparing data statistics computed by the StatisticsGen pipeline component against a schema.
 3. It takes the inputs and looks for problems in the data, like missing values, and reports any anomalies.
 
+## Distriduted Training
+Distributed training distributes training workloads across multiple mini-processors, or worker nodes. These worker nodes work in parallel to accelerate the training process. Their parallelism can be achieved via two types of distributed training architecture: **Data Paralism** and 
+
+### Data Paralism
+It is model-agnostic, making it the most widely used paradigm for parallelizing neural network training. In data parallelism, you run the same model and computation on every device, but train each of them using different training data samples. Each device computes loss and gradients based on the training samples. Then you update the model's parameters using these gradients. The updated model is then used in the next round of computation.
+
+
+
+
+
 
 
 
