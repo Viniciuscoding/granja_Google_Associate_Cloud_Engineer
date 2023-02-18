@@ -1424,11 +1424,44 @@ Types, Categories and Ranges of the data.<br>
 3. It takes the inputs and looks for problems in the data, like missing values, and reports any anomalies.
 
 ## Distriduted Training
-Distributed training distributes training workloads across multiple mini-processors, or worker nodes. These worker nodes work in parallel to accelerate the training process. Their parallelism can be achieved via two types of distributed training architecture: **Data Paralism** and 
+Distributed training distributes training workloads across multiple mini-processors, or worker nodes. These worker nodes work in parallel to accelerate the training process. Their parallelism can be achieved via two types of distributed training architecture: **Data Paralism** and **Model Paralism**.
 
 ### Data Paralism
 It is model-agnostic, making it the most widely used paradigm for parallelizing neural network training. In data parallelism, you run the same model and computation on every device, but train each of them using different training data samples. Each device computes loss and gradients based on the training samples. Then you update the model's parameters using these gradients. The updated model is then used in the next round of computation.
 
+There are two approaches used to update the model using gradients.<br>
+
+### Synchronous
+All of the devices train their local model using different parts of data from a single, large mini-batch. They then communicate their locally calculated gradients, directly or indirectly, to all devices. In this approach, each worker device computes the forward and backward passes through the model on a different slice of input data. The `computed gradients from each of these slices are then aggregated across all of the devices and reduced, usually using an average, in a process known as` **Allreduce**. The optimizer then performs the parameter updates with these reduced gradients, thereby keeping the devices in sync.
+
+#### Cons
+Because each worker cannot proceed to the next training step until all the other workers have finished the current step, this gradient calculation becomes the main overhead in distributed training for synchronous strategies. Only after all devices have successfully computed and sent their gradients, so that all models are synchronized, is the model updated.
+
+#### Pros
+The asynchronous parameter server approach, in which the parameter servers contain fewer features, consume less memory, and can run just a cluster of CPUs, is great for sparse models, as it shards the model across parameter servers, and workers only need to fetch the part they need for each step.
+
+### Asynchronous
+No device waits for updates to the model from any other device. The devices can run independently and share results as peers, or communicate through one or more central servers known as parameter servers. Thus, in an asynchronous parameter server architecture, some devices are designated to be parameter servers and others as workers. Devices used to run computations are called worker devices, while devices used to store variables are parameter devices. Each worker independently fetches the latest parameters from the parameter servers and computes gradients based on a subset of training samples. It then sends the gradients back to the parameter server, which then updates its copy of the parameters with those gradients. Each worker does this independently. This allows it to scale well to a large number of workers, where training workers might be preempted by higher priority production jobs, or a machine may go down for maintenance, or where there is asymmetry between the workers. This doesn't hurt the scaling, because workers are not waiting for each other.
+
+#### Cons
+The downside of this approach, however, is that workers can get out of sync. They compute parameter updates based on stale values, and this can delay convergence.
+
+#### Pros
+For dense models, the parameter server transfers the whole model each step, and this can create a lot of network pressure. Therefore, the synchronous Allreduce approach should be considered for dense models which contain many features and thus consume more memory. In this approach, all machines share the load of storing and maintaining the global parameters. This makes it the best option for dense models, like BERT, Bidirectional Encoder Representations from Transformers.
+
+
+### Model Paralism
+When a model is too big to fit on one device's memory, you can divide it into smaller parts on multiple devices and then compute over the same training samples. This is called model parallelism.
+
+Model parallelism feeds or gives every processor the same data, but applies a different model to it. Think of model parallelism as simply multiple program, same data. Model parallelism splits the weights of the net equally among the threads. And all threads work on a single mini-batch. Here, the generated output after each layer needs to be synchronized, i.e. stacked, to provide the input to the next layer. In this approach, each GPU has different parameters and computation of different parts of a model.
+
+#### Pros
+In other words, multiple GPUs do not need to synchronize the values of the parameters.
+
+#### Cons
+Model parallelism needs special care when assigning different layers to different GPUs, which is more complicated than data parallelism. The gradients obtained from each model and each GPU are accumulated after a backward process, and the parameters are synchronized and updated. However, a hybrid of the data and model parallelism approaches is sometimes used together in the same architecture.
+
+## TensorFlow Distributed Training Strategies
 
 
 
