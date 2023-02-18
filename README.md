@@ -1463,6 +1463,13 @@ Model parallelism needs special care when assigning different layers to differen
 
 ## TensorFlow Distributed Training Strategies
 
+### Challenges
+1. How will you distribute the data accross the different devices.
+2. How will you accumulate the gradients during backpropagation.
+3. How will the model parameters be updated.
+
+### Solution
+`tf.distribute.Strategy is a TensorFlow API to distribute training across multiple GPUs, multiple machines, or TPUs. There are four TensorFlow distributed training strategies that support data parallelism.`
 
 
 
