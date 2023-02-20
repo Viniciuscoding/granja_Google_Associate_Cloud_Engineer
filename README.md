@@ -1578,6 +1578,8 @@ There are specialized dataset classes that can read data from text files like CS
 ## Hybrid ML Systems
 
 ### Kubeflow
+An open-source machine learning platform designed to enable the use of machine learning pipelines to orchestrate complicated workflows running on Kubernetes. Kubeflow helps build hybrid cloud machine learning models.
+
 ```
 1. It helps you migrate between cloud and on-prem environments.
 2. Kubeflow is an open-source machine learning stack built on Kubernetes.
