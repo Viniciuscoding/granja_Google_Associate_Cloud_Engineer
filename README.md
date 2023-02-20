@@ -153,9 +153,9 @@ NOTE: Data Drift, Feature Drift, Population, and Covariate Shift describe change
 2. Disks
 3. Skillsets: software engineers, researchers, data engineers, data analysts, data scientists, different skillsets
 4. Teams across the org:<br>
-4.1. teams that are gonna be building the experiments.<br>
-4.2. teams that are gonna be using the experiments.<br>
-4.3. teams that are gonna be monitoring the machine learning models.<br>
+4.1. Teams that are gonna be building the experiments.<br>
+4.2. Teams that are gonna be using the experiments.<br>
+4.3. Teams that are gonna be monitoring the machine learning models.<br>
 
 
 ### Enterprise Data
@@ -1649,6 +1649,8 @@ There are specialized dataset classes that can read data from text files like CS
 **Peakedness:** is the degree to which data values are concentrated around the mean in a data distribution, or in this case, how concentraded the distribution of the prediction workload is. You can also think of it as inverse entropy.
 
 **PKL:** it is standard method of serialization objects in python.
+
+**Portability:** Because it is necessary to configure the stack over and over again and production services is not done on your laptop, portability is needed.
 
 **Root Mean Squared Error (RMSE):** RMSE measures the difference between the predictions of a model and the observed values. A large RMSE is equivalent to a large average error, so smaller values of RMSE are better.<br>
 ```
