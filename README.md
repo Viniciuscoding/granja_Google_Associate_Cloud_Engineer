@@ -1581,12 +1581,24 @@ There are specialized dataset classes that can read data from text files like CS
 An open-source machine learning platform designed to enable the use of machine learning pipelines to orchestrate complicated workflows running on Kubernetes. Kubeflow helps build hybrid cloud machine learning models.
 
 ```
-1. It helps you migrate between cloud and on-prem environments.
-2. Kubeflow is an open-source machine learning stack built on Kubernetes.
-3. On Google Cloud, you can run Kubeflow on Google Kubernetes Engine (GKE).
-4. However, you can run Kubeflow on anything from a phone, to a laptop, to an on-prem cluster.
-5. Your code remains the same.
+1. It makes deploying machine learning workflows on Kubernetes simple, portable, and scalable.
+2. It helps you migrate between cloud and on-prem environments.
+3. It also extends Kubernetes' ability to run independent and configurable steps with machine-learning-specific frameworks and libraries.
+4. Kubeflow is an open-source machine learning stack built on Kubernetes.
+5. On Google Cloud, you can run Kubeflow on Google Kubernetes Engine (GKE).
+6. Kubeflow can be ran on anything from a phone, to a laptop, to an on-prem cluster.
+7. Your code remains the same.
+8. Some of the configuration settings just change.
 ```
+
+
+### Kubeflow Benefits
+
+
+3. It is open source, so it can run on Google Kubernetes Engine which is part of Google Cloud.
+4. Kubeflow can actually run on anything, whether it's a phone, a laptop, or an on-premises cluster. Regardless of where it's run, the code remains the same. 
+
+
 
 
 
