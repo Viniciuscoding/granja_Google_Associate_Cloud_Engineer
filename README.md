@@ -148,6 +148,16 @@ By International Data Corporation on May 2020
 4. Label Drift: A change in P(Y Ground Truth) is a shift in the model's output or label distribution.
 ```
 NOTE: Data Drift, Feature Drift, Population, and Covariate Shift describe changes in the data distribution of inputs.<br>
+### ML Scalability Meaning.
+1. Accelerators: GPUs, TPUs, et cetera
+2. Disks
+3. Skillsets: software engineers, researchers, data engineers, data analysts, data scientists, different skillsets
+4. Teams across the org:<br>
+4.1. teams that are gonna be building the experiments.<br>
+4.2. teams that are gonna be using the experiments.<br>
+4.3. teams that are gonna be monitoring the machine learning models.<br>
+
+
 ### Enterprise Data
 ```
 90% of Enterprise data is unstructured such as emails, video footage, texts, reports, catalogs,
@@ -1565,6 +1575,22 @@ There are specialized dataset classes that can read data from text files like CS
 4. But if you want maintainability, the second and third options reverse. The batch prediction is still the best.
 5. Using online predictions as a microservice allows for easier upgradability and dependency management than loading up the current version into the Dataflow job.
 
+## Hybrid ML Systems
+
+### Kubeflow
+```
+1. It helps you migrate between cloud and on-prem environments.
+2. Kubeflow is an open-source machine learning stack built on Kubernetes.
+3. On Google Cloud, you can run Kubeflow on Google Kubernetes Engine (GKE).
+4. However, you can run Kubeflow on anything from a phone, to a laptop, to an on-prem cluster.
+5. Your code remains the same.
+```
+
+
+
+
+
+
 
 
 
@@ -1585,6 +1611,8 @@ There are specialized dataset classes that can read data from text files like CS
 **Changes in the Distribution:** The statistical term for changes in the likelihood of observed values like model inputs.
 
 **Cold Start:** when your model is not updating to new users, new products, and new patterns in user preference because the model only knows about your older products, it continues to recommend them long after they’ve fallen out of favor. Ultimately, users simply ignored the recommendations altogether, and made do with the site’s search functionality.
+
+**Composability:** the ability to compose a bunch of microservices together and the option to use what makes sense for your problem.
 
 **Compulation:**
 
