@@ -1598,6 +1598,10 @@ An open-source machine learning platform designed to enable the use of machine l
 3. It is open source, so it can run on Google Kubernetes Engine which is part of Google Cloud.
 4. Kubeflow can actually run on anything, whether it's a phone, a laptop, or an on-premises cluster. Regardless of where it's run, the code remains the same. 
 
+### Confederated learning
+The idea is you continuously train the model on the device, and then you combine the model updates from a federation of user devices to update the overall model. The goal is for each user to get their customized experience because there's model training happening on the device, but still retain privacy because it's the overall model update.
+
+
 
 
 
