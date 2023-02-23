@@ -1601,10 +1601,32 @@ An open-source machine learning platform designed to enable the use of machine l
 ### Confederated learning
 The idea is you continuously train the model on the device, and then you combine the model updates from a federation of user devices to update the overall model. The goal is for each user to get their customized experience because there's model training happening on the device, but still retain privacy because it's the overall model update.
 
+## Recommendation Systems
+recommendation systems are about personalization it's about taking your product that works for everyone and personalizing it for an individual user 
 
+### Content-based Recommendations
+Content-based recommendation system you use the metadata about your products for example perhaps you know which movies are cartoons and which movies are sci-fi.<br>
+```NOTE:
+There is no machine learning here it's a simple rule that relies on the builder of the recommendation system
+to assign proper tags to items and users that's a content based recommendation system.
+```
 
+### Collaborative Filtering
+Collaborative filtering you don't have any metadata about the products instead you learn about item similarity and user similarity from the ratings data itself. We might store our user movie data in a matrix like this with check marks indicating whether the user watched the complete movie or commented on it or gave it a star rating or however it is that we measure that a specific user.
+```
+No need of any metadata about your items.
+No need of market segmentation of your users.
+As long as you have an interactions matrix you're ready to go.
+```
 
+### Building an End-to-End Recommendation Systems
+`NOTE: If you have metadata and an interactions matrix a neural network solution is recommended.`<br>
+Use neural networks to combine all of the advantages and eliminate the disadvantages of all three types of recommendation systems three types well.
 
+### Knowledge Based Recommendation
+System that can be used to provide business impact inputs to systems.
+
+We'll cover this in this course the hybrid models of all three of these types of systems use all the data available and connect all of these models together into an ml pipeline.
 
 
 
