@@ -538,10 +538,10 @@ Machine Learning Development + Operations
 ```
 Practicing MLOps means advocating for automation and monitoring at each step of 
 the ML system construction. This means adopting a process to enable:
-```
 - Continuous integration (CI)
 - Continuous training (CT)
 - Continuous delivery (CD)
+```
 
 ### Machine Learning Deployment Options
 **Endpoint**<br>
@@ -1153,7 +1153,9 @@ Dataprep is a tool to instantly prepare data. Dataprep will produce Dataflow job
 5. Validate
 
 ```
-NOTE: When you are importing data into Dataprep, you are creating a reference to a source of data. When the data is required for use, Dataprep reads a sample of the source data into the application for your use through an object known as a connection.
+NOTE: When you are importing data into Dataprep, you are creating a reference to a source of data. 
+When the data is required for use, Dataprep reads a sample of the source data into the application 
+for your use through an object known as a connection.
 ```
 
 ### Three connection types
@@ -1182,8 +1184,8 @@ This means ways to upload or download your data from Dataprep.<br>
 - Auto-scalable
 
 ```
-NOTE: In Dataprep, the flows are implemented as sequence of recipes. The recipes are data processing steps built from a library of Wrangler.
-Cloud Dataprep Wrhanglers write beam code in CLoud Dataflow.
+NOTE: In Dataprep, the flows are implemented as sequence of recipes. The recipes are data processing
+steps built from a library of Wrangler. Cloud Dataprep Wranglers write beam code in Cloud Dataflow.
 1. Build recipes in Cloud Dataprep UI.
 2. Converts repices to Beam.
 3. Runs a Cloud Dataflow job pipeline.
@@ -1583,7 +1585,8 @@ An open-source machine learning platform designed to enable the use of machine l
 ```
 1. It makes deploying machine learning workflows on Kubernetes simple, portable, and scalable.
 2. It helps you migrate between cloud and on-prem environments.
-3. It also extends Kubernetes' ability to run independent and configurable steps with machine-learning-specific frameworks and libraries.
+3. It also extends Kubernetes' ability to run independent and configurable steps with 
+machine-learning-specific frameworks and libraries.
 4. Kubeflow is an open-source machine learning stack built on Kubernetes.
 5. On Google Cloud, you can run Kubeflow on Google Kubernetes Engine (GKE).
 6. Kubeflow can be ran on anything from a phone, to a laptop, to an on-prem cluster.
