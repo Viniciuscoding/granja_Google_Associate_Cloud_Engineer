@@ -1609,17 +1609,27 @@ recommendation systems are about personalization it's about taking your product 
 
 ### Content-based Recommendations
 Content-based recommendation system you use the metadata about your products for example perhaps you know which movies are cartoons and which movies are sci-fi.<br>
-```NOTE:
-There is no machine learning here it's a simple rule that relies on the builder of the recommendation system
-to assign proper tags to items and users that's a content based recommendation system.
+```
+1. Needs metadata about the items.
+2. Needs market segmentation of the users.
+3. Uses attributes of the items to recommend new items to a user.
+3. Recommendation relies on the behaviors and item interactions of a single user.
+4. Recommended when large number of items were rated. 
+5. Doesn't take into account the behavior or ratings of other users.
+6. There is no machine learning.
+7. relies on the builder of the recommendation system to assign proper tags to items and users.
 ```
 
 ### Collaborative Filtering
 Collaborative filtering you don't have any metadata about the products instead you learn about item similarity and user similarity from the ratings data itself. We might store our user movie data in a matrix like this with check marks indicating whether the user watched the complete movie or commented on it or gave it a star rating or however it is that we measure that a specific user.
 ```
-No need of any metadata about your items.
-No need of market segmentation of your users.
-As long as you have an interactions matrix you're ready to go.
+1. No need of any metadata about your items.
+2. No need of market segmentation of your users.
+3. Recommendation relies on the behaviors and item interactions of other users.
+3. As long as you have an interactions matrix you're ready to go.
+4. Uses similarities between users and items simultaneously to determine recommendations.
+5. Recommended when a few number of items were rated. 
+
 ```
 
 ### Building an End-to-End Recommendation Systems
@@ -1627,9 +1637,29 @@ As long as you have an interactions matrix you're ready to go.
 Use neural networks to combine all of the advantages and eliminate the disadvantages of all three types of recommendation systems three types well.
 
 ### Knowledge Based Recommendation
-System that can be used to provide business impact inputs to systems.
+Based on explicit knowledge about the user's preferences items and or recommendation criteria
+```
+1. System that can be used to provide business impact inputs to systems.
+2. Used in situations where items are not purchased very often.
+3. Recommended when there is no rated information about an item or user.
+4. Will often explicitly ask users for their preferences and then use that information to begin making
+recommendations.
+```
 
-We'll cover this in this course the hybrid models of all three of these types of systems use all the data available and connect all of these models together into an ml pipeline.
+### Hybrid Approach
+Hybrid models of all three of these types of systems use all the data available and connect all of these models together into an ml pipeline.
+
+## Recommendation Systems Pitfalls
+
+1. User space and the product space are sparse and skewed.<br>
+1.1. Iteraction matrix is sparse because there are potentially few interactions within the entire user item space 
+
+
+
+
+
+
+
 
 
 
