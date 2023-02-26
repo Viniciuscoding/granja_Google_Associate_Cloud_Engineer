@@ -1659,7 +1659,7 @@ Hybrid models of all three of these types of systems use all the data available 
 1.4. Iteraction matrix is skewed because some properties are very popular.<br>
 1.5. Iteraction matrix is skewed because some properties are very prolific.<br>
 2. Cold start problem when there aren't enough interactions for users or items.
-3. Lack of explicit user feedback leads to the need of implicit user feedback
+3. Lack of explicit user feedback leads to the need of implicit user feedback.<br>
 3.1. Number of clicks.<br>
 3.2. Play counts.<br>
 3.3. Fraction of video watch.<br>
@@ -1667,12 +1667,36 @@ Hybrid models of all three of these types of systems use all the data available 
 3.5. Time spent on page.<br>
 4. Explicit rating is not easily available.
 
+## Similarity Measures
+Is a metric for items in an embedding space.
+
+### Dot product
+s(a,b) = SUMi(ai x bi)
+
+``` Python Dot Product Function
+def dot(ai, bi):
+    return sum(a*b for a, b in zip(ai, bi))
+```
+
+### Cosine Similarity
+It is a dot product and magnitude (norm). It is the dot product scaled by the norm of the feature vectors.
+
+s(a,b) = SUMi(ai x bi) / (|a||b|)
+s(a,b) = SUMi(ai x bi) / (sqrt(SUMi(a^2i)) x sqrt(SUMi(a^2i)))
 
 
+``` Python Norm Function
+def norm(vi):
+    return sum(v*v for v in vi) ** 0.5
+```
 
-
-
-
+``` Python Cosine Similarity
+def cos_sim(ai, bi):
+    dot = dot(ai, bi)
+    norm_a, norm_b = norm(ai), norm(bi)
+    
+    return dot / (norm_a*norm_b)
+```
 
 
 
@@ -1718,6 +1742,8 @@ Hybrid models of all three of these types of systems use all the data available 
 **Data Dredging:** It is the statistical manipulation of data in order to find patterns which can be presented as statistically significant, when in reality there is no underlying effect.
 
 **Data Parallelism:** it is a common architecture for distributed training where you run the same model and computation on every device. But train each of them using different training samples. Each device computes loss and gradients based on training samples it sees. Then we update the models' parameters using these gradients. The updated model is then used in the next round of computation.
+
+**Embedding:** is a map from our collection of items to some finite dimensional vector space. They are commonly used to represent input features in machine learning problems.
 
 **Extrapolation::** means to generalize outside the bounds of what we’ve previously seen.
 
