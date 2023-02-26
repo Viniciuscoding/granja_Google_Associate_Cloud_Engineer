@@ -1609,6 +1609,7 @@ recommendation systems are about personalization it's about taking your product 
 
 ### Content-based Recommendations
 Content-based recommendation system you use the metadata about your products for example perhaps you know which movies are cartoons and which movies are sci-fi.<br>
+Use item features to recommend new items that are similar to what the user has already liked based on their previous actions or explicit feedback. They don't rely on information about other users or other user item interactions.
 ```
 1. Needs metadata about the items.
 2. Needs market segmentation of the users.
