@@ -1652,7 +1652,20 @@ Hybrid models of all three of these types of systems use all the data available 
 ## Recommendation Systems Pitfalls
 
 1. User space and the product space are sparse and skewed.<br>
-1.1. Iteraction matrix is sparse because there are potentially few interactions within the entire user item space 
+1.1. Iteraction matrix is sparse because there are potentially few interactions within the entire user item space<br>
+1.2. Most items are rated by very few users.<br>
+1.3. Most users rate only a small fraction of items.<br>
+1.4. Iteraction matrix is skewed because some properties are very popular.<br>
+1.5. Iteraction matrix is skewed because some properties are very prolific.<br>
+2. Cold start problem when there aren't enough interactions for users or items.
+3. Lack of explicit user feedback leads to the need of implicit user feedback
+3.1. Number of clicks.<br>
+3.2. Play counts.<br>
+3.3. Fraction of video watch.<br>
+3.4. Site navigation.<br>
+3.5. Time spent on page.<br>
+4. Explicit rating is not easily available.
+
 
 
 
