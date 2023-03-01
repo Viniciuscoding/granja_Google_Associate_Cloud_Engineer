@@ -1638,7 +1638,7 @@ Collaborative filtering you don't have any metadata about the products instead y
 Use neural networks to combine all of the advantages and eliminate the disadvantages of all three types of recommendation systems three types well.
 
 ### Knowledge Based Recommendation
-Based on explicit knowledge about the user's preferences items and or recommendation criteria
+Is based on explicit knowledge about the user's preferences items and or recommendation criteria. They are especially useful when alternative approaches such as collaborative filtering or content-based methods cannot be applied. This occurs in situations where items are not purchased very often.
 ```
 1. System that can be used to provide business impact inputs to systems.
 2. Used in situations where items are not purchased very often.
