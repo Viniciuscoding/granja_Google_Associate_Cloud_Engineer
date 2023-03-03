@@ -1618,7 +1618,11 @@ Use item features to recommend new items that are similar to what the user has a
 4. Recommended when large number of items were rated. 
 5. Doesn't take into account the behavior or ratings of other users.
 6. There is no machine learning.
-7. relies on the builder of the recommendation system to assign proper tags to items and users.
+7. Relies on the builder of the recommendation system to assign proper tags to items and users.
+8. Doesn't need information about other users.
+9. Can recommend niche items that the user was not initially interested in.
+10. Requires domain knowledge to hand-engineer features.
+11. Difficult to expand interests of user.
 ```
 
 ### Collaborative Filtering
@@ -1698,7 +1702,9 @@ def cos_sim(ai, bi):
     return dot / (norm_a*norm_b)
 ```
 
-
+# Deep Learning Models
+Deep learning models can also be used when building a recommendation system.<br>
+Deep neural networks work well because they are flexible and can be trained to have varying outcomes such as predicting ratings interactions or even next items.
 
 
 
