@@ -1637,6 +1637,44 @@ Collaborative filtering you don't have any metadata about the products instead y
 6. Collaborative filtering learns latent factors and can explore outside user's personal bubble.
 ```
 
+NOTE: 'Embeddings can be learned from data.`
+
+As long as the number of latency features is less than half the harmonic mean of the number of users and the number of items this will save space for this hypothetical website that would be almost 10 000 latent features 9998 to be precise. Each movie is essentially its own feature.
+```
+k < U * V / 2(U + V)
+```
+
+### Factorization Approaches
+
+#### Stochastic Gradient Descent (SGD)
+```
+Flexible and Paralyzable algorithm. You can scale your problem to handle much larger data.
+Slower and hard to handle unobserved interaction pairs,
+```
+#### Alternating Least Squares (ALS)
+Solve U holding v constant and solve v holding U constant
+```
+Only works for Least Square Problems.
+Paralyzable algorithm. You can scale your problem to handle much larger data.
+Faster convergence than SDG.
+Easily to handle unobserved interaction pairs.
+```
+#### Singular Value Decomposition (SVD)
+Unobserved pairs are given values of zero. Poor performance and recommendation
+```
+|A-UV^T|^2
+```
+#### Matrix Factorization ALS
+Just ignore the missing values. 
+```
+SUM(i,j)(Aij-UiVj)^2
+```
+#### Weighted ALS (WALS)
+Assigns a weight for those interaction pairs that are missing as a way to represent low confidence.
+```
+SUM(i,j)(Aij-UiVj)^2 + w0 * SUM(i,j)(0-UiVj)^2
+```
+
 ### Building an End-to-End Recommendation Systems
 `NOTE: If you have metadata and an interactions matrix a neural network solution is recommended.`<br>
 Use neural networks to combine all of the advantages and eliminate the disadvantages of all three types of recommendation systems three types well.
@@ -1702,7 +1740,7 @@ def cos_sim(ai, bi):
     return dot / (norm_a*norm_b)
 ```
 
-# Deep Learning Models
+### Deep Learning Models
 Deep learning models can also be used when building a recommendation system.<br>
 Deep neural networks work well because they are flexible and can be trained to have varying outcomes such as predicting ratings interactions or even next items.
 
@@ -1758,6 +1796,10 @@ Deep neural networks work well because they are flexible and can be trained to h
 **Implicit feedback:** It is not intentionally given as a means of reading the item the user has interacted with. However, there was some type of interaction and from that we can infer whether the user had a positive or a negative experience. This could be whether someone viewed a video, how long they watched a video, if a user spent a lot of time on a page, if they clicked certain areas, or buttons on the page, etc.
 
 **Interpolation::** is the opposite of Extrapolation. It means to generalize within the bounds of what we’ve previously seen.
+
+**Latent Factors:** Compress the data to find the best generalities to rely on.
+
+**Latent Feature:** It is a feature that we are not directly observing or defining but are instead inferring through our model from the other variables that are directly observed.
 
 **Legacy Features:** are older features that were added because they were valuable at the time. The have become redundant because of the implementation of new features without our knowledge.
 
