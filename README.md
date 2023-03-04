@@ -1631,10 +1631,10 @@ Collaborative filtering you don't have any metadata about the products instead y
 1. No need of any metadata about your items.
 2. No need of market segmentation of your users.
 3. Recommendation relies on the behaviors and item interactions of other users.
-3. As long as you have an interactions matrix you're ready to go.
+3. As long as you have an interactions matrix (user-interaction matrix) you're ready to go.
 4. Uses similarities between users and items simultaneously to determine recommendations.
-5. Recommended when a few number of items were rated. 
-
+5. Recommended when a few number of items were rated.
+6. Collaborative filtering learns latent factors and can explore outside user's personal bubble.
 ```
 
 ### Building an End-to-End Recommendation Systems
@@ -1752,6 +1752,10 @@ Deep neural networks work well because they are flexible and can be trained to h
 **Embedding:** is a map from our collection of items to some finite dimensional vector space. They are commonly used to represent input features in machine learning problems.
 
 **Extrapolation::** means to generalize outside the bounds of what we’ve previously seen.
+
+**Explicit feedback:** the user is intentionally explicitly leaving feedback for that item.
+
+**Implicit feedback:** It is not intentionally given as a means of reading the item the user has interacted with. However, there was some type of interaction and from that we can infer whether the user had a positive or a negative experience. This could be whether someone viewed a video, how long they watched a video, if a user spent a lot of time on a page, if they clicked certain areas, or buttons on the page, etc.
 
 **Interpolation::** is the opposite of Extrapolation. It means to generalize within the bounds of what we’ve previously seen.
 
