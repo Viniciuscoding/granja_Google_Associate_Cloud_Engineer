@@ -1754,9 +1754,6 @@ Deep neural networks work well because they are flexible and can be trained to h
 
 
 
-
-
-
 ## Glossary
 
 **Ablation Analysis:** analysis where the value of an individual feature is computed by comparing it to a model trained without it. What might this engineer be concerned about? The engineer might be concerned about legacy and bundled features.
