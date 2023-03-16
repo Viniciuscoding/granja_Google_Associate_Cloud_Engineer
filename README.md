@@ -1625,6 +1625,15 @@ Use item features to recommend new items that are similar to what the user has a
 11. Difficult to expand interests of user.
 ```
 
+#### Structured
+```
+1. Genres  2. Themes  3. Actors/directors involved  4. Professional Ratings
+```
+#### Unstructured
+```
+1. Movies Summary. 2. Stills from movie. 3. Movie Trailer
+```
+
 ### Collaborative Filtering
 Collaborative filtering you don't have any metadata about the products instead you learn about item similarity and user similarity from the ratings data itself. We might store our user movie data in a matrix like this with check marks indicating whether the user watched the complete movie or commented on it or gave it a star rating or however it is that we measure that a specific user.
 ```
