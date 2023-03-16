@@ -1631,7 +1631,7 @@ Use item features to recommend new items that are similar to what the user has a
 ```
 #### Unstructured
 ```
-1. Movies Summary. 2. Stills from movie. 3. Movie Trailer
+1. Movies Summary. 2. Stills from movie. 3. Movie Trailer  4. Professional Reviews
 ```
 
 ### Collaborative Filtering
