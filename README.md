@@ -1771,14 +1771,91 @@ def cos_sim(ai, bi):
 Deep learning models can also be used when building a recommendation system.<br>
 Deep neural networks work well because they are flexible and can be trained to have varying outcomes such as predicting ratings interactions or even next items.
 
+### Context-Aware Recommendation Systems (CARS)
+Context aware recommendation systems add an extra dimension to our usual collaborative filtering problem. Traditional collaborative filtering recommendation systems use a rank two tensor a user item interaction matrix containing explicit or implicit ratings. Contextual collaborative filtering recommendation systems on the other hand use a multi-dimensional tensor but the user item interaction matrix flow ratings is stratified across multiple dimensions of context.
 
+#### Contextual prefiltering
+```
+Data
+U x I x C -> R
+Apply [C] Context Vector
+Contextualized Data
+U x I -> R
+2D Recommender
+U x I -> R
+Apply [U] User Vector
+Contextual Recommendations
+i1,i2,i3, ...
+```
+##### Examples
+```
+1. Reduction-Based Approach (2005)
+2. Exact and Generalized Prefiltering (2009)
+3. Item Splitting (2009)
+4. User Splitting (2011)
+5. Dimensions as Virtual Items (2011)
+6. User-Item Splitting (2014)
+```
 
+#### Item\User\User-Item Splitting
+```
+t-value
+tmean = | Mic - Mić| \ |sqrt(Sic/Nic + Sić/Nić)|
+```
+#### Contextual Postfiltering
+```
+Data
+U x I x C -> R
+2D Recommender
+U x I -> R
+Apply [U] User Vector
+Recommendations
+i1,i2,i3, ...
+Apply [C] Context Vector
+Contextual Recommendations
+i1,i2,i3, ...
+```
+```
+Weight postfiltering method
+R'ij = Rij * P
+```
+#### Contextual Modeling
+```
+Data
+U x I x C -> R
+MD Recommender
+U x I x C -> R
+Apply [U] User Vector
+Apply [C] Context Vector
+Contextual Recommendations
+i1,i2,i3, ...
+```
+### Deviation-based context-aware matrix factorization
+- How is user's rating deviated?
+- Contextual rating deviation (CRD)
+- Looks at the deviations of users across context dimensions
 
+CRD is used to adjust rating recommendations
 
+**Biased Matrix Factorization in Traditional RS**
+```
+Rui = M + bu + bi + pu^Tqi
+M = Global Average Rating
+bu = User Bias
+bi =  Item Bias
+pu^Tqi = User-Item interaction
+```
 
-
-
-
+**Deviation-based Context Aware Matrix Factorization (CAMF_C approach)**
+```
+Ruicic2...cN = M + bu + bi + pu^Tqi + SUMj=i^N(CRDcj)
+M = Global Average Rating
+bu = User Bias
+bi =  Item Bias
+pu^Tqi = User-Item interaction
+Ruicic2...cN = Contextual Rating
+SUMj=i^N(CRDcj) = Contextual Rating Deviation
+```
 
 
 ## Glossary
