@@ -1646,6 +1646,15 @@ Collaborative filtering you don't have any metadata about the products instead y
 6. Collaborative filtering learns latent factors and can explore outside user's personal bubble.
 ```
 
+#### Structured
+```
+1. User Ratings. 2. User Views  3. User wishlist/cart history  4. User Purchase/Return History
+```
+#### Unstructured
+```
+1. User Reviews  2. User-answered questions  3. User-submitted photos. 4. User-submitted videos
+```
+
 NOTE: 'Embeddings can be learned from data.`
 
 As long as the number of latency features is less than half the harmonic mean of the number of users and the number of items this will save space for this hypothetical website that would be almost 10 000 latent features 9998 to be precise. Each movie is essentially its own feature.
@@ -1697,6 +1706,15 @@ Is based on explicit knowledge about the user's preferences items and or recomme
 4. Will often explicitly ask users for their preferences and then use that information to begin making
 recommendations.
 ```
+#### Structured
+```
+1. Demographic information  2. Location/country/language  3. Genre preferences  4. Global filters
+```
+#### Unstructured
+```
+1. User "about me" snippets.
+```
+
 
 ### Hybrid Approach
 Hybrid models of all three of these types of systems use all the data available and connect all of these models together into an ml pipeline.
