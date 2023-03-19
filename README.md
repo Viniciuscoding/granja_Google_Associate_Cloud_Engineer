@@ -1857,6 +1857,32 @@ Ruicic2...cN = Contextual Rating
 SUMj=i^N(CRDcj) = Contextual Rating Deviation
 ```
 
+## Reinforcement Learning (RL)
+Reinforcement learning is borrowed from an area of behavior psychology known as operant conditioning and deals with learning the relationship between stimuli action and consequences that is the occurrence of rewards or punishments. These rewards and punishments then guide the learner on the desired behavior or policy.
+
+Reinforcement learning in software is an area of machine learning where an agent or system of agents learns to achieve a goal by interacting with its environment. By goal, we mean that we want the agent to learn the optimal path or behavior that collects the maximum reward.
+
+```
+The agents learn to:
+1. Achieve a goal.
+2. Achieve the optimal behavior.
+3. Obtain the maximum reward.
+```
+### Characteristics of RL
+1. There is no supervisor. There is only a real number of reward signal.
+2. Decision Making is sequencial.
+3. Time plays a crucial role in RL problems.
+4. Feed back is alaways delayed, not instanteneous.
+5. The agent's actions determine the subsequent data it receives. 
+
+### Reinforcement Learning Framework
+
+Agent -> Environment: States | Actions | Rewards
+
+
+
+
+
 
 ## Glossary
 
