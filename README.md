@@ -1893,6 +1893,16 @@ Value Function: Measure of potential future rewards from being in a particular s
 Q(S,A): "Q-value" of an action in various state/action pairs.
 ```
 
+#### Model-based vs model-free RL
+|Qualities|Model-based|Model-Free|
+|:--------|:---------:|:--------:|
+|You have access to or knowledge about the environment|YES|NO|
+|You can avoid needless exploration by focusing on areas you already know are worthwhile|YES|NO|
+|Need to make more assumptions and approximations|YES|NO|
+|Need lots of samples|NO|YES|
+|Over many episodes, results become less optimal|YES|NO|
+|Over many episodes, results become more optimal|NO|YES|
+|Applicable accross a wide variety of applications|NO|YES|
 
 
 
