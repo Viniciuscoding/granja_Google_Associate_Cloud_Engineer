@@ -1905,6 +1905,15 @@ Q(S,A): "Q-value" of an action in various state/action pairs.
 |Applicable accross a wide variety of applications|NO|YES|
 
 
+#### Examples of Model-based and Model-free methods
+|Model-based methods|Model-free methods|
+|:-----------------:|:----------------:|
+|Analytic gradient computation|Value-based|
+|Sampling-based planning|Policy-based|
+|Model-based data generation|Contextual bandits|
+|Value-equivalence prediction|On-policy|
+| |Off-policy|
+
 
 
 
