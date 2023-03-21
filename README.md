@@ -1879,7 +1879,19 @@ The agents learn to:
 
 Agent -> Environment: States | Actions | Rewards
 
-
+#### Terminology in Reinforcement Learning
+```
+State: Summary of events so far; the current situation.
+Action: One or more events that alter the state.
+Environment: The scenario the agent has to respond to.
+Agent: The learner entity that performs actions in an environment.
+Reward: Feedback on agent actions, also known as reward signal.
+Policy: Method to map the agent's to actions.
+Episode: A termination point.
+Value: Long-term reward gained by the end of an episode.
+Value Function: Measure of potential future rewards from being in a particular state, or V(S)
+Q(S,A): "Q-value" of an action in various state/action pairs.
+```
 
 
 
