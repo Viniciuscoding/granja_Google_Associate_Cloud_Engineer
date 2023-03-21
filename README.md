@@ -1911,7 +1911,8 @@ Q(S,A): "Q-value" of an action in various state/action pairs.
 |Analytic gradient computation|Value-based|
 |Sampling-based planning|Policy-based|
 |Model-based data generation|Contextual bandits|
-|Value-equivalence prediction|On-policy|
+|Value-equivalence prediction|Actor-critic|
+| |On-policy|
 | |Off-policy|
 
 
