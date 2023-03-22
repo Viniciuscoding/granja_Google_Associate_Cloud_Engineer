@@ -1904,7 +1904,6 @@ Q(S,A): "Q-value" of an action in various state/action pairs.
 |Over many episodes, results become more optimal|NO|YES|
 |Applicable accross a wide variety of applications|NO|YES|
 
-
 #### Examples of Model-based and Model-free methods
 |Model-based methods|Model-free methods|
 |:-----------------:|:----------------:|
@@ -1914,6 +1913,75 @@ Q(S,A): "Q-value" of an action in various state/action pairs.
 |Value-equivalence prediction|Actor-critic|
 | |On-policy|
 | |Off-policy|
+
+### Value-based Approach
+You explore in order to learn state-action values and maximize a value function, V(S).
+
+The agent can sample and generalize to derive a policy, pi, that maximizes the value of action for each state.
+
+#### Sample backups
+**Sample backup:** the agent learns from environment sampling which may provide an incomplete picture of the environment dynamics with enough samples. The sample backup approaches come closer to the full backup approaches.<br>
+**Deep backup:** the agent learns the whole trajectory of the chosen action up to the termination point. This can be the whole trajectory of the sample and not necessarily the full environment.<br>
+**Shallow backup::** the agent learns one step at a time in a breadth-first search manner of the chosen action trajectory.<br>
+**Full backup:** the agent learns from the ability to access the complete environment.<br>
+
+#### Monte Carlo backup
+``` Cons
+1. It tends to evaluate the whole trajectory of actions the agent took up to the terminal state of
+the episode because this method of reward attribution is sensitive to the trajectory.
+2. Actions taken it tends to overfit and exhibit higher variance
+3. If a particular value was achieved it's assumed that each action was equally responsible for the outcome.
+4. There is an inherent assumption that an episode has a terminal state or endpoint and reaches 
+that in a feasible amount of time.
+```
+``` Pros
+1. Easy to implement at each time step with each action that the agent takes it gets a reward.
+2. The rewards accumulate throughout the episode and are backed up throughout, so that the agent learns that these actions led to a certain cumulative reward. 
+```
+#### Temporal Difference backup
+The td method can learn directly from raw experience without the model of the environment's dynamics.<br>
+Unlike the Monte Carlo method, td estimates are based in part on other learned estimates without waiting until the end of the episodes bootstrapping. The agent learns from one or more intermediate time steps in a recursive fashion.<br>
+The recursive learning helps in accelerating overall learning even in cases where there might not be any well-defined terminal states in td backup.
+
+`NOTE: Because td backups haven't seen the whole set of trajectories, they have a narrow perspective and tend to underfit especially in the beginning despite higher complexity and higher bias`
+
+TD backups are used more often than Monte Carlo backups.
+
+### Policy-based RL
+You want the action performerd in every state to help you to gain maximum reward in the future.
+
+The agent will:<br>
+- Learn the stochastic policy function that maps state to action.
+- Act by sampling policy.
+- Utilize exploration techniques.
+
+|Poly-based method|Value-based|
+|:----------------|:----------|
+|There are large action spaces.| |
+|Stochastic is needed.| |
+|An agent will learn the policy directly.| |
+|Lower bias in the policy is needed.| |
+
+### Multi-armed bandits
+An agent simultaneously attempts to:
+- Explore (acquire new knowledge).
+- Exploit (optimize its decision based on existing knowledge.
+
+### Contextual Bandits
+It is an extension of multi-armed bandits or simplified RL.
+- In a sequence of trials, the agent acts based on a given context.
+- Each data point is a new episode.
+- Value of exploration strategies is much easier to quantify/tune.
+- Context can be the input feature space (recommender|personalization systems).
+- A policy as the function approximator: Estimation value gain from an action.
+
+Bandits problem is a simplified reinforcement learning problem which has only one time step and note state transition dynamics in the diagram.
+
+
+
+
+
+
 
 
 
