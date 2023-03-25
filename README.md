@@ -1936,7 +1936,8 @@ that in a feasible amount of time.
 ```
 ``` Pros
 1. Easy to implement at each time step with each action that the agent takes it gets a reward.
-2. The rewards accumulate throughout the episode and are backed up throughout, so that the agent learns that these actions led to a certain cumulative reward. 
+2. The rewards accumulate throughout the episode and are backed up throughout, so that the agent 
+learns that these actions led to a certain cumulative reward. 
 ```
 #### Temporal Difference backup
 The td method can learn directly from raw experience without the model of the environment's dynamics.<br>
