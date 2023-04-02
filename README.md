@@ -1978,7 +1978,42 @@ It is an extension of multi-armed bandits or simplified RL.
 
 Bandits problem is a simplified reinforcement learning problem which has only one time step and note state transition dynamics in the diagram.
 
+## Computer Vision
 
+
+**Batch Normalization:** Our input pixel values are in the range [0,1] and this is compatible with the dynamic range of the typical activation functions and optimizers. However, once we add a hidden layer, the resulting output values will no longer lie in the dynamic range of the activation function for subsequent layers. When this happens, the neuron output is zero, and because there is no difference by moving a small amount in either direction, the gradient is zero. There is no way for the network to escape from the dead zone.
+
+To fix this, batch norm normalizes neuron outputs across a training batch of data, i.e. it subtracts the average and divides by the standard deviation. This way, the network decides, through machine learning, how much centering and re-scaling to apply at each neuron. In Keras, you can selectively use one or the other:
+
+x^(k) = (x^(k) - E[x^(k)]) / sqrt(Var[x^(k)])
+```
+def batchnorm(data, gamma, beta, eps=1e-5):  
+    """
+    
+    Arguments:
+        - data = Data of shape (X,Y)
+        - gamma = Scale parameter of shape (Y,)
+        - beta = Shift paremeter of shape (Y,)
+        - eps = Constant for numeric stability
+    
+    Returns:
+        - out = Data result of shape (X,Y)
+        - cache = A tuple of values needed for backward pass
+    """
+    
+    sample_mean = x.mean(axis=0)
+    sample_var = x.var(axis=0)
+    
+    std, x_center = np.sqrt(sample_var + eps), x - sample_mean
+
+    x_norm = x_center / std
+    
+    result = (gamma * x_norm) + beta
+    
+    cache = (x_norm, x_center, std, gamma)
+
+    return out, cache
+```
 
 
 
