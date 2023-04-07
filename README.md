@@ -2016,6 +2016,17 @@ def batchnorm(data, gamma, beta, eps=1e-5):
 ```
 
 
+### Convolution
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2045,6 +2056,8 @@ def batchnorm(data, gamma, beta, eps=1e-5):
 **Concept Drift:** occurs when there is a change in the relationship between the input feature and the label, or target. It can occur due to shifts in the feature space and/or the decision boundary, so we need to be aware of these during production.
 
 **Container:** it is an abstraction that packages applications and libraries together so that the applications can run on a greater variety of hardware and operating systems. This ultimately makes hosting large applications better.
+
+**Convolution:** is the mathematical combination of two functions to produce a third function.
 
 **Data Leakage:** it is when the label is somehow laking into the training data.
 
