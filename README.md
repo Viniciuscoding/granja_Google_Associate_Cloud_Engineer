@@ -2087,6 +2087,8 @@ def batchnorm(data, gamma, beta, eps=1e-5):
 
 **Legacy Features:** are older features that were added because they were valuable at the time. The have become redundant because of the implementation of new features without our knowledge.
 
+**Max Pooling:** operation like a convolution that returns the maximum value out of all the input data values pass to a kernel.
+
 **Model Definition:**
 
 **Model Staleness:** Data that you used to train the model in the research or production environment does not represent the data that you actually have in your live system. 
