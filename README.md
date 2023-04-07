@@ -2041,6 +2041,8 @@ def batchnorm(data, gamma, beta, eps=1e-5):
 
 **Artifact Lineage:** it describes all the factors that resulted in an artifact such as training data or hyperparameters used for model training. One can understand differences in performance or accuracy over several pipeline runs
 
+**Average Pooling:** instead of calculating a max value like max pooling, average pooling calculates the average value for each block on the feature map.
+
 **Bundled Features:** are features that were added as part of a bundle, which collectively are valuable but individually may not be.
 
 **Cardinality:** refers to the number of values in a set.
