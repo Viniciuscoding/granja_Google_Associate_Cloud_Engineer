@@ -2047,7 +2047,7 @@ def batchnorm(data, gamma, beta, eps=1e-5):
 
 
 ### DevOps concepts translated to MLOps
-|**Conitnuous Integration (CI)**|**Continuous Delivery or Deployment (CD)**|**Conitnuous Training**|
+|**Conitnuous Integration (CI)**|**Continuous Delivery or Deployment (CD)**|**Continuous Training**|
 |:------------------------------|:-----------------------------------------|:----------------------|
 |Checkout the code|Build|Monitor|
 |Complete the task|Test|Measure|
@@ -2071,6 +2071,13 @@ The difference between Continuous Delivery and Continuous Deployment is the auto
 ### Technical Debt
 Represents the pressure to prioritize releases over quality, which might mean not paying close attention to code quality.
 
+### ML Lifecycle
+|**Discovery Phase**|**Development Phase**|**Deployment Phase**|
+|:------------------|:--------------------|:-------------------|
+|Business use case definition|Data pipeline creation and feature engineering|Plan for deployment|
+|Data exploration|Model building|Model operationalization|
+|Architecture and algorithm selection|Model evaluation|Model monitoring|
+| |Presentation results| |
 
 
 
