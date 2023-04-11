@@ -73,6 +73,13 @@ though, the key performance aspect is speed of response and high QPS.
 3. ML is hard, so it is hard for competitors too.
 4. ML is a great differentiator. 
 ```
+### ML Practicioners's Pain Points
+```
+1. Keeping track of different versions.
+Controllig the experiment space.
+Pinpointing the best-performing model.
+Collaboration is not easy.
+```
 ### ML Strategy
 ```
 Simple ML and more data > Fancy ML and small data.
