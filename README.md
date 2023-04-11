@@ -91,6 +91,12 @@ By International Data Corporation on May 2020
 2. Lack of production-ready data.
 3. Lack of and integrated development environment.
 ```
+### ML three phases lifecycle
+```
+1. Discovery Phase
+2. Development Phase
+3. Deployment Phase
+```
 ### Top 13 ML Pitfalls
 1. Training your own ML algorithm would be faster than writting the software.
 
@@ -140,6 +146,14 @@ By International Data Corporation on May 2020
 1. Can be expensive.
 2. Low model accuracy.
 3. Long debugging.
+```
+### ML Technical Debt
+```
+1. Multi-functional teams: Requires a lot of experts in different fields. 
+2. Experimental nature: Needs constant experimentation.
+3. Testing complexity: It is more complex than testing other systems
+4. Deployment complexity: Requires multi-step pipeline.
+5. Model decay: Data is constantly changing, so it is important to monitor otherwise performance can drop.
 ```
 ### ML Algorithm Assumptions
 ```
@@ -2023,7 +2037,9 @@ def batchnorm(data, gamma, beta, eps=1e-5):
 ```
 
 
-### Convolution
+## Convolution
+
+
 
 
 
@@ -2039,12 +2055,21 @@ def batchnorm(data, gamma, beta, eps=1e-5):
 |Perform unit testing| | |
 |Merge the code| | |
 
+### DevOPS vs MLOps differences
+|**DevOps**|**MLOps**|
+|:---------|:--------|
+|Tests and validates code and components|Tests and validates data, data schemas and models|
+|Focuses on a single software package service|Considers the whole system: the ML training pipeline|
+|Deploys code and moves to the next task|Constantly monitors, retrains, and serves the model|
+
+
 
 The difference between Continuous Delivery and Continuous Deployment is the automation deployment.<br>
 **Continuous delivery:** automates integration or acceptance tests, deployment to staging and smoke tests. Deployment to the production still done manually.<br>
 **Continuous deployment:** compliments continuous integration with additional steps by automating the configuration and deployment application to the production evironment. 
 
-
+### Technical Debt
+Represents the pressure to prioritize releases over quality, which might mean not paying close attention to code quality.
 
 
 
