@@ -2027,7 +2027,22 @@ def batchnorm(data, gamma, beta, eps=1e-5):
 
 
 
+## MLOps
 
+
+### DevOps concepts translated to MLOps
+|**Conitnuous Integration (CI)**|**Continuous Delivery or Deployment (CD)**|**Conitnuous Training**|
+|:------------------------------|:-----------------------------------------|:----------------------|
+|Checkout the code|Build|Monitor|
+|Complete the task|Test|Measure|
+|Validate against the code base|Release|Retrain|
+|Perform unit testing| | |
+|Merge the code| | |
+
+
+The difference between Continuous Delivery and Continuous Deployment is the automation deployment.<br>
+**Continuous delivery:** automates integration or acceptance tests, deployment to staging and smoke tests. Deployment to the production still done manually.<br>
+**Continuous deployment:** compliments continuous integration with additional steps by automating the configuration and deployment application to the production evironment. 
 
 
 
