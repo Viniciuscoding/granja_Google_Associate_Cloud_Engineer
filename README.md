@@ -502,14 +502,40 @@ This page describes how to make API requests to Vertex AI Vizier by using Python
 
 Tutorial on how to use [Vertex AI Vizier](https://cloud.google.com/vertex-ai/docs/vizier/using-vizier) in Python
 
-## Vertex AI Feature Store
+
+### Vertex AI Feature Store
 It is managed cloud service for machine learning engineers and data scientists to store, serve, manage, and share machine learning features at scale.
 
 - It is a centralized repository to organize, store, and serve machine learning features.
 - It aggregates all the different features from different sources and updates them to make them available from a central repository.
 - Upon engineers need to model something, they can use the features available in the Feature Store dictionary to build a dataset.
 
+### Vertex AI Monitoring
+|**Monitor and alert**|**Diagnose**|**Update the model**|
+|:--------------------|:-----------|:-------------------|
+|Monitor signals for model's predictive performance, and alert when those signals deviate.|Help identify the cause for deviation, for example, what changed, how, and how much.|Trigger model retraining pipeline or collect relevant training data to address performance degradation.|
 
+### Vertex AI Experiments
+Used to track, analyze, visualize, and compare ML experiments.<br>
+1. Vary and track parameters and metrics as you experiment.
+2. Organize Vertex AI Pipeline runs and compare their parameters, metrics, and artifacts.
+3. Track steps and artifacts to capture the lineage of experiments.
+4. Compare Vertex AI Pipeline against Vertex AI Workbench Notebook experiments.
+
+### Vertex AI TensorBoard
+Based on the OpenSource TensoBoard tool, it is used to track, analyze, visualize, and compare ML experiments.<br>
+1. Track and visualize metrics such as loss and accuracy over time.
+2. Visualize model computational graphs.
+3. View histograms of weights, biases, or other tensors.
+4. Project embeddings to a lower dimensional space.
+5. Display image, text, and audio samples.
+
+### Vertex AI Tabular Workflows (for Google AutoML)
+It is a managed instance of Vertex AI Pipelines. It is a set of integrated, fully managed, and scalable pipelines for end-to-end ML with tabular data that uses Google's AutoML technology for model development and provising customization options to fit your needs.<br>
+1. Supports large datasets that are multiple TB in size.
+2. Allows you to improve stability and lower training time.
+3. Allows you to improve training speed.
+4. Allows you to reduce model size and improve latency.
 
 ### Three Key ML Features Challenges 
 - Hard to share and reuse
