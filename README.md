@@ -485,6 +485,11 @@ Hyperparameters are the variables that govern the training process itself. For e
 
 Hyperparameter tuning searches for the best combination of hyperparameter values by optimizing metric values across a series of trials. Metrics are scalar summaries that you add to your trainer, such as model accuracy. Hyperparameter tuning optimizes target variables that you specify, called hyperparameter metrics. Model accuracy, as calculated from an evaluation pass, is a common metric. Metrics must be numeric.
 
+### Vertex Explainable AI
+|**Provides robust, actionable explanations**|**Is built into multiple Vertex AI services**|**Is flexible, fast, and scalable**|
+|:-------------------------------------------|:--------------------------------------------|:----------------------------------|
+|Vertex Explainable AI integrates feature attributions into Vertex AI to show the most important features for specific predictions with Shapley, Integrated gradients, and eXplanation with Ranked Area Integrals (XRAI).|You can get explanations easily through Vertex AI Prediction, AutoML Table, and Vertex AI Workedbench.|Supports tabular, image, and text models from any ML framework. Fully managed, serverless, and significantly faster than open source.|
+
 ### [Vertex AI Vizier](https://cloud.google.com/vertex-ai/docs/vizier/overview)
 It is a hyperparameter optmizer. Vertex AI Vizier is a **black-box optimization service** that helps you tune hyperparameters in complex machine learning (ML) models. When ML models have many different hyperparameters, it can be difficult and time consuming to tune them manually. Vertex AI Vizier optimizes your model's output by tuning the hyperparameters for you.
 
