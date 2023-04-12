@@ -441,6 +441,15 @@ It is a unified platform which means having one digital experience to create, de
 3. Training & Hyperparameter Tunning
 4. Deployment & Model Monitoring
 
+### Veterx AI interface does the following
+1. Create a dataset and upload data.
+2. Train an ML model on your data.
+3. Upload and store your model in Vertex AI.
+4. Deploy your trained model to an endpoint for serving predictions.
+5. Send prediction requests to your endpoint.
+6. Specify a prediction traffic split in your endpoint.
+7. Manage your models and endpoints.
+
 ### Traditional Challenges
 - Determining how to handle large quantities of data.
 - Determining the right machine learning model to train the data.
@@ -463,6 +472,13 @@ Hyperparameters are the variables that govern the training process itself. For e
 
 ### Resources
 [Hyperparameter tuning in Cloud Machine Learning Engine using Bayesian Optimization](https://cloud.google.com/blog/products/ai-machine-learning/hyperparameter-tuning-cloud-machine-learning-engine-using-bayesian-optimization)
+
+### Manage and Govern with Vertex AI
+|**Feature Store**|**Model Registry**|**ML Metadata**|**Model Evaluation**|
+|:----------------|:-----------------|:--------------|:-------------------|
+|Shared and reuse ML features accross use cases.|Register, organize, track, and version your trained and deployed ML models.|Automatically track inputs or outputs of all components.|Iteratively run model evaluations on new datasets at scale.|
+|Serve ML features at scale with low latency.|Govern the model launch process.|Query the metadata to help analyze, debug, and audit the performance.| Visualize and compare model evaluations to identify the best model for prod deployment.|
+|Alleviate training serving skew.|Maintain model documentation and reporting.|Maintain model documentation and reporting.|Visualize, analyze, and compare detailed ML lineage.|Assess the performance of models on different slice and evaluated annotations.|
 
 
 ### [Using Hyperparameter Tunning](https://cloud.google.com/vertex-ai/docs/training/using-hyperparameter-tuning#aiplatform_get_hyperparameter_tuning_job_sample-python)
