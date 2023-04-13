@@ -2127,10 +2127,63 @@ Represents the pressure to prioritize releases over quality, which might mean no
 | |Presentation results| |
 
 
+## Tensorflow Extended (TFX)
 
 
+**TFX Component:** it is an implementation of the machine learning task in your pipeline. They are designed to be modular and extensible, while incorporating Google's machine learning best practices on tasks such as data partitionaing, validation, and transformation. 
 
+### Components 5 elements
+**Component specification:** A configuration protocol buffer defines how components communicate with each other via input and output artifact channels and runtime parameters.<br>
+**Component driver:** A drive coordinates job execution.<br>
+**Component executor:** Code to perform ML workflow step such as data preprocessing or TensorFlow model training.<br>
+**Component publisher:** Updates ML Metadata store.<br>
+**Component interface:** Packages component specification and executor for use in pipeline.
 
+### TFX components at runtime
+1. **Driver** reads the component specification for parameters and artifacts and retrieves input artifacts from the metadata store for the component.
+2. **Executor** performs computation on artifacts.
+3. **Publisher** uses the component specification and executor results to store the component's output artifacts in the metadata store.
+
+### TFX Pipeline
+It is a sequence of components connected be channels in a directed acyclic graph (DAG) of artifact dependencies.
+```
+1. Uses Medata storage<br>
+1.1. It stores the metadata in a relational back end.<br>
+1.2. It does not store the actual pipeline artifacts.<br>
+2. It is task aware. They can be authored in a script or notebook to run manually by the user as tasks.<br>
+2.1. A task can be an entire pipeline run or a partial pipeline run of an individual component and its downstream components.
+3. It is data aware. It means TFX pipelines store all the artifacts from every component over many executions.
+```
+
+NOTE: TFX pipeline uses ML Metadata storage, an open source library to standardize the definition storage and querying of metadata for ML pipelines. ML metadata stores the metadata in a relational back end. It does not store the actual pipeline artifacts.
+
+### TFX Horizontal Layers
+Coordinate pipeline components. These are primarily shared libraries if utilities and protobuffs for defining abstractions that simplify development of TFX pipelines accross different computing and orchestration environments.
+
+### TFX Orchestrators
+They take the logical pipeline object, which can contain pipeline arcs components in a DAG, and are responsible for scheduling components of the TFX pipeline sequentially based on the artifact dependencies.
+
+### TFXIO
+It defines a common in-memory data representation shared by all TFX libraries and components based on **Apache Arrow**, a columnar memory format for efficient analytics on CPUs and GPUs.
+
+### ExampleGen
+1. It is the entry point to one's pipeline that adjusts data.
+2. It supports inputs like CSV, TF Records, Avro, and Parquet.
+3. As outputs is produces TF examples or TF sequence examples.
+
+### Benefits of ExampleGen
+```
+1. Brings configurable and reproducible data partitioning.
+2. Shuffling into TF records, a common data representation used by all components in one's pipeline.
+3. Supports external ingestion of CSV< Avro, Parquet and TF Record data sources.
+4. Supports BigQuery ingestion through configuring sequel queries for each data partition. 
+5. Leverages Apache Beam for scalable, fault-tolerant data ingestion.
+6. Customizable tonew inout data formats and ingestion methods which makes it easier to incorporate
+into one's machine learning project.
+7. Supports advanced data management capabilities such as data partitioning, versioning, and custom
+splitting on features or time.
+
+```
 
 
 
