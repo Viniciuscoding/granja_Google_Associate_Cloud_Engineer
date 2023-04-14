@@ -2182,8 +2182,10 @@ It defines a common in-memory data representation shared by all TFX libraries an
 into one's machine learning project.
 7. Supports advanced data management capabilities such as data partitioning, versioning, and custom
 splitting on features or time.
-
 ```
+
+
+
 
 
 
