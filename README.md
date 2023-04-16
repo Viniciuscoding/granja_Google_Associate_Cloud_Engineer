@@ -2171,6 +2171,11 @@ It defines a common in-memory data representation shared by all TFX libraries an
 2. It supports inputs like CSV, TF Records, Avro, and Parquet.
 3. As outputs is produces TF examples or TF sequence examples.
 
+ExampleGen brings configurable and reproducible data partitioning and shuffling into TF Records, a common data representation used by all components in your pipeline.<br>
+ExampleGen supports external ingestion of CSV, Avro, Parquet, and TF Record data sources. This can be done across sharded file systems using glob file patterns as well.
+
+`NOTE: A span is a grouping of training examples.`
+
 ### Benefits of ExampleGen
 ```
 1. Brings configurable and reproducible data partitioning.
@@ -2184,10 +2189,19 @@ into one's machine learning project.
 splitting on features or time.
 ```
 
+### ExampleValidator
+The ExampleValidator pipeline component identifies any anomalies in the example data by comparing data statistics computed by the StatisticsGen pipeline component against a schema.<br>
 
+1. It can perform validity checks by comparing data set statistics against a schema that codifies expectations of the user.
+2. It can detect feature train-serving skew by comparing training and serving data.
+3. It can also detect data drift by looking at a series of feature data across different data splits. 
 
+### Transform
+The Transform TFX pipeline component performs feature engineering on the TF examples data artifact emitted from the ExampleGen component using the data schema artifact from SchemaGen or imported from external sources as well as TensorFlow transformations typically defined in a pre-processing function as shown in the example on the slide.<br>
 
-
+1. It brings consistent feature engineering at training and serving time to benefit your machine learning project.
+2. Including feature engineering directly into your model graph reduces train-serving skew from differences in feature engineering.
+3. It is also underpinned by Apache Beam, so you can scale up your future transformations using distributed compute as your data grows.
 
 
 
