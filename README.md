@@ -2203,6 +2203,67 @@ The Transform TFX pipeline component performs feature engineering on the TF exam
 2. Including feature engineering directly into your model graph reduces train-serving skew from differences in feature engineering.
 3. It is also underpinned by Apache Beam, so you can scale up your future transformations using distributed compute as your data grows.
 
+### Component: Trainer
+1. It trains the TensorFlow model.
+2. It supports TF1 estimators and native TF2 Keras models via the generic executer.
+3. Trainers component spec also allows you to parameterize your training and evaluation arguments, such as the number of steps as shown in the example on the screen.
+
+### Component: Tuner
+1. It makes extensive use of the Python Keras tuner API for tuning hyper parameters.
+2. As inputs, the tuner component takes in the transform data and transform graph artifacts.
+3. As outputs the tuner components output a hyper parameter artifact.<br>
+4. You can modify the trainer configurations to directly ingest the best hyperparameters found from the most recent tuner run.
+5. Brings the benefits of tight integration with the trainer component to perform hyperparameter tuning in a continuous training pipeline.
+6. You can also perform distributed tuning by running parallel trials on Google Cloud to significantly speed up your tuning jobs.
+
+### Component: Evaluator
+1. Evaluates how well the model performed during trainer and tuner.
+2. It will perform a thorough analysis using the TensorFlow Model Analysis library to compute machine learning metrics across data splits and slices.
+3. As outputs, the evaluator component produces two artifacts, an evaluation metrics artifact that contains configurable model performance metrics slices, and a "model blessing" artifact that indicates whether the models performance was higher than the configured thresholds and that it is ready for production.
+4. Brings standardization to your machine learning projects for easier sharing and reuse.
+5. Evaluator blesses the model if the new trained model is good enough to be pushed to production. In other words, it assures that your pipeline will only graduate a model to production when it has exceeded the performance of previous models.
+
+### Component: InfraValidator
+1. It is used as an early warning layer before pushing a model to production.
+2. It blesses the model if the model is mechanically serviceable in a production environment
+3. As inputs, InfraValidator takes the SavedModel artifact from the trainer component, launches a sandboxed model server with the model, and tests whether it can be successfully loaded and optionally queried using the input data artifact from the example Gen component.
+4. Focuses on the compatibility between the model server binary, such as TensorFlow serving, in the model ready to deploy.
+5. It is the user's responsibility to configure the environment correctly.
+6. Only interacts with the model server in the user configured environment to see whether it works well.
+7. Brings an additional validation check to your TFX pipeline by ensuring that only top-performing models are graduated to production and that they do not have any failure-causing mechanical issues.
+8. Brings standardization to this model infra check and is configurable to mirror model-serving environments such as Kubernetes clusters and TF Serving.
+
+### Component: Pusher
+1. It is used to push a validated model to a deployment target during model training or retraining.
+2. Relies on one or more blessings from other validation components as input to decide whether to push the model.
+3. As output a pusher component will wrap model versioning data with the train TensorFlow SavedModel for export to various deployment targets.
+4. The pusher component brings the benefits of a production gatekeeper to your TFX pipeline to ensure that only the best performing models that are mechanically sound make it to production.
+5. Standardizes the code for pipeline model export for reuse and sharing across machine learning projects while still having the flexibility to be configured for Filesystem and Model Server deployments.
+
+### Component: Bulkinferrer
+1. Used to perform batch inference on unlabeled TF examples.
+2. It is typically deployed after an evaluator component to perform inference with a validated model, or after the trainer component to directly perform inference on an exported model.
+3. It currently performs in memory model inference and remote inference.
+4. Remote inference requires the model to be hosted on Cloud AI platform.
+5. As inputs, BulkInferer reads from the following artifacts, a train TensorFlow SavedModel from the trainer component, optionally a model blessing artifact from the evaluator component, input data TF example artifacts from the example jam component.
+6. As output BulkInferer generates an inference result proto, which contains the original features and the prediction results.
+7. If your machine learning use case only calls for batch inference, BulkInferer is a great option for your machine learning project to directly include inference in your pipeline.
+8. Enables you to have task and data-driven batch inference in a continuous training and inference pipeline.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Glossary
