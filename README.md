@@ -2305,6 +2305,8 @@ Handles special artifact resolution logistics that will be used as inputs for do
 
 **Convolution:** is the mathematical combination of two functions to produce a third function.
 
+**DAG Runner:** it refers to an implementation that supports an orchestration.
+
 **Data Leakage:** it is when the label is somehow laking into the training data.
 
 **Distributed Training:** it is running training in parallel on many devices such as CPUs or GPUs or TPUs in order to make your training faster.
