@@ -2270,6 +2270,12 @@ Handles special artifact resolution logistics that will be used as inputs for do
 **PTransform:** Data processing operation that operates over 1:many PCollections. ParDO is the core parallel processing transform.<br>
 **Runners:** Excute and translate pipelines to massively parallel big-data processing systems.
 
+## TF Metadata
+
+### TFX Metadata Store
+**Trained models:** Type definitions of artifacts and their propertities.<br>
+**Trainer:** Execution records (runs) of components.<br>
+Data provenence accross all executions.<br>
 
 
 
@@ -2340,6 +2346,8 @@ Handles special artifact resolution logistics that will be used as inputs for do
 **Latent Feature:** It is a feature that we are not directly observing or defining but are instead inferring through our model from the other variables that are directly observed.
 
 **Legacy Features:** are older features that were added because they were valuable at the time. The have become redundant because of the implementation of new features without our knowledge.
+
+**Machine Learning Metadata:** Data about data, but not the data itself. Who triggerd the pipeline run? What hyperparameters were used for training? Where is the model file stored? When was the model pushed to production? Why was model A prefered over model B? How was the training environmnet configured?
 
 **Max Pooling:** operation like a convolution that returns the maximum value out of all the input data values pass to a kernel.
 
