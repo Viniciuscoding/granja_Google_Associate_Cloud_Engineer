@@ -2277,8 +2277,16 @@ Handles special artifact resolution logistics that will be used as inputs for do
 **Trainer:** Execution records (runs) of components.<br>
 Data provenence accross all executions.<br>
 
+## Cloud Coposer
+It is a managed Apache Airflow service that helps you create, schedule, monitor and manage workflows.
 
+1. Author end-to-end workflows on Google Cloud.
+2. Integrate with BigQuery, Cloud Storage, AI Plaftform, etc.
+3. Security for yours worflows accross Google Cloud using tools such as Cloud IAM.
+4. Have your infrastructure fully managed by Google.
+5. Explore Cloud Composer and Airflows logs through Cloud Operations Logging and Monitoring.
 
+In Airflow, A DAG is defined in a Python script, which represents the DAG structure (tasks and dependencies) as code.
 
 
 
@@ -2320,6 +2328,8 @@ Data provenence accross all executions.<br>
 **DAG Runner:** it refers to an implementation that supports an orchestration.
 
 **Data Leakage:** it is when the label is somehow laking into the training data.
+
+**Directed Acyclic Graphs (DAGs):** A DAG is a collection of all tasks you want to run, organized in a way that reflects their relationships and dependencies.
 
 **Distributed Training:** it is running training in parallel on many devices such as CPUs or GPUs or TPUs in order to make your training faster.
 
