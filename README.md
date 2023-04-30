@@ -2286,7 +2286,9 @@ It is a managed Apache Airflow service that helps you create, schedule, monitor 
 4. Have your infrastructure fully managed by Google.
 5. Explore Cloud Composer and Airflows logs through Cloud Operations Logging and Monitoring.
 
-In Airflow, A DAG is defined in a Python script, which represents the DAG structure (tasks and dependencies) as code.
+In Airflow, A DAG is defined in a Python script, which represents the DAG structure (tasks and dependencies) as code.<br>
+
+A DAG is usually created by the Airflow scheduler, but it can also be created by an external trigger.<br>
 
 
 
@@ -2324,6 +2326,8 @@ In Airflow, A DAG is defined in a Python script, which represents the DAG struct
 **Container:** it is an abstraction that packages applications and libraries together so that the applications can run on a greater variety of hardware and operating systems. This ultimately makes hosting large applications better.
 
 **Convolution:** is the mathematical combination of two functions to produce a third function.
+
+**DAR Run:** is a physical instance of a DAG, containing task intances that run for a specific execution_date.
 
 **DAG Runner:** it refers to an implementation that supports an orchestration.
 
