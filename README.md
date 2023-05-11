@@ -190,6 +190,15 @@ fashion show, events, news, etc.
 - Google has been a hundred percent carbon neutral since 2007.
 - Its data centers energy source will shortly reach a hundred percent renewable energy.
 ```
+
+### Data quality attributes
+```
+Accuracy of Data
+Consistency of Data
+Timeliness of Data
+Completenes of Data
+```
+
 ### Payments and reliability
 ```
 Google was the first major Cloud provider to deliver per second billing for its IaaS Compute offering.
