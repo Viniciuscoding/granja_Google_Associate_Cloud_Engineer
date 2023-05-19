@@ -2300,10 +2300,24 @@ In Airflow, A DAG is defined in a Python script, which represents the DAG struct
 A DAG is usually created by the Airflow scheduler, but it can also be created by an external trigger.<br>
 
 
+## CDA vs EDA vs Baysesian Analysis
 
+### Classical Data Analysis
+The data collection is followed by the imposition of a model, normality, linearity, analysis, estimation and testing that follows are focused on the parameters of that model.
+### Exploratory Data Analysis
+1. The data collection is not followed by a model imposition.
+2. It is followed immediately by analysis with a goal of inferring what model would be appropriate.
+3. It does not impose deterministic or probabilistic models on the data.
+4. It allows the data to suggest admissible models that best fit the data.
+### Bayesian Analysis
+1. Analyst attempts to answer research questions about unkown parameters using probability statements based on prior data.
+2. They may bring their own domain knowledge and/or expertise to the analysis as new information is obtained.
+3. The purpose is to determine posterior probabilities based on prior probabilities and new information.
+4. Posterior probabilties
 
-
-
+## Difference between Mean Square Error and Cross Entropy?
+**Mean Square Error:** There is a quadratic penalty for means-squared error, so it is essentially trying to minimize the Euclidean distance between the actual label and the predicted label.<br>
+**Cross Entropy:** The penalty is almost linear when the predicted probability is close to the actual label, but as it gets farther away it becomes exponential when it gets close to predicting the opposite class of the label.
 
 
 
