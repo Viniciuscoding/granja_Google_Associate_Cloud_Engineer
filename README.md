@@ -2319,6 +2319,16 @@ The data collection is followed by the imposition of a model, normality, lineari
 **Mean Square Error:** There is a quadratic penalty for means-squared error, so it is essentially trying to minimize the Euclidean distance between the actual label and the predicted label.<br>
 **Cross Entropy:** The penalty is almost linear when the predicted probability is close to the actual label, but as it gets farther away it becomes exponential when it gets close to predicting the opposite class of the label.
 
+## Machine Learning vs Statistics
+||**Machine Learning**|**Standard Statistics (linear/logistic regression)**|
+|:--|:----------------|:---------------------------------------------------|
+|**Data Preparation**|Doesn't require explicit commands to find patterns in data|Need to know variables and and parameters before hand|
+|**Hypothesis**|No hypothesis needed|Need hypothesis to test|
+|**Type of data?**|Multi-dimensional data that can be non-linear in nature|Linear data|
+|**Training?**|Needs to be trained|No training|
+|**Goal?**|Generally better for predictions|Generally better for inferences /hypothesis testing|
+|**Scientific Question?**|What will happen?|How/why will happen?|
+
 
 
 
