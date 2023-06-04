@@ -2329,8 +2329,44 @@ The data collection is followed by the imposition of a model, normality, lineari
 |**Goal?**|Generally better for predictions|Generally better for inferences /hypothesis testing|
 |**Scientific Question?**|What will happen?|How/why will happen?|
 
+## Loss Function 
 
+### Error
+One measure of the quality of the prediction at a single point is simply the sign differnece between the prediction and actual value. This difference is called the error.<br>
+1. Get the errors for the training sample: `Error = Actual Value - Predicted Value` or `Error = Ÿi - Yi`
+2. Compute the squares of the errors in step 1: `(Ÿi - Yi)^2`<br>
+2.1 Ÿi = actual value
+2.2 Yi = predicted value
+4. Computer  mean of the squared errors: `Mean = 1/n * sum(Error^2)` or `Mean = 1/n * sum((Ÿi - Yi)^2)
 
+### Root Mean Squared Errors (RMSE)
+`sqrt(1/n * sum(Error^2))`<br>
+n = number of values
+
+```
+Pro blem: RMSE doesn't work as well for classification.
+```
+
+### Cross Entropy (Log loss)
+` -1/N * sum(y*log(ÿ) + (1-y)*log(1-ÿ)` which is -1/N * sum(Positive Term + Negative Term)
+
+### Gradient Descent
+Search for the minima by descending the gradient
+```
+def computeLoss(params):
+    while loss is ? Epsilon:
+        direction = computeDirection()
+        for i in range(self.params):
+            self.params[i] = self.params[i] + stepsize * direction[i]
+loss = computeLoss()
+```
+
+In order to converge step sizes are necessary.
+```
+1. Small step sizes (learning rate) can take very long to converge.
+2. Large step sizes (learning rate) may never converege to the true minimum. Process is not guarantee to converge.
+3. A correct step size requires try and error. However, one correct step size does not fit all models.
+```
 
 
 
@@ -2393,6 +2429,8 @@ The data collection is followed by the imposition of a model, normality, lineari
 **Latent Feature:** It is a feature that we are not directly observing or defining but are instead inferring through our model from the other variables that are directly observed.
 
 **Legacy Features:** are older features that were added because they were valuable at the time. The have become redundant because of the implementation of new features without our knowledge.
+
+**Loss Function:** it takes the quality of predictions for a group of data points from our training set and compose them into a single number with which to estimate the quality of the models current parameters.
 
 **Machine Learning Metadata:** Data about data, but not the data itself. Who triggerd the pipeline run? What hyperparameters were used for training? Where is the model file stored? When was the model pushed to production? Why was model A prefered over model B? How was the training environmnet configured?
 
