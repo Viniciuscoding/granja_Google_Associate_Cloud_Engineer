@@ -76,9 +76,9 @@ though, the key performance aspect is speed of response and high QPS.
 ### ML Practicioners's Pain Points
 ```
 1. Keeping track of different versions.
-Controllig the experiment space.
-Pinpointing the best-performing model.
-Collaboration is not easy.
+2. Controllig the experiment space.
+3. Pinpointing the best-performing model.
+4. Collaboration is not easy.
 ```
 ### ML Strategy
 ```
