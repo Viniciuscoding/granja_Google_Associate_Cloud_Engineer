@@ -2299,7 +2299,6 @@ In Airflow, A DAG is defined in a Python script, which represents the DAG struct
 
 A DAG is usually created by the Airflow scheduler, but it can also be created by an external trigger.<br>
 
-
 ## CDA vs EDA vs Baysesian Analysis
 
 ### Classical Data Analysis
