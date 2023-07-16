@@ -2419,6 +2419,8 @@ In order to converge step sizes are necessary.
 
 **Explicit feedback:** the user is intentionally explicitly leaving feedback for that item.
 
+**Feature cross:** It is a process of combining features into a single feature. It enables a model to learn separate weights for each combination of features. A feature cross is a synthetic feature formed by multiplying (crossing) two or more features. Crossing combinations of features can provide predictive abilities beyond what those features can provide individually.
+
 **Implicit feedback:** It is not intentionally given as a means of reading the item the user has interacted with. However, there was some type of interaction and from that we can infer whether the user had a positive or a negative experience. This could be whether someone viewed a video, how long they watched a video, if a user spent a lot of time on a page, if they clicked certain areas, or buttons on the page, etc.
 
 **Interpolation::** is the opposite of Extrapolation. It means to generalize within the bounds of what we’ve previously seen.
