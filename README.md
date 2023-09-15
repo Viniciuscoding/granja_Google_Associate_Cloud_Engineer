@@ -13,6 +13,24 @@ Studying for the GCP Machine Learning Enginerr Professional certification
 [Advanced Solutions Lab (For Teams!)](https://cloud.google.com/asl)<br>
 The Advanced Solutions Lab is an immersive training program that provides a unique opportunity for technical teams to learn from Google's machine learning experts in a dedicated, collaborative space on Google Campus.
 
+### Looker Partner Connectors
+
+#### Notable Partner Connectors
+Not all data sources are hosted on Google tools or within the Google Marketing Platform. To bridge this gap, several partner connectors can be used to connect to other data sources. Here are four notable partner connectors:
+
+#### Supermetrics
+Connects to over 70 different marketing analytics tools and data sets. Most of its connectors are live connections, although some use snapshot data. Supermetrics can work around Universal GA sampling and provide fields not available in Google's built-in connector. It can also perform data transformations, join data, and aggregate data from multiple accounts at once. Data can be sent to Looker Studio, Google Sheets, or BigQuery.
+
+#### Power My Analytics (PMA)
+Offers 40+ connections, with connectors using a data warehouse approach. This makes loading data quicker and faster compared to live connections. PMA can send data to Looker Studio, Google Sheets, and BigQuery as well.
+
+#### Funnel.io
+A warehouse-based connector with many data sources available. It includes built-in data transformation features, allowing you to perform resource-intensive transformations before connecting to Looker Studio. Funnel.io supports additional destinations like BigQuery, Snowflake, and Tableau.
+
+#### Dataddo
+A newer player in the market with 90+ connectors. It can be a live connection or use a snapshot feature for warehouse connections. Dataddo includes built-in drag-and-drop data transformation features and supports various data destinations, including Looker Studio, Redshift, Power BI, and Tableau.
+
+
 ## Google Code Samples
 
 ### [Detect sentiment](https://cloud.google.com/natural-language/docs/samples/language-quickstart?hl=en)
