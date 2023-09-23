@@ -30,6 +30,19 @@ A warehouse-based connector with many data sources available. It includes built-
 #### Dataddo
 A newer player in the market with 90+ connectors. It can be a live connection or use a snapshot feature for warehouse connections. Dataddo includes built-in drag-and-drop data transformation features and supports various data destinations, including Looker Studio, Redshift, Power BI, and Tableau.
 
+### Looker Studio Additional Resource
+#### Function List
+https://support.google.com/looker-studio/table/6379764?hl=en<br>
+#### Google RE2 Regex Syntax
+https://github.com/google/re2/wiki/Syntax<br>
+https://support.google.com/a/answer/1371417?hl=en<br>
+
+#### Templr
+Tool that helps build your own custom visualizations in Google Data Studio using HTML, CSS, and JavaScript.<br>
+https://www.templr.pro/<br>
+https://www.templr.pro/article/getting-started-with-templr-pro
+
+
 
 ## Google Code Samples
 
