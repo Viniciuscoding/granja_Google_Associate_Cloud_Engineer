@@ -46,7 +46,9 @@ https://www.templr.pro/article/getting-started-with-templr-pro
 Tool to generate color palletes<br>
 https://coolors.co/
 
-
+#### Icons for Looker Studio
+https://icons8.com/<br>
+https://www.flaticon.com/<br>
 
 
 ## Google Code Samples
