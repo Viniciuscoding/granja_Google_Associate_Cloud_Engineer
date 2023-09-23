@@ -42,6 +42,11 @@ Tool that helps build your own custom visualizations in Google Data Studio using
 https://www.templr.pro/<br>
 https://www.templr.pro/article/getting-started-with-templr-pro
 
+#### Coolors
+Tool to generate color palletes<br>
+https://coolors.co/
+
+
 
 
 ## Google Code Samples
