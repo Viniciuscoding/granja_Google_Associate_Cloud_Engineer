@@ -47,6 +47,7 @@ Tool to generate color palletes<br>
 https://coolors.co/
 
 #### Icons for Looker Studio
+Tools to generate or download icons for free<br>
 https://icons8.com/<br>
 https://www.flaticon.com/<br>
 
