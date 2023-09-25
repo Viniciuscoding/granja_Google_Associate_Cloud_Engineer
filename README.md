@@ -31,6 +31,17 @@ A warehouse-based connector with many data sources available. It includes built-
 A newer player in the market with 90+ connectors. It can be a live connection or use a snapshot feature for warehouse connections. Dataddo includes built-in drag-and-drop data transformation features and supports various data destinations, including Looker Studio, Redshift, Power BI, and Tableau.
 
 ### Looker Studio Additional Resource
+#### Tutorials and Courses
+**Supermetrics**<br>
+https://supermetrics.com/<br>
+https://lookerstudio.google.com/u/0/reporting/6a211d82-26ef-4a4d-920c-7d5a2db2c279/page/MLdGB<br>
+**Looker Studio Master Class by Ahmad Kanani**<br>
+https://www.youtube.com/@siakanani/videos<br>
+
+
+
+
+
 #### Function List
 https://support.google.com/looker-studio/table/6379764?hl=en<br>
 #### Google RE2 Regex Syntax
