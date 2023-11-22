@@ -1543,7 +1543,7 @@ Training-serving skew occurs when training data is generated differently from ho
 |Features with values outside an expected range|Features that vary so widely in scale that they may slow learning|
 |Data anomalies|Features with little or no unique predictive information|
 
-### SatiticsGen data validation checks
+### StatisticsGen data validation checks
 1. Feature min, max, mean, mode, and median.
 2. Feature correlations.
 3. Class imbalance.
