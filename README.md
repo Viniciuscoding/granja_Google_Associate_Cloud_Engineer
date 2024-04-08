@@ -2423,6 +2423,10 @@ In order to converge step sizes are necessary.
 
 **Ablation Analysis:** analysis where the value of an individual feature is computed by comparing it to a model trained without it. What might this engineer be concerned about? The engineer might be concerned about legacy and bundled features.
 
+**AlloyDB:** A fully managed PostgreSQL - compatible dabase service for your most demanding enterprise workloads. It combines the best of Google with PostgreSQL, for superior performance, scale, and availability.
+
+**AlloyDB AI:** automates embeddings generation, to easily transform operational data into vector embeddings. 
+
 **Artifact Lineage:** it describes all the factors that resulted in an artifact such as training data or hyperparameters used for model training. One can understand differences in performance or accuracy over several pipeline runs
 
 **Average Pooling:** instead of calculating a max value like max pooling, average pooling calculates the average value for each block on the feature map.
